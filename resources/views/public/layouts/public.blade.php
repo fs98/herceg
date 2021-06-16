@@ -27,12 +27,12 @@
         <header>
 
           <!-- Navigational bar -->
-            <nav class="navbar navbar-expand-lg navbar-2">
-              <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-2 px-0 mx-5">
+              <div class="container-fluid">
 
                   <!-- Site logo -->
                   <a class="navbar-brand" href="">
-                    <img class="header-logo mt-4" src="{{ asset('/images/logo/logo-herceg.png') }}" alt="main-logo" width="200">
+                    <img class="header-logo mb-n4" src="{{ asset('/images/logo/logo-herceg.png') }}" alt="main-logo" width="200">
                   </a>
                   <!-- Toggling button for mobile responsivnes -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-2" aria-controls="navbar-2"  aria-expanded="false" aria-label="Toggle navigation">
@@ -41,13 +41,13 @@
                 <div class="row">
                  
                  <!-- Email and Phone links -->
-                  <div class="col-lg-12">
+                  <div class="col-lg-12 d-none d-lg-block">
                     <div class="collapse navbar-collapse" id="navbar-2">
                       <ul class="navbar-nav mr-auto"></ul>
-                      <ul class="navbar-nav text-lg-right contact-info">
+                      <ul class="navbar-nav text-lg-right contact-info rounded-right">
                         <li class="nav-item">
                           <a class="navbar-brand navbar-brand-1" href="tel:+387-61-758-733">
-                            <img src="{{ asset('/images/icons/phone.png') }}" width="18">
+                            <img src="{{ asset('/images/icons/phone.png') }}" width="17">
                             <span class="navbar-info" style="color: black;">061 758 733</span>
                           </a>
                         </li>
@@ -67,16 +67,16 @@
                       <ul class="navbar-nav mr-auto"></ul>
                       <ul class="navbar-nav text-lg-right">
                         <li class="nav-item">
-                          <a class="nav-link nav-link-2" href="">Početna</a>
+                          <a class="nav-link nav-link-2 h5 font-weight-normal" href="">Početna</a>
                         </li>
                         <li class="nav-item">
-                         <a class="nav-link nav-link-2" href="">O nama</a>
+                         <a class="nav-link nav-link-2 h5 font-weight-normal" href="">O nama</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link nav-link-2" href="">Proizvodi</a>
+                          <a class="nav-link nav-link-2 h5 font-weight-normal" href="">Proizvodi</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link nav-link-2" href="">Kontakt</a>
+                          <a class="nav-link nav-link-2 h5 font-weight-normal" href="">Kontakt</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link nav-link-2 market-link position-relative" href="">
