@@ -9,7 +9,8 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('admin.category.index') }}">{{ __('Sve kategorije') }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{ $category->title }}</li>
+      <li class="breadcrumb-item"><a href="{{ route('admin.category.edit', $category) }}">{{ $category->title }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Uređivanje</li>
     </ol>
   </nav>
 

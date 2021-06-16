@@ -8,7 +8,8 @@
   {{-- Breadcrumb --}}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb"> 
-      <li class="breadcrumb-item active" aria-current="page">{{ __('Kategorije') }}</li>
+      <li class="breadcrumb-item"><a href="{{ route('admin.category.index') }}">{{ __('Sve kategorije') }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ __('Lista svih kategorija') }}</li>
     </ol>
   </nav>
 

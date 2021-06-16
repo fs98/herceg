@@ -71,7 +71,7 @@
 
             <div class="col-12">
               <div class="alert alert-danger w-100" role="alert">
-                U bazi podataka trenutno nemate ni jednog pitanja.
+                U bazi podataka trenutno nemate ni jednu poruku.
               </div>
             </div>
 

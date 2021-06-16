@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\ProductEditRequest;
 use App\Models\Swal;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,11 +18,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $user = auth()->user();
-        if(empty($user)) abort(404);
-        if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
-      
+    { 
         $products = Product::orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.pages.products.index', [
@@ -51,10 +48,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(ProductRequest $request)
-    {
-        $user = auth()->user();
-        if(empty($user)) abort(404);
-        if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
+    { 
 
         $product = new Product;
         $product->title = $request->title;
@@ -113,8 +107,13 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
-    }
+        $categories = Category::select('id','title')->get();
+        return view('admin.pages.products.edit', [
+          'product' => $product,
+          'categories' => $categories
+        ]);
+    
+      }
 
     /**
      * Update the specified resource in storage.
@@ -123,9 +122,43 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductEditRequest $request, Product $product)
     {
-        //
+        $product->title = $request->title;
+        $product->category_id = $request->category;
+        $product->price = $request->price;
+        $product->description = $request->product_description;
+        $product->in_stock = $request->product_in_stock;
+
+
+        $oldImage = $product->picture_file_name;
+
+        $directory = FileStorageController::getDirectory($product->base_storage_path, $product->directory_id);
+        
+        if ($request->hasFile('selected_image')) {
+          $headerImageSet = true;
+        } else {
+            $headerImageSet = false;
+        }
+
+        if($headerImageSet) {
+          $file = FileStorageController::store($request->file('selected_image'), $directory->getFullPath());
+          $product->picture_file_name = $file; 
+          $product->directory_id = $directory->getDirectoryId();
+          Storage::delete($directory->getFullPath() . '/' . $oldImage);
+        } else {
+          $product->picture_file_name = $product->picture_file_name;
+          $product->directory_id = $product->directory_id;
+        }
+
+        try {
+          $product->update();
+        } catch (Exception $e) {
+          //throw $th;
+        }
+
+        $swal = new Swal("Gotovo", 200, Route('admin.product.index'), "success", "Gotovo!", "Proizvod dodan.");
+        return response()->json($swal->get());
     }
 
     /**
