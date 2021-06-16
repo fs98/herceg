@@ -13,15 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('public.pages.home');
-});
+// Public pages frontEnd Routes
+Route::get('/', [App\Http\Controllers\PublicPageController::class, 'index'])->name('public.index');
+Route::get('/o-nama', [App\Http\Controllers\PublicPageController::class, 'about'])->name('public.about');
 
 Auth::routes([
   'register' => false
 ]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // Admin Routes
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() { 
