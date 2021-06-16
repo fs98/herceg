@@ -1,0 +1,76 @@
+body {
+    overflow-x: hidden;
+}
+
+/* NavBar styling */
+
+/* Added background color for email and phone links */
+.contact-info {
+    background-color: #39B54A;
+    padding: 0 74px 0 50px;
+    border-radius: 10px;
+    margin-right: -64px;
+}
+
+/* telephone and email links styling */
+.navbar-brand-1 span {
+    color: #fff !important;
+}
+
+/* Links to the other pages styling */
+.navbar-expand-lg .navbar-nav .nav-link {
+    margin-left: 50px;
+    margin-top: 10px;
+    color: black;
+}
+
+/* Cart button styling */
+.accented-button {
+    background-color: #EB9833;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* End of NavBar styling */
+
+/* Home page styling */
+
+ /* Splash Screen CSS */
+
+/* Main image on home page */
+#splashScreenSection {
+	background-image: url("/images/home/home-main.png") !important;
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 161px);
+    display: flex;
+    align-items: center;
+}
+
+/* motivation text on the home page h1 with green background */
+.main-motivation-content h1 {
+    color: #fff;
+    background-color: #39B54A;
+    padding: 15px 20px 15px 20px;
+    border-radius: 10px;
+    margin-top: 200px;
+    font-weight: 400;
+}
+
+/* Who we are section */
+
+#whoWeAre {
+    background-image: url("/images/home/bih.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.who-we-are-content {
+    line-height: 40px;
+}
+
+
+ /* End of home page styling 
