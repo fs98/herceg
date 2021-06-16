@@ -24,6 +24,8 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "composer": "^4.1.0"
+        "@fortawesome/fontawesome-free": "^5.15.3",
+        "rfs": "^9.0.3",
+        "sweetalert2": "^11.0.17"
     }
 }
