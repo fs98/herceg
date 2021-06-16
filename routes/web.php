@@ -28,4 +28,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
   Route::resource('category', App\Http\Controllers\CategoryController::class);
   Route::resource('question', App\Http\Controllers\QuestionController::class);
   Route::resource('product', App\Http\Controllers\ProductController::class);
+  Route::resource('order', App\Http\Controllers\OrderController::class);
+  Route::resource('order_item', App\Http\Controllers\OrderItemController::class);
 });

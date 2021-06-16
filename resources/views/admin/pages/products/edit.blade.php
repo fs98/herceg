@@ -9,7 +9,8 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('admin.product.index') }}">{{ __('Svi proizvodi') }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{ __('Novi proizvod') }}</li>
+      <li class="breadcrumb-item"><a href="{{ route('admin.product.edit', $product) }}">{{ $product->title }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Uređivanje</li>
     </ol>
   </nav>
 
@@ -20,14 +21,15 @@
     </div>
     <div class="card-body"> 
 
-      <form action="{{ Route('admin.product.store') }}" method="POST" id="{{ Helper::RouteCrafter('store') }}" autocomplete="off" enctype="multipart/form-data">
+      <form action="{{ Route('admin.product.update', $product) }}" method="POST" id="{{ Helper::RouteCrafter('store') }}" autocomplete="off" enctype="multipart/form-data">
+        @method('PUT')
         <div class="row">
           <div class="col-12">
 
             <div class="form-group">
               <label for="title" class="col-form-label">Naziv proizvoda</label>
               <label for="title" class="label-required">(obavezno)</label>
-              <input id="title" value="{{ old('title') }}" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Naziv proizvoda" name="title" maxlength="128">
+              <input id="title" value="{{ old('title', $product->title) }}" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Naziv proizvoda" name="title" maxlength="128">
               
               @error('title')
                 <span class="invalid-feedback" role="alert">
@@ -42,7 +44,7 @@
               <select class="form-control" id="category" name="category">
                   <option disabled="" selected="" value="">--Izaberite kategoriju--</option>
                   @foreach($categories as $index => $category)
-                    <option value="{{ $category->id }}" {{ old('category') == $category->id ? "selected" : "" }}>{{ $category->title }}</option>
+                    <option value="{{ $category->id }}" {{ old('category', $product->category->id) == $category->id ? "selected" : "" }}>{{ $category->title }}</option>
                   @endforeach
               </select>
             </div>
@@ -50,7 +52,7 @@
             <div class="form-group">
               <label for="price" class="col-form-label">Cijena</label>
                 <label for="price" class="label-required">(obavezno)</label>
-                <input id="price" value="{{ old('price') }}" type="number" class="form-control @error('price') is-invalid @enderror" placeholder="Unesite cijenu" name="price" maxlength="32">
+                <input id="price" value="{{ old('price', $product->price) }}" type="number" class="form-control @error('price') is-invalid @enderror" placeholder="Unesite cijenu" name="price" maxlength="32">
                 
                 @error('price')
                   <span class="invalid-feedback" role="alert">
@@ -65,7 +67,7 @@
               <label class="label-required" for="selected_image">(obavezno)</label>
               <div class="custom-file">
                 <input type="file" accept="image/png, image/jpeg, image/jpg" class="custom-file-input @error('selected_image') is-invalid @enderror" id="selected_image" name="selected_image">
-                <label class="custom-file-label color-light-grey" for="selected_image">Učitajte sliku</label>
+                <label class="custom-file-label color-light-grey" for="selected_image">Učitaj sliku</label>
               </div>
 
               @error('selected_image')
@@ -75,14 +77,14 @@
               @enderror
             </div>
 
-            <div class="form-group mt-2" id="selected_image_preview_parent" style="display: none;">
-              <img class="img-fluid" id="selected_image_preview" width="300">
+            <div class="form-group mt-2" id="selected_image_preview_parent">
+              <img class="img-fluid" id="selected_image_preview" width="300" src="{{ $product->header_image_url }}">
             </div>
 
             <div class="form-group">
                 <label for="product_description" class="col-form-label">Opis proizvoda</label>
                 <label for="product_description" class="label-required">(obavezno)</label>
-                <textarea id="product_description" class="form-control textarea-custom" placeholder="Opis proizvoda" name="product_description" maxlength="1024"></textarea>
+                <textarea id="product_description" class="form-control textarea-custom" placeholder="Opis proizvoda" name="product_description" maxlength="1024">{{ $product->description }}</textarea>
             </div>
 
             <div class="form-group">
@@ -90,10 +92,10 @@
               <label for="product_in_stock" class="label-required">(obavezno)</label>
               <br>
               <label class="custom-control custom-radio custom-control-inline">
-              <input type="radio" name="product_in_stock" checked="" value="1" class="custom-control-input @error('product_in_stock') is-invalid @enderror"><span class="custom-control-label">Da</span>
+              <input type="radio" name="product_in_stock" {{ $product->is_stock == true ? 'checked' : '' }} value="1" class="custom-control-input @error('product_in_stock') is-invalid @enderror"><span class="custom-control-label">Da</span>
               </label>
               <label class="custom-control custom-radio custom-control-inline">
-              <input type="radio" name="product_in_stock" value="0" class="custom-control-input @error('selected_image') is-invalid @enderror"><span class="custom-control-label">Ne</span>
+              <input type="radio" name="product_in_stock" {{ $product->is_stock == false ? 'checked' : '' }} value="0" class="custom-control-input @error('selected_image') is-invalid @enderror"><span class="custom-control-label">Ne</span>
               </label>
               
               @error('product_in_stock')
@@ -104,7 +106,7 @@
             </div> 
 
             <div class="mt-2 float-right">
-              <button type="button" id="submit-button" form="{{ Helper::RouteCrafter('store') }}" class="btn btn-success">Kreiraj</button>
+              <button type="button" id="submit-button" form="{{ Helper::RouteCrafter('store') }}" class="btn btn-success">Sačuvaj</button>
             </div>
           </div>
         </div>

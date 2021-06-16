@@ -8,7 +8,8 @@
   {{-- Breadcrumb --}}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb"> 
-      <li class="breadcrumb-item active" aria-current="page">{{ __('Proizvodi') }}</li>
+      <li class="breadcrumb-item"><a href="{{ route('admin.product.index') }}">{{ __('Svi proizvodi') }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ __('Lista svih proizvoda') }}</li>
     </ol>
   </nav>
 

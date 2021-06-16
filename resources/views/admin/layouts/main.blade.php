@@ -30,7 +30,7 @@
       <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
           <!-- Sidebar - Brand -->
-          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.order.index') }}">
               <div class="sidebar-brand-icon">
                   <img src="{{ asset('images/logo/herceg.png') }}" alt="sidebar-logo" width="120">
               </div> 
@@ -40,10 +40,10 @@
           <hr class="sidebar-divider my-0">
 
           <!-- Nav Item - Dashboard -->
-          <li class="nav-item">
-              <a class="nav-link" href="#">
-                  <i class="fas fa-fw fa-home"></i>
-                  <span>{{ __('Početna') }}</span></a>
+          <li class="nav-item {{ Route::currentRouteNamed('admin.order.*') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ Route('admin.order.index') }}">
+                  <i class="fas fa-fw fa-receipt"></i>
+                  <span>{{ __('Narudžbe') }}</span></a>
           </li>
 
           <!-- Divider -->
@@ -99,7 +99,7 @@
               <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
                   aria-controls="collapsePages">
                   <i class="fas fa-fw fa-quote-left"></i>
-                  <span>{{ __('Sadržaj')}}</span>
+                  <span>{{ __('Proizvodi')}}</span>
               </a>
               <div id="collapsePages" class="collapse {{ Route::currentRouteNamed('admin.category.*') || Route::currentRouteNamed('admin.product.*') ? "show" : "" }}" aria-labelledby="headingPages"
                   data-parent="#accordionSidebar">
@@ -109,12 +109,9 @@
                       <a class="collapse-item {{ Route::currentRouteNamed('admin.category.index') ? "active" : "" }}" href="{{ Route('admin.category.index') }}">{{ __('Kategorije') }}</a>
                       <a class="collapse-item {{ Route::currentRouteNamed('admin.category.create') ? "active" : "" }}" href="{{ Route('admin.category.create') }}">{{ __('Nova kategorija') }}</a>
                       <div class="collapse-divider"></div>
-                      <h6 class="collapse-header">{{ __('Proizvodi') }}</h6>
+                      <h6 class="collapse-header">{{ __('Proizvodi:') }}</h6>
                       <a class="collapse-item {{ Route::currentRouteNamed('admin.product.index') ? "active" : "" }}" href="{{ Route('admin.product.index') }}">{{ __('Proizvodi') }}</a>
                       <a class="collapse-item {{ Route::currentRouteNamed('admin.product.create') ? "active" : "" }}" href="{{ Route('admin.product.create') }}">{{ __('Novi proizvod') }}</a>
-                      <h6 class="collapse-header">{{ __('Dnevna ponuda') }}</h6>
-                      <a class="collapse-item" href="#">{{ __('Ponude') }}</a>
-                      <a class="collapse-item" href="#">{{ __('Nova ponuda')}}</a> 
                   </div>
               </div>
           </li>
@@ -321,12 +318,12 @@
                               aria-labelledby="userDropdown"> 
                               <a class="dropdown-item" href="#">
                                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                  Change Password
+                                  Promjena lozinke
                               </a> 
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" href="{{ Route('logout') }}" data-toggle="modal" data-target="#logoutModal">
                                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                  Logout
+                                  Odjava
                               </a>
                           </div>
                       </li>

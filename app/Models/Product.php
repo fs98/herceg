@@ -22,4 +22,13 @@ class Product extends Model
     public function getHeaderImageUrlAttribute() {
       return asset(config('api.storage_paths_v2.product') . $this->directory_id . '/' . $this->picture_file_name);
     }
+
+    /**
+     * Relations
+     */
+
+    public function category()
+    {
+      return $this->belongsTo(Category::class);
+    }
 }
