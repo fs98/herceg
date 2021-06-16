@@ -34,6 +34,51 @@ body {
 
 /* End of NavBar styling */
 
+
+
+/* Footer styling */
+
+
+/* Added background image for footer */
+#footer {
+    background-image: url("/images/layouts/footer-img.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Socila media icons */
+.footer-link-1 {
+    margin: 5px;
+}
+
+/* Email input field */
+.newsletter-input-field input {
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    height: 40px;
+}
+
+/* Email submit button */
+.newsletter-submit {
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    width: 40%;
+    height: 30px;
+    background-color: #39B54A;
+    color: #fff;
+}
+
+/* Enf of footer styling */
+
+
+
+
+
 /* Home page styling */
 
  /* Splash Screen CSS */
@@ -45,6 +90,7 @@ body {
     background-size: cover;
     background-position: center;
     height: calc(100vh - 161px);
+    border-bottom: 5px solid #39B54A;
     display: flex;
     align-items: center;
 }
@@ -73,4 +119,42 @@ body {
 }
 
 
+/* Coming soon section */
+
+#comingSoon {
+    background-image: url("/images/home/coming-soon.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
  /* End of home page styling 
+
+
+
+
+ /* About Us page styling */
+
+#splashAboutUs {
+    background-image: url("/images/about/splash-about-us.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid #39B54A;
+    height: 400px;
+}
+
+#secondSplashAbouUs {
+    background-image: url("/images/about/splash-about-us-two.jpg") !important;
+    background-repeat: no-repeat;
+    height: 400px;
+    object-fit: contain;
+}
+
+.our-team img {
+    width: 70%;
+    object-fit: cover;
+}
+
+ /* End of About Us styling */
