@@ -1,0 +1,63 @@
+/* NavBar styling */
+
+/* Added background color for email and phone links */
+.contact-info {
+    background-color: #39B54A;
+    padding: 0 50px;
+    border-radius: 10px;
+}
+
+/* telephone and email links styling */
+.navbar-brand-1 span {
+    font-size: 16px;
+    color: #fff !important;
+}
+
+/* Links to the other pages styling */
+.navbar-expand-lg .navbar-nav .nav-link {
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+}
+
+/* Cart button styling */
+.accented-button {
+    background-color: #EB9833;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* End of NavBar styling */
+
+/* Home page styling */
+
+ /* Splash Screen CSS */
+
+/* Main image on home page */
+#splashScreenSection {
+	background-image: url("/images/home/home-main.png") !important;
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 125px);
+    display: flex;
+    align-items: center;
+}
+
+/* motivation text on the home page h1 with green background */
+.main-motivation-content h1 {
+    font-size: 40px;
+    color: #fff;
+    background-color: #39B54A;
+    padding: 15px 20px 15px 20px;
+    border-radius: 10px;
+    margin-top: 200px;
+}
+
+
+
+
+ /* End of home page styling 
