@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 /* NavBar styling */
 
 /* Added background color for email and phone links */
@@ -55,7 +59,18 @@
     font-weight: 400;
 }
 
+/* Who we are section */
 
+#whoWeAre {
+    background-image: url("/images/home/bih.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.who-we-are-content {
+    line-height: 40px;
+}
 
 
  /* End of home page styling 

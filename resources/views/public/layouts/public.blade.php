@@ -29,15 +29,18 @@
           <!-- Navigational bar -->
             <nav class="navbar navbar-expand-lg navbar-2 px-0 mx-5">
               <div class="container-fluid">
-
-                  <!-- Site logo -->
-                  <a class="navbar-brand" href="">
-                    <img class="header-logo mb-n4" src="{{ asset('/images/logo/logo-herceg.png') }}" alt="main-logo" width="200">
-                  </a>
-                  <!-- Toggling button for mobile responsivnes -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-2" aria-controls="navbar-2"  aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="{{ asset('front/images/icons/menu-bar.svg') }}">
-                </button>
+                <div class="row">
+                  <div class="col-12">
+                    <!-- Site logo -->
+                    <a class="navbar-brand" href="">
+                      <img class="header-logo mb-n4" src="{{ asset('/images/logo/logo-herceg.png') }}" alt="main-logo" width="200">
+                    </a>
+                      <!-- Toggling button for mobile responsivnes -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-2" aria-controls="navbar-2"  aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="{{ asset('front/images/icons/menu-bar.svg') }}">
+                    </button>
+                  </div>
+                  </div>
                 <div class="row">
                  
                  <!-- Email and Phone links -->
