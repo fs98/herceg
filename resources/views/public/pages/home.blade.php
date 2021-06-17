@@ -2,131 +2,345 @@
 
 @section('content')
 
+<!-- Carousel --> 
+
+<section id="mainCarousel">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="5000">
+        <img src="https://images.pexels.com/photos/5231216/pexels-photo-5231216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100 img-responsive" alt="...">
+        <div class="d-flex align-items-center animated-caption">
+            <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
+              <h5 class="text-uppercase px-4 py-2">20 godina tradicije</h5>
+              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3">Organska proizvodnja "Herceg"</h1>
+              <p class="text-white fw-normal h6 mt-3">"Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne 
+                proizvodnje u Bosni i Hercegovini.</p>
+              <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Proizvodi</button>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item" data-interval="5000">
+        <img src="https://images.pexels.com/photos/6763421/pexels-photo-6763421.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="d-block w-100 img-responsive" alt="...">
+        <div class="d-flex align-items-center animated-caption">
+          <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
+            <h5 class="text-uppercase px-4 py-2">Kozmetika</h5>
+            <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3">Neven krema - melem</h1>
+            <p class="text-white fw-normal h6 mt-3">Pomaže kod opekotina, posjekotina, ogrebotina, akni, upaljenih i proširenih vena.</p>
+            <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" data-interval="5000">
+        <img src="https://image.freepik.com/free-photo/still-life-loose-tea_169016-2071.jpg" class="d-block w-100 img-responsive " alt="...">
+          <div class="d-flex align-items-center animated-caption"> 
+            <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
+              <h5 class="text-uppercase px-4 py-2">Čajevi</h5>
+              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3">Čaj kadulja</h1>
+              <p class="text-white fw-normal h6 mt-3">Veoma brzo eliminiše bol i svrab, zaustavlja krvarenje, ima protuupalnu i antiseptičko dejstvo...</p>
+              <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item" data-interval="5000">
+        <img src="https://image.freepik.com/free-photo/yellow-flowers-among-other-flowers_1160-706.jpg" class="d-block w-100 img-responsive" alt="...">
+        <div class="d-flex align-items-center animated-caption">
+            <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
+              <h5 class="text-uppercase px-4 py-2">Save up to 75%</h5>
+              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3">Med od maslačka</h1>
+              <p class="text-white fw-normal h6 mt-3">Veoma brzo eliminiše bol i svrab, zaustavlja krvarenje, ima protuupalno i antiseptičko dejstvo...</p>
+              <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
+            </div>
+          </div>
+      </div> 
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+
+<!-- End of Carousel -->
+
+<!-- Items Section -->
+
+<section>
+  <div class="container mt-4">
+    <div class="row pt-4">
+      <div class="col-12">
+        <nav class="text-uppercaser">
+          <div class="nav justify-content-center" id="nav-tab" role="tablist">
+            <a class="nav-link border-transparent text-decoration-none active text-dark text-wide mx-3" id="popular" data-bs-toggle="tab" data-bs-target="#popularItems" type="button" role="tab" aria-controls="popularItems" aria-selected="true">Popularni</a>
+            <a class="nav-link text-decoration-none text-dark text-wide mx-3" id="featured" data-bs-toggle="tab" data-bs-target="#featuredItems" type="button" role="tab" aria-controls="featuredItems" aria-selected="false">Izdvajamo</a>
+            <a class="nav-link text-dark text-wide mx-3" id="latest" data-bs-toggle="tab" data-bs-target="#latestItems" type="button" role="tab" aria-controls="latestItems" aria-selected="false">Najnoviji</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container mt-4 mt-md-4 px-0">
+    <div class="tab-content mx-3 mx-sm-0" id="nav-tabContent">
+
+      <div class="tab-pane fade show active" id="popularItems" role="tabpanel" aria-labelledby="popular">
+        <div class="row">
+          <div class="col-12">
+            <!-- Swiper -->
+              <div class="swiper-container w-100 h-100" style="margin: 20px 0">
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                    <div class="h-100">
+                      <div class="card text-dark p-0 border-0 rounded-0 h-75">
+                        <img src="{{ asset('images/home/category (2).jpg') }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="...">
+                        <div class="card-img-overlay px-0">
+                          <span class="p-2 text-light fw-500 bg-danger position-absolute">TOP</span>
+                          <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
+                          <div class="mb-4">
+                            <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
+                              <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Quick view">
+                              <i class="fas fa-search"></i>
+                            </button>
+                          </div>
+                          <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500">
+                            <i class="fas fa-shopping-cart mr-2" >
+                              </i>Add to cart
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body text-center h-25">
+                        <h6 class="card-title fw-normal">Čaj</h6>
+                        <p class="card-text fw-500">30 KM<del class="text-muted ml-2">10 KM</del>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="featuredItems" role="tabpanel" aria-labelledby="featured">
+        <div class="row">
+          <div class="col-12">
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="latestItems" role="tabpanel" aria-labelledby="latest">
+        <div class="row">
+          <div class="col-12">
+            
+          </div>
+        </div>	
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <button class="btn browse-btn rounded-0 font-size-13 py-3 text-light">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End of Items Section -->
+
+
+<!-- Image or Add Section -->
+
+<section>
+  <div class="container">
+    <div class="row my-5">
+      <div class="px-0 col-12">
+        <img src="{{ asset('images/home/home-main.png') }}" class="img-fluid img-responsive w-100" style="height: 200px">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End of Image or Add Section -->
+
+	<!-- Random Items -->
+
+	<section id="randomItems">
+		<div class="container my-4 px-0">
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+				@for ($i = 0; $i < 10; $i++)
+          <div class="col">
+            <div class="card text-dark p-0 border-0 rounded-0 h-75">
+              <img src="https://via.placeholder.com/250x300" class="card-img rounded-0 h-100 img-fluid" alt="...">
+              <div class="card-img-overlay px-0">
+                <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
+                <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
+                  <div class="mb-4">
+                    <button class="btn btn-light rounded-0 me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i class="fas fa-heart"></i></button>
+                    <button class="btn btn-light rounded-0 ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Quick view"><i class="fas fa-search"></i></button>
+                  </div>
+                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Add to cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body text-center h-25">
+              <h6 class="card-title fw-normal">Čaj</h6>
+              <p class="card-text fw-500">35.00 KM<del class="text-muted ml-2">41.00 KM</del></p>
+            </div>
+          </div>
+        @endfor
+			</div>
+			<div class="row mt-4">
+				<div class="col-12 text-center">
+					<button class="btn browse-btn rounded-0 font-size-13 py-3 text-light">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- End of Random Items -->
+
+
+<!-- Image Cards Section -->
+
+	<section id="imageCards">
+		<div class="container">
+			<div class="row my-5">
+				<div class="col-12 col-lg-5 d-flex p-0">
+					<div class="card bg-dark text-white rounded-0 p-0 border-0 overflow-hidden">
+					  <img class="card-img rounded-0 w-100 h-100 img-responsive" src="{{ asset('images/home/category (1).jpg') }}" alt="Card image">
+					  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+					    <button class="border-0 rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">do -75%</button>
+					    <h2 class="card-title text-uppercase text-wide fw-500 bg-dark rounded-0 px-3 py-2">na zimnicu</h2>
+					  </div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-7 d-flex flex-wrap p-0">
+					<div class="d-flex flex-row w-100">
+						<div class="card bg-dark text-white rounded-0 p-0 border-0 w-50 overflow-hidden">
+						  <img class="card-img rounded-0 w-100 h-100 img-responsive" src="{{ asset('images/home/category (2).jpg') }}" alt="Card image">
+						  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+						    <button class="border-0 rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">do -75%</button>
+					    	<h2 class="card-title text-uppercase text-wide fw-500 bg-dark rounded-0 px-3 py-2">na čajeve</h2>
+						  </div>
+						</div>
+						<div class="card bg-dark text-white rounded-0 p-0 border-0 w-50 overflow-hidden">
+						  <img class="card-img rounded-0 w-100 h-100 img-responsive" src="{{ asset('images/home/category (3).png') }}" alt="Card image">
+						  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+							  <button class="border-0 rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">do -75%</button>
+					    	<h2 class="card-title text-uppercase text-wide fw-500 bg-dark rounded-0 px-3 py-2">na sirupe</h2>
+						  </div>
+						</div>
+					</div>
+					<div class="d-flex flex-row w-100">
+						<div class="card bg-dark text-white rounded-0 p-0 border-0 w-50 h-auto overflow-hidden">
+						  <img class="card-img rounded-0 w-100 h-100 img-responsive" src="{{ asset('images/home/category (4).jpg') }}" alt="Card image">
+						  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+						    <button class="border-0 rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">do -75%</button>
+					    	<h2 class="card-title text-uppercase text-wide fw-500 bg-dark rounded-0 px-3 py-2">na ulja</h2>
+						  </div>
+						</div>
+						<div class="card bg-dark text-white rounded-0 p-0 border-0 w-50 overflow-hidden">
+						  <img class="card-img rounded-0 w-100 h-100 img-responsive" src="{{ asset('images/home/category (5).jpg') }}" alt="Card image">
+						  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+						    <button class="border-0 rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">do -75%</button>
+					    	<h2 class="card-title text-uppercase text-wide fw-500 bg-dark rounded-0 px-3 py-2">na prehranu</h2>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- End of Image Cards Section -->
+
+  	<!-- Web shop Info Section -->
+
+	<section class="bg-dark" id="webShopInfoSection">
+		<div class="container">
+			<div class="row py-5 text-light text-center">
+				<div class="col-12 col-lg-4">
+					<i class="fas fa-shuttle-van fa-2x"></i>
+					<h5 class="text-uppercase fw-bold mt-3">Besplatna dostava</h5>
+					<p class="my-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</p>
+				</div>
+				<div class="col-12 mt-5 col-lg-4 mt-lg-0">
+					<i class="fas fa-clock fa-2x"></i>
+					<h5 class="text-uppercase fw-bold mt-3">30 dana povrat novca</h5>
+					<p class="my-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</p>
+				</div>
+				<div class="col-12 mt-5 col-lg-4 mt-lg-0">
+					<i class="fas fa-phone-alt fa-2x"></i>
+					<h5 class="text-uppercase fw-bold mt-3">Podrška 24/7</h5>
+					<p class="my-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Web shop Info Section -->
     
-    <!-- Splash Screen -->
-
-    <section id="splashScreenSection">
-      
-        <div class="container">
-            <div class="row justify-content-start">
-                <div class="mt-5 col-lg-9 main-motivation-content">
-                  <h1>Mi smo pioniri u uvođenju organske<br> 
-                      poljoprivredne proizvodnje u Bosni i Hercegovini.</h1>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- Who we are -->
-
-    <section id="whoWeAre">
-      
-      <div class="container">
-            <div class="row">
-                <div class="mt-5 col-lg-7 text-center text-lg-left">
-                  <h1>Ko smo mi?</h1>
-                  <p class="mt-5 lead who-we-are-content">"Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne proizvodnje u Bosni i Hercegovini. Neprestano je uključena u ovaj sistem a jedna je od rijetkih koja je, zahvaljujući u prvom redu kvaliteti svojih proizvoda, već u samom startu uspjela dobiti međunarodni certifikat.
-                  Nadalje, firma ”Herceg” ne samo da je uspjela sačuvati kontinuitet i nivo svoje organske proizvodnje nego je na dobrom putu da ga u doglednoj budućnosti i značajno unaprijedi. Imanje Organske Proizvodnje ”Herceg” smješteno je na pitoresknim padinama planina Vranica i Vlašića nedaleko od putnog pravca Novi Travnik - Gornji Vakuf. Stanovita tradicija u organskoj proizvodnji te izniman kvalitet proizvoda nisu prošli nezapaženo pa firma ”Herceg” već od 2003. godine posjeduje certifikat za organske proizvode dobijen od strane Švedske certifikacijske kuće KRAV International branch of the Swedish certification body, koja je članica međunarodne asocijacije IFOAM.
-                  </p>
-                </div>
-                <div class="mt-5 col-lg-5">
-                  <img src="{{ asset('/images/home/who-we-are.png') }}" width="100%" class="img-fluid">
-                  <img src="{{ asset('/images/home/who-we-are-two.png') }}" width="100%" class="img-fluid mt-3">
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Icons section -->
-
-     <section id="iconsAboutUs">
-      
-      <div class="container">
-            <div class="row mt-5 mb-5">
-                <div class=" col-lg-3 col-6 mt-5 text-center">
-                  <img src="{{ asset('/images/icons/bih-icon.png') }}" width="30%" class="img-fluid">
-                  <p class="h3 mt-3">20 godina<br> tradicije</p>
-                </div>
-                <div class="col-lg-3 col-6 mt-5 text-center">
-                  <img src="{{ asset('/images/icons/familiy-icon.png') }}" width="30%" class="img-fluid">
-                  <p class="h3  mt-3">Porodični<br> biznis</p>
-                </div>
-                <div class="col-lg-3 col-6 mt-5 text-center">
-                  <img src="{{ asset('/images/icons/natural-icon.png') }}" width="30%" class="img-fluid">
-                  <p class="h3  mt-3">Prirodni<br> proizvodi</p>
-                </div>
-                <div class="col-lg-3 col-6 mt-5 text-center">
-                  <img src="{{ asset('/images/icons/heart-icon.png') }}" width="30%" class="img-fluid">
-                  <p class="h3  mt-3">Proizvedeno<br> sa ljubavlju</p>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Our products section -->
-
-    <section id="ourProductsPreview">
-      
-      <div class="container">
-            <div class="row mt-5 mb-5 d-flex align-items-center">
-              <div class="col-lg-6 col-12">
-                <h2 class="h1 text-center text-lg-left">Naši proizvodi</h2>
-                <img src="{{ asset('/images/home/home-our-products.png') }}" width="100%" class="img-fluid mt-5">
-              </div>
-              <div class="col-lg-6 col-12 mt-5">
-                <h3 class="text-center text-lg-left">Naša alternativna apoteka</h3>
-                <p class="mt-5">orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy </p>
-                <a class="btn btn-danger" href="">Pogledaj više</a>
-              </div>    
-            </div>
-
-            <div class="row mt-5 mb-5 d-flex align-items-center">
-              <div class="col-lg-6 col-12 mt-5">
-                <h3 class="text-center text-lg-left">Prehrambeni organski proizvodi</h3>
-                <p class="mt-5">orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy </p>
-                <a class="btn btn-danger" href="">Pogledaj više</a>
-              </div>
-              <div class="col-lg-6 col-12">
-                <img src="{{ asset('/images/home/home-our-products-two.png') }}" width="100%" class="img-fluid mt-5">
-              </div>    
-            </div>
-
-            <div class="row mt-5 mb-5 d-flex align-items-center">
-              <div class="col-lg-6 col-12">
-                <img src="{{ asset('/images/home/home-our-products-three.png') }}" width="100%" class="img-fluid mt-5">
-              </div>
-              <div class="col-lg-6 col-12 mt-5">
-                <h3 class="text-center text-lg-left">Kozmetika</h3>
-                <p class="mt-5">orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy </p>
-                <a class="btn btn-danger" href="">Pogledaj više</a>
-              </div>    
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Coming soon section -->
-
-    <section id="comingSoon">
-      
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mt-5">
-                  <h3 class="h1 text-center text-white">Uskoro u ponudi</h3>
-                  <p class="h5 text-center text-white font-weight-normal mt-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                  <div class="col-lg-6 offset-lg-3 col-12">
-                    <img src="{{ asset('/images/home/home-our-products-two.png') }}" width="100%" class="img-fluid mt-5 mb-5">
-                  </div>  
-                </div>
-            </div>
-        </div>
-
-    </section>
-
 @endsection
 
+@section('scripts')
 
+<script>
+
+// Card animation
+
+$("#nav-tabContent .card, #randomItems .card").hover(function() {
+		$(this).find(".animated-card-buttons").css("display","flex").hide().fadeIn();
+	}, function() {
+		$(this).find(".animated-card-buttons").css("display","none");
+	})
+
+$("#imageCards .card").hover(function() {
+	$(this).find("img").css({
+		'transform' : 'scale(1.2)',
+	'-webkit-transform' : 'scale(1.2)',
+	'-o-transform': 'scale(1.2)',
+	'-moz-transform': 'scale(1.2)',
+	'transition-duration': '0.7s'
+	});
+	$(this).find("h2").css({
+		'color' : '#3fc380',
+		'transition' : '0.5s'
+	});
+	$(this).find(".card-img-overlay").css({
+		'background-color' : 'rgba(255, 255, 255, 0.5)',
+	});
+}, function() {
+	$(this).find("img").css({
+		'transform' : 'scale(1)',
+	'-webkit-transform' : 'scale(1)',
+	'-o-transform': 'scale(1)',
+	'-moz-transform': 'scale(1)',
+	'transition-duration': '0.7s'
+	});
+	$(this).find("h2").css({
+		'color' : 'white'
+	});
+	$(this).find(".card-img-overlay").css({
+		'background-color' : 'transparent',
+	});
+})
+
+</script>
+    
+@endsection
