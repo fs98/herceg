@@ -1,160 +1,124 @@
+/* Variables */
+
+:root {
+  --main-green-color: #39B54A;
+}
+
 body {
     overflow-x: hidden;
 }
 
-/* NavBar styling */
+/* Utility Classes */
 
-/* Added background color for email and phone links */
-.contact-info {
-    background-color: #39B54A;
-    padding: 0 74px 0 50px;
-    border-radius: 10px;
-    margin-right: -64px;
+@media (min-width: 1200px) {
+  .position-xl-relative {
+    position: relative;
+  }
+
+  .position-absolute-xl-top-right {
+    position: absolute; 
+    top:0; 
+    right:0
+  }
 }
 
-/* telephone and email links styling */
-.navbar-brand-1 span {
-    color: #fff !important;
+.bottom-0 {
+  bottom: 0;
 }
 
-/* Links to the other pages styling */
-.navbar-expand-lg .navbar-nav .nav-link {
-    margin-left: 50px;
-    margin-top: 10px;
-    color: black;
+.img-responsive {
+  object-fit: cover;
+  object-position: center;
 }
 
-/* Cart button styling */
-.accented-button {
-    background-color: #EB9833;
-    padding: 5px 20px;
-    border-radius: 10px;
-    color: #fff;
+.fw-500 {
+  font-weight: 500 !important;
 }
 
-/* End of NavBar styling */
+/*******
+* Header
+*******/
 
+/* Carousel */
 
-
-/* Footer styling */
-
-
-/* Added background image for footer */
-#footer {
-    background-image: url("/images/layouts/footer-img.jpg") !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+#mainCarousel .carousel-inner .carousel-item img {
+  height: calc(100vh - 164px);
 }
 
-/* Socila media icons */
-.footer-link-1 {
-    margin: 5px;
+#mainCarousel .carousel-inner h1{
+	background-color: rgba(255, 255, 255, 0.5);
+	color: rgba(0, 0, 0, 0.7);
 }
 
-/* Email input field */
-.newsletter-input-field input {
-    border-radius: 10px;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    height: 40px;
+#mainCarousel .carousel-inner h5{
+	background-color: white;
 }
 
-/* Email submit button */
-.newsletter-submit {
-    border-radius: 10px;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    width: 40%;
-    height: 30px;
-    background-color: #39B54A;
-    color: #fff;
+/* Carousel Caption Animation */
+
+.animated-caption{
+	position: relative; 
+	animation: caption 2s; 
+	animation-timing-function: ease;
 }
 
-/* Enf of footer styling */
-
-
-
-
-
-/* Home page styling */
-
- /* Splash Screen CSS */
-
-/* Main image on home page */
-#splashScreenSection {
-	background-image: url("/images/home/home-main.png") !important;
-	background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: calc(100vh - 161px);
-    border-bottom: 5px solid #39B54A;
-    display: flex;
-    align-items: center;
+@keyframes caption {
+  from {top: -200px;}
+  to {top: 0px;}
 }
 
-/* motivation text on the home page h1 with green background */
-.main-motivation-content h1 {
-    color: #fff;
-    background-color: #39B54A;
-    padding: 15px 20px 15px 20px;
-    border-radius: 10px;
-    margin-top: 200px;
-    font-weight: 400;
+/* Image Card */
+
+#imageCard .card-img-overlay{
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Who we are section */
+.breadcrumb-item + .breadcrumb-item::before {
+    color: white;
+ }
 
-#whoWeAre {
-    background-image: url("/images/home/bih.png") !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+/*#imageCards .card-img-overlay{
+	background-color: rgba(0,0,0,0.3);
+}*/
+
+#imageCards img:hover{
+	transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transition-duration: 0.7s;
 }
 
-.who-we-are-content {
-    line-height: 40px;
+ /* Items Section */
+
+#nav-tab .nav-link{
+	border: transparent;
 }
 
+/* Footer */
 
-/* Coming soon section */
-
-#comingSoon {
-    background-image: url("/images/home/coming-soon.png") !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+footer a:hover{
+	color: whitesmoke !important;
+	transition: 0.5s;
 }
 
+/* Item Card */
 
- /* End of home page styling 
-
-
-
-
- /* About Us page styling */
-
-#splashAboutUs {
-    background-image: url("/images/about/splash-about-us.png") !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-bottom: 5px solid #39B54A;
-    height: 400px;
+.card i{
+	pointer-events: none !important;
 }
 
-#secondSplashAbouUs {
-    background-image: url("/images/about/splash-about-us-two.jpg") !important;
-    background-repeat: no-repeat;
-    height: 400px;
-    object-fit: contain;
+.animated-card-buttons{
+	display: none;
 }
 
-.our-team img {
-    width: 70%;
-    object-fit: cover;
+/* My Cart Items */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+margin: 0;
 }
 
- /* End of About Us styling */

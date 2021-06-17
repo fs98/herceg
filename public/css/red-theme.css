@@ -1,0 +1,241 @@
+/* CSS Variables */
+
+
+:root {
+  --theme-color: #d91e18;
+} 
+ 
+/* Theme Styling */
+
+ /* Selection */
+
+ ::selection {
+	background-color: var(--orange);
+	 color: black;
+}
+
+/* Header */
+
+#logoIcon{
+	color: var(--theme-color);
+}
+
+#logo .colored-text {
+	color: var(--theme-color);
+}
+
+#search .input-group-append button,
+#newsletterSection .input-group-append button{
+	background-color: var(--theme-color);
+	border: 1px solid var(--theme-color);
+}
+
+#search button:focus,
+#search input:focus,
+#newsletterSection .input-group-append button:focus,
+#newsletterSection input:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+.shopping-cart i{
+	color: var(--theme-color);
+}
+
+.shopping-cart span:hover{
+	cursor: pointer;
+	color: rgba(242, 121, 53, 0.8);
+	transition: 1s
+}
+
+/* Header Navbar */
+
+#bottomHeader nav{
+	background-color: var(--theme-color);
+}
+
+nav .dropdown-menu a{
+	color: var(--theme-color);
+}
+
+nav .dropdown-menu a:hover{
+	background-color: var(--theme-color);
+	color: white;
+	transition: 0.5s;
+}
+
+/* Login modal */
+
+
+.modal input:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+#loginButton{
+	background-color: var(--theme-color);
+	border: 1px solid var(--theme-color);
+}
+
+#loginButton:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+#loginModal a{
+	color: var(--theme-color);
+}
+
+/* Carousel */
+
+#mainCarousel .carousel-inner h5{
+	color: var(--theme-color);
+}
+
+#mainCarousel .carousel-caption button{
+	color: var(--theme-color);
+}
+
+#mainCarousel .carousel-caption button:hover{
+	background-color: var(--theme-color) !important;
+	color: white;
+	transition: 0.5s;
+}
+
+#mainCarousel .carousel-caption button:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+/* Image Card */
+
+.breadcrumb .active{
+	color: var(--theme-color);
+}
+
+/* Login and Register Forms */
+
+#loginAndRegister input:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+/* Web Shop info section */
+
+#webShopInfoSection i{
+	color: var(--theme-color);
+}
+
+/* Items Section */
+
+#nav-tab .nav-link:hover{
+	border-bottom: 1px solid rgba(242, 121, 53, 1);
+}
+
+#nav-tab .active{
+	border-bottom: 1px solid rgba(242, 121, 53, 1);
+}
+
+#nav-tabContent .card-body p{
+	color: var(--theme-color);
+}
+
+#nav-tabContent .card button:hover{
+	color: var(--theme-color);
+}
+
+/* Image Cards */
+
+#imageCards button{
+	color: var(--theme-color);
+	pointer-events: none;
+}
+
+/* Swiper */
+
+#nav-tabContent .swiper-button-next,
+#nav-tabContent .swiper-button-prev {
+	color: var(--theme-color);
+}
+
+#nav-tabContent .swiper-button-next:hover,
+#nav-tabContent .swiper-button-prev:hover {
+	color: rgb(0, 0, 0, 0.7);
+	transition: 0.5s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--theme-color) !important;
+}
+
+/* Random items */
+
+.browse-btn{
+	background-color: var(--theme-color);
+}
+
+.browse-btn:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+.browse-btn:hover{
+	background-color: rgba(242, 121, 53, 0.9);
+	transition: 0.5s;
+}
+
+#randomItems .card button:hover{
+	color: var(--theme-color);
+}
+
+#randomItems .card-body p{
+	color: var(--theme-color);
+}
+
+/* My Cart Items */
+
+#myCart .input-group button{
+	background-color: var(--theme-color);
+}
+
+#myCart .input-group button:hover{
+	background-color: rgba(242, 121, 53, 0.9);
+	transition: 0.5s;
+}
+
+#myCart .input-group button:focus,
+#myCart .input-group input:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+#myCart .product-info span{
+	color: var(--theme-color);
+}
+
+#myCart .product-info button:hover i{
+	color: var(--theme-color) !important;
+	transition: 0.5s;
+}
+
+#myCart .warning{
+	color: var(--theme-color);
+}
+
+#myCart .total-heading{
+	color: var(--theme-color);
+}
+
+#myCart .total button{
+	background-color: var(--theme-color);
+}
+
+#myCart .total button:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+#myCart .accordion button:focus{
+	box-shadow: none;
+	border: none;
+}
