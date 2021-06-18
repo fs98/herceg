@@ -21,6 +21,14 @@
   color: var(--theme-color);
 }
 
+.bg-theme-color {
+  background-color: var(--theme-color);
+}
+
+.border-2 {
+  border: 2px solid var(--theme-color);
+}
+
 /* Header */
 
 #logoIcon{

@@ -2,6 +2,8 @@
 
 :root {
   --main-green-color: #39B54A;
+  --swiper-navigation-size: 30px;
+  --swiper-navigation-color: var(--main-green-color);
 }
 
 body {
@@ -33,6 +35,22 @@ body {
 
 .fw-500 {
   font-weight: 500 !important;
+}
+
+font-weight-light {
+  font-weight: 200;
+}
+
+/* Navbar */
+
+.navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  transition: 0.5s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.5s;
 }
 
 /*******
@@ -122,3 +140,26 @@ appearance: none;
 margin: 0;
 }
 
+/* Shops Swiper */
+
+.shops-swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.shops-swiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+
+.shops-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+/* Products Swiper */
+
+.swiper-button-next
