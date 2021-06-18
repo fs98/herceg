@@ -13,9 +13,8 @@ import 'swiper/swiper-bundle.css';
 window.onload = function() {
   
   // Swiper Init
-  var swiper = new Swiper('.swiper-container', {
+  var itemsSwiper = new Swiper('.items-swiper', {
     slidesPerView: 1,
-    slidesPerGroup: 3,
     spaceBetween: 10,
     // init: false,
     navigation: {
@@ -39,6 +38,24 @@ window.onload = function() {
         slidesPerView: 5,
         spaceBetween: 40,
       },
+    },
+  });
+
+  var shopsSwiper = new Swiper(".shops-swiper", {
+    effect: "coverflow", 
+    grabCursor: true,
+    slidesPerView: 1,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 10,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    breakpoints: { 
+      992: {
+        slidesPerView: 2, 
+      }, 
     },
   });
   

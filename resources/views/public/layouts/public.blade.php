@@ -92,8 +92,8 @@
                 <div id="logoIcon">
                 <img src="{{ asset('images/logo/logo-herceg.png') }}" alt="navbar-brand-logo" width="130">
                 </div>
-                <div class="ml-2" id="logo">
-                  <h3 class="mb-0 tight-text">OP<span class="colored-text">Herceg</span></h3>
+                <div class="ml-2 d-none d-xl-block" id="logo">
+                  <h3 class="mb-0">OP<span class="colored-text">Herceg</span></h3>
                   <span class="pt-0 text-uppercase text-wide">20 godina tradicije</span>
                 </div>
               </div>
@@ -145,44 +145,32 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item pr-xl-2 pr-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link" aria-current="page" href="{{ Route('public.index') }}" id="indexPage">{{ __('Početna') }}</a>
+                  <a class="nav-link lead" aria-current="page" href="{{ Route('public.index') }}" id="indexPage">{{ __('Početna') }}</a>
                 </li>
                 <li class="nav-item dropdown px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Alternativna apoteka
+                  <a class="nav-link dropdown-toggle lead" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ __('Alternativna apoteka') }}
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Casual</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Sports</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Formal</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Standard</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">T-shirts</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Shirts</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Jeans</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Trousers</a></li> 
+                    <li><a class="dropdown-item fw-500 py-2" href="#">Sirupi</a></li> 
                   </ul>
                 </li>
                 <li class="nav-item dropdown px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle lead" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ __('Prehrambeni proizvodi') }}
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Trousers</a></li> 
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Casual</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Sports</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Formal</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Shoes</a></li>
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Bags</a></li>
+                    <li><a class="dropdown-item fw-500 py-2" href="#">Džemovi</a></li>   
                   </ul>
                 </li> 		        		        
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link" href="#">{{ __('Kozmetika') }}</a>
+                  <a class="nav-link lead" href="#">{{ __('Kozmetika') }}</a>
                 </li> 
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link" href="#">{{ __('O nama') }}</a>
+                  <a class="nav-link lead" href="{{ Route('public.about') }}">{{ __('O nama') }}</a>
                 </li>
                 <li class="nav-item pl-xl-2 pl-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link" href="#">{{ __('Kontakt') }}</a>
+                  <a class="nav-link lead" href="#">{{ __('Kontakt') }}</a>
                 </li>
               </ul>
             </div>

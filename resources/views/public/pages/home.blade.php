@@ -12,7 +12,7 @@
         <div class="d-flex align-items-center animated-caption">
             <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
               <h5 class="text-uppercase px-4 py-2">20 godina tradicije</h5>
-              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3">Organska proizvodnja "Herceg"</h1>
+              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Organska proizvodnja "Herceg"</h1>
               <p class="text-white fw-normal h6 mt-3">"Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne 
                 proizvodnje u Bosni i Hercegovini.</p>
               <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Proizvodi</button>
@@ -24,7 +24,7 @@
         <div class="d-flex align-items-center animated-caption">
           <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
             <h5 class="text-uppercase px-4 py-2">Kozmetika</h5>
-            <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3">Neven krema - melem</h1>
+            <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Neven krema - melem</h1>
             <p class="text-white fw-normal h6 mt-3">Pomaže kod opekotina, posjekotina, ogrebotina, akni, upaljenih i proširenih vena.</p>
             <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
           </div>
@@ -35,7 +35,7 @@
           <div class="d-flex align-items-center animated-caption"> 
             <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
               <h5 class="text-uppercase px-4 py-2">Čajevi</h5>
-              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3">Čaj kadulja</h1>
+              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Čaj kadulja</h1>
               <p class="text-white fw-normal h6 mt-3">Veoma brzo eliminiše bol i svrab, zaustavlja krvarenje, ima protuupalnu i antiseptičko dejstvo...</p>
               <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
             </div>
@@ -45,8 +45,8 @@
         <img src="https://image.freepik.com/free-photo/yellow-flowers-among-other-flowers_1160-706.jpg" class="d-block w-100 img-responsive" alt="...">
         <div class="d-flex align-items-center animated-caption">
             <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h5 class="text-uppercase px-4 py-2">Save up to 75%</h5>
-              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3">Med od maslačka</h1>
+              <h5 class="text-uppercase px-4 py-2">Uštedite do 75%</h5>
+              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Med od maslačka</h1>
               <p class="text-white fw-normal h6 mt-3">Veoma brzo eliminiše bol i svrab, zaustavlja krvarenje, ima protuupalno i antiseptičko dejstvo...</p>
               <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
             </div>
@@ -66,99 +66,80 @@
 
 <!-- End of Carousel -->
 
+<style>
+
+.items-swiper .swiper-button-next {
+  right: -30px;
+}
+
+.items-swiper .swiper-button-prev {
+  left: -30px;
+}
+
+</style>
+
 <!-- Items Section -->
 
-<section>
-  <div class="container mt-4">
-    <div class="row pt-4">
+<section class="mt-5">
+  <div class="container position-relative">
+    <div class="row">
       <div class="col-12">
-        <nav class="text-uppercaser">
-          <div class="nav justify-content-center" id="nav-tab" role="tablist">
-            <a class="nav-link border-transparent text-decoration-none active text-dark text-wide mx-3" id="popular" data-bs-toggle="tab" data-bs-target="#popularItems" type="button" role="tab" aria-controls="popularItems" aria-selected="true">Popularni</a>
-            <a class="nav-link text-decoration-none text-dark text-wide mx-3" id="featured" data-bs-toggle="tab" data-bs-target="#featuredItems" type="button" role="tab" aria-controls="featuredItems" aria-selected="false">Izdvajamo</a>
-            <a class="nav-link text-dark text-wide mx-3" id="latest" data-bs-toggle="tab" data-bs-target="#latestItems" type="button" role="tab" aria-controls="latestItems" aria-selected="false">Najnoviji</a>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Swiper -->
+          <div class="swiper-container items-swiper w-100 h-100" style="position: unset;">
+            <div class="swiper-wrapper" id="featuredItems">
 
-<section>
-  <div class="container mt-4 mt-md-4 px-0">
-    <div class="tab-content mx-3 mx-sm-0" id="nav-tabContent">
+              @for ($i = 0; $i < 7; $i++)
 
-      <div class="tab-pane fade show active" id="popularItems" role="tabpanel" aria-labelledby="popular">
-        <div class="row">
-          <div class="col-12">
-            <!-- Swiper -->
-              <div class="swiper-container w-100 h-100" style="margin: 20px 0">
-                <div class="swiper-wrapper">
-
-                  <div class="swiper-slide">
-                    <div class="h-100">
-                      <div class="card text-dark p-0 border-0 rounded-0 h-75">
-                        <img src="{{ asset('images/home/category (2).jpg') }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="...">
-                        <div class="card-img-overlay px-0">
-                          <span class="p-2 text-light fw-500 bg-danger position-absolute">TOP</span>
-                          <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
-                          <div class="mb-4">
-                            <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
-                              <i class="fas fa-heart"></i>
-                            </button>
-                            <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Quick view">
-                              <i class="fas fa-search"></i>
-                            </button>
-                          </div>
-                          <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500">
-                            <i class="fas fa-shopping-cart mr-2" >
-                              </i>Add to cart
-                            </button>
-                          </div>
+                <div class="swiper-slide">
+                  <div class="h-100">
+                    <div class="card text-dark p-0 border-0 rounded-0 h-75" style="max-height: 246px; max-width: 196px">
+                      <img src="https://via.placeholder.com/300x300" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="...">
+                      <div class="card-img-overlay px-0">
+                        @if ($i % 2 == 0)
+                        <span class="p-2 text-light fw-500 bg-danger position-absolute">-30 %</span>
+                        @elseif ($i % 3 == 0) 
+                        <span class="p-2 text-light fw-500 bg-success position-absolute">NOVO</span>
+                        @else 
+                        <span class="p-2 text-light fw-500 bg-primary position-absolute">SNIŽENO</span>
+                        @endif
+                        <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
+                        <div class="mb-4">
+                          <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
+                            <i class="fas fa-heart"></i>
+                          </button>
+                          <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Quick view">
+                            <i class="fas fa-search"></i>
+                          </button>
+                        </div>
+                        <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500">
+                          <i class="fas fa-shopping-cart mr-1"></i>
+                          <small>Dodaj u košaricu</small>
+                        </button>
                         </div>
                       </div>
-                      <div class="card-body text-center h-25">
-                        <h6 class="card-title fw-normal">Čaj</h6>
-                        <p class="card-text fw-500">30 KM<del class="text-muted ml-2">10 KM</del>
-                        </p>
-                      </div>
+                    </div>
+                    <div class="card-body text-center h-25">
+                      <h6 class="card-title fw-normal">Čaj</h6>
+                      <p class="card-text fw-500 text-theme-color">30 KM<del class="text-muted ml-2">10 KM</del>
+                      </p>
                     </div>
                   </div>
-
                 </div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-              </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="tab-pane fade" id="featuredItems" role="tabpanel" aria-labelledby="featured">
-        <div class="row">
-          <div class="col-12">
-            
-          </div>
-        </div>
-      </div>
+              @endfor
 
-      <div class="tab-pane fade" id="latestItems" role="tabpanel" aria-labelledby="latest">
-        <div class="row">
-          <div class="col-12">
-            
-          </div>
-        </div>	
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
       </div>
-
-    </div>
-    <div class="row">
       <div class="col-12 text-center">
         <button class="btn browse-btn rounded-0 font-size-13 py-3 text-light">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
       </div>
-    </div>
-  </div>
+    </div> 
+  </div> 
 </section>
 
 <!-- End of Items Section -->
@@ -168,9 +149,9 @@
 
 <section>
   <div class="container">
-    <div class="row my-5">
-      <div class="px-0 col-12">
-        <img src="{{ asset('images/home/home-main.png') }}" class="img-fluid img-responsive w-100" style="height: 200px">
+    <div class="row">
+      <div class="col-12 mt-5">
+        <img src="{{ asset('images/home/home-main.png') }}" class="img-responsive w-100 mt-5" height="200">
       </div>
     </div>
   </div>
@@ -181,7 +162,7 @@
 	<!-- Random Items -->
 
 	<section id="randomItems">
-		<div class="container my-4 px-0">
+		<div class="container my-5">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 				@for ($i = 0; $i < 10; $i++)
           <div class="col">
@@ -194,7 +175,10 @@
                     <button class="btn btn-light rounded-0 me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i class="fas fa-heart"></i></button>
                     <button class="btn btn-light rounded-0 ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Quick view"><i class="fas fa-search"></i></button>
                   </div>
-                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Add to cart</button>
+                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500">
+                    <i class="fas fa-shopping-cart mr-1"></i>
+                    <small>Dodaj u košaricu</small>
+                  </button>
                 </div>
               </div>
             </div>
@@ -218,7 +202,7 @@
 
 <!-- Image Cards Section -->
 
-	<section id="imageCards">
+	<section id="imageCards" class="d-none">
 		<div class="container">
 			<div class="row my-5">
 				<div class="col-12 col-lg-5 d-flex p-0">
@@ -304,7 +288,7 @@
 
 // Card animation
 
-$("#nav-tabContent .card, #randomItems .card").hover(function() {
+$("#featuredItems .card, #randomItems .card").hover(function() {
 		$(this).find(".animated-card-buttons").css("display","flex").hide().fadeIn();
 	}, function() {
 		$(this).find(".animated-card-buttons").css("display","none");
