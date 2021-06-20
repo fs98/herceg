@@ -32,3 +32,11 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
   Route::resource('order', App\Http\Controllers\OrderController::class);
   Route::resource('order_item', App\Http\Controllers\OrderItemController::class);
 });
+
+Route::get('search', function() {
+  $query = 'djem'; // <-- Change the query for testing.
+
+  $articles = App\Models\Product::search($query)->get();
+
+  return $articles;
+});
