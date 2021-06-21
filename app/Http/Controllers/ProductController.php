@@ -52,6 +52,7 @@ class ProductController extends Controller
 
         $product = new Product;
         $product->title = $request->title;
+        $product->ingredients = $request->product_ingredients;
         $product->category_id = $request->category;
         $product->price = $request->price;
         $product->description = $request->product_description;
@@ -125,6 +126,7 @@ class ProductController extends Controller
     public function update(ProductEditRequest $request, Product $product)
     {
         $product->title = $request->title;
+        $product->ingredients = $request->product_ingredients;
         $product->category_id = $request->category;
         $product->price = $request->price;
         $product->description = $request->product_description;

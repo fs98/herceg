@@ -116,6 +116,24 @@
               </div>
           </li>
 
+          <!-- Nav Item - Content Collapse Menu -->
+          <li class="nav-item {{ Route::currentRouteNamed('admin.tag.*') ? "active" : "" }}">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTags" aria-expanded="true"
+                aria-controls="collapseTags">
+                <i class="fas fa-fw fa-quote-left"></i>
+                <span>{{ __('Tagovi')}}</span>
+            </a>
+            <div id="collapseTags" class="collapse {{ Route::currentRouteNamed('admin.tag.*') ? "show" : "" }}" aria-labelledby="headingPages"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">{{ __('Tagovi:') }}</h6>
+                    <a class="collapse-item {{ Route::currentRouteNamed('admin.tag.index') ? "active" : "" }}" href="{{ Route('admin.tag.index') }}">{{ __('Tagovi') }}</a>
+                    <a class="collapse-item {{ Route::currentRouteNamed('admin.tag.create') ? "active" : "" }}" href="{{ Route('admin.tag.create') }}">{{ __('Novi tag') }}</a>
+                </div>
+            </div>
+          </li>
+
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
 

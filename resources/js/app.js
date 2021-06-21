@@ -9,8 +9,11 @@ import Swiper from 'swiper/bundle';
 // import Swiper styles
 import 'swiper/swiper-bundle.css';
 
+// Algolia
+import { autocomplete } from '@algolia/autocomplete-js';
+
 // Custom JS
-window.onload = function() {
+window.onload = function() { 
   
   // Swiper Init
   var itemsSwiper = new Swiper('.items-swiper', {
