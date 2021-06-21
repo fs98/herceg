@@ -8,7 +8,8 @@ use Laravel\Scout\Searchable;
 use Illuminate\Support\Str;
 
 class Product extends Model
-{
+{   
+    use Searchable;
     use HasFactory;
     use Searchable;
 
