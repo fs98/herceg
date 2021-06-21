@@ -26,8 +26,9 @@ class ProductRequest extends FormRequest
         return [
           'title' => 'required',
           'category' => 'required',
-          'price' => 'required|min:0',
+          'price' => 'required|integer|min:0',
           'product_description' => 'required',
+          'product_ingredients' => 'required',
           'selected_image' => 'required|image|mimes:jpg,jpeg,png|max:16384'
         ];
     }
@@ -45,6 +46,7 @@ class ProductRequest extends FormRequest
             'price.required' => 'Morate definisati cijenu.',
             'price.min' => 'Cijena ne može biti manja od nule.',
             'product_description.required' => 'Opis proizvoda je obavezan.',
+            'product_ingredients.required' => 'Morate unijeti sastav proizvoda.',
             'selected_image.required' => 'Morate izabrati sliku',
             'selected_image.image' => 'Kao fotografiju nije dozvoljeno postaviti druge vrste fajlova',
             'selected_image.mimes' => 'Dozvoljeni formati su: jpg, jpeg, png',

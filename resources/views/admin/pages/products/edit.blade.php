@@ -1,9 +1,9 @@
 @extends('admin.layouts.main')
 
 @section('content')
-  
+
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">{{ __('Proizvodi') }}</h1> 
+  <h1 class="h3 mb-2 text-gray-800">{{ __('Proizvodi') }}</h1>
 
   {{-- Breadcrumb --}}
   <nav aria-label="breadcrumb">
@@ -17,9 +17,9 @@
   <!-- Category -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-success align-middle">{{ __('Novi proizvod') }}</h6> 
+        <h6 class="m-0 font-weight-bold text-success align-middle">{{ __('Novi proizvod') }}</h6>
     </div>
-    <div class="card-body"> 
+    <div class="card-body">
 
       <form action="{{ Route('admin.product.update', $product) }}" method="POST" id="{{ Helper::RouteCrafter('store') }}" autocomplete="off" enctype="multipart/form-data">
         @method('PUT')
@@ -30,7 +30,7 @@
               <label for="title" class="col-form-label">Naziv proizvoda</label>
               <label for="title" class="label-required">(obavezno)</label>
               <input id="title" value="{{ old('title', $product->title) }}" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="Naziv proizvoda" name="title" maxlength="128">
-              
+
               @error('title')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -53,7 +53,7 @@
               <label for="price" class="col-form-label">Cijena</label>
                 <label for="price" class="label-required">(obavezno)</label>
                 <input id="price" value="{{ old('price', $product->price) }}" type="number" class="form-control @error('price') is-invalid @enderror" placeholder="Unesite cijenu" name="price" maxlength="32">
-                
+
                 @error('price')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -82,9 +82,27 @@
             </div>
 
             <div class="form-group">
-                <label for="product_description" class="col-form-label">Opis proizvoda</label>
-                <label for="product_description" class="label-required">(obavezno)</label>
-                <textarea id="product_description" class="form-control textarea-custom" placeholder="Opis proizvoda" name="product_description" maxlength="1024">{{ $product->description }}</textarea>
+              <label for="product_description" class="col-form-label">Opis proizvoda</label>
+              <label for="product_description" class="label-required">(obavezno)</label>
+              <textarea id="product_description" class="form-control textarea-custom @error('product_description') is-invalid @enderror" placeholder="Opis proizvoda" name="product_description" maxlength="1024">{{ $product->description }}</textarea>
+
+              @error('product_description')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="product_ingredients" class="col-form-label">Sastav</label>
+                <label for="product_ingredients" class="label-required">(obavezno)</label>
+                <textarea id="product_ingredients" class="form-control textarea-custom @error('product_ingredients') is-invalid @enderror" placeholder="Sastav proizvoda" name="product_ingredients" maxlength="1024">{{ $product->ingredients }}</textarea>
+
+                @error('product_ingredients')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
 
             <div class="form-group">
@@ -97,13 +115,13 @@
               <label class="custom-control custom-radio custom-control-inline">
               <input type="radio" name="product_in_stock" {{ $product->is_stock == false ? 'checked' : '' }} value="0" class="custom-control-input @error('selected_image') is-invalid @enderror"><span class="custom-control-label">Ne</span>
               </label>
-              
+
               @error('product_in_stock')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
                 </span>
               @enderror
-            </div> 
+            </div>
 
             <div class="mt-2 float-right">
               <button type="button" id="submit-button" form="{{ Helper::RouteCrafter('store') }}" class="btn btn-success">Sačuvaj</button>
@@ -111,13 +129,13 @@
           </div>
         </div>
       </form>
-    </div>  
+    </div>
   </div>
 
 @endsection
 
 @section('scripts')
-    
+
     {{-- Image Preview --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
