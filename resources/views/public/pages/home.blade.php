@@ -138,6 +138,7 @@
 
 <!-- End of Items Section -->
 
+<div id="autocomplete"></div>
 
 <!-- Image or Add Section -->
 

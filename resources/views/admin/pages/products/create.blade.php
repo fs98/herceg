@@ -82,7 +82,25 @@
             <div class="form-group">
                 <label for="product_description" class="col-form-label">Opis proizvoda</label>
                 <label for="product_description" class="label-required">(obavezno)</label>
-                <textarea id="product_description" class="form-control textarea-custom" placeholder="Opis proizvoda" name="product_description" maxlength="1024"></textarea>
+                <textarea id="product_description" class="form-control textarea-custom @error('product_description') is-invalid @enderror" placeholder="Opis proizvoda" name="product_description" maxlength="1024"></textarea>
+            
+                @error('product_description')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="product_ingredients" class="col-form-label">Sastav</label>
+                <label for="product_ingredients" class="label-required">(obavezno)</label>
+                <textarea id="product_ingredients" class="form-control textarea-custom @error('product_ingredients') is-invalid @enderror" placeholder="Sastav proizvoda" name="product_ingredients" maxlength="1024"></textarea>
+            
+                @error('product_ingredients')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
 
             <div class="form-group">
@@ -117,7 +135,6 @@
 @section('scripts')
     
     {{-- Image Preview --}}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <script>
       $('#selected_image').on('change',function(e){
@@ -132,6 +149,7 @@
     </script>
 
     {{-- Sweetalert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script>
       $("#submit-button").on("click", function(event) {
         if($(event.target.form)[0] != undefined) {

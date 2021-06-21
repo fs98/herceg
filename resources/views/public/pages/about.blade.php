@@ -95,7 +95,7 @@
         </p>
       </div>
     </div>
-    <div class="row mb-5">
+    <div class="row">
       <div class="col-12">
         <!-- Swiper -->
         <div class="swiper-container w-100 shops-swiper">

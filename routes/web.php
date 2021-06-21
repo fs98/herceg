@@ -35,4 +35,11 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
   Route::resource('product', App\Http\Controllers\ProductController::class);
   Route::resource('order', App\Http\Controllers\OrderController::class);
   Route::resource('order_item', App\Http\Controllers\OrderItemController::class);
+  Route::resource('tag', App\Http\Controllers\TagController::class);
 });
+
+Route::get('search', function() {
+  $search = $request->input('search');
+    $products = Product::where('title', 'like', '%' . $search . '%')->get();
+    return view('public.pages.products')->with(['products' => $products]);
+})->name('search');
