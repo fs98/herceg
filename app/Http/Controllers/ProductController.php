@@ -10,6 +10,7 @@ use App\Http\Requests\ProductEditRequest;
 use App\Models\Swal;
 use Illuminate\Support\Facades\Storage;
 
+
 class ProductController extends Controller
 {
     /**

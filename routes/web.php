@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 // Public pages frontEnd Routes
 Route::get('/', [App\Http\Controllers\PublicPageController::class, 'index'])->name('public.index');
 Route::get('/o-nama', [App\Http\Controllers\PublicPageController::class, 'about'])->name('public.about');
+Route::get('/proizvodi', [App\Http\Controllers\PublicPageController::class, 'products'])->name('public.products');
+Route::get('/kontakt', [App\Http\Controllers\PublicPageController::class, 'contact'])->name('public.contact');
+// Route for search
+Route::get('/search', [App\Http\Controllers\SearchproductsController::class, 'search'])->name('public.search');
 
 Auth::routes([
   'register' => false

@@ -1,0 +1,232 @@
+/* Selection */
+
+::selection {
+	background-color: #f27935;
+	 color: black;
+}
+
+/* Header */
+
+#logoIcon{
+	color: #f27935;
+}
+
+#logo .colored-text {
+	color: #f27935;
+}
+
+#search .input-group-append button,
+#newsletterSection .input-group-append button{
+	background-color: #f27935;
+	border: 1px solid #f27935;
+}
+
+#search button:focus,
+#search input:focus,
+#newsletterSection .input-group-append button:focus,
+#newsletterSection input:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+.shopping-cart i{
+	color: #f27935;
+}
+
+.shopping-cart span:hover{
+	cursor: pointer;
+	color: rgba(242, 121, 53, 0.8);
+	transition: 1s
+}
+
+/* Header Navbar */
+
+#bottomHeader nav{
+	background-color: #f27935;
+}
+
+nav .dropdown-menu a{
+	color: #f27935;
+}
+
+nav .dropdown-menu a:hover{
+	background-color: #f27935;
+	color: white;
+	transition: 0.5s;
+}
+
+/* Login modal */
+
+
+.modal input:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+#loginButton{
+	background-color: #f27935;
+	border: 1px solid #f27935;
+}
+
+#loginButton:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+#loginModal a{
+	color: #f27935;
+}
+
+/* Carousel */
+
+#mainCarousel .carousel-inner h5{
+	color: #f27935;
+}
+
+#mainCarousel .carousel-caption button{
+	color: #f27935;
+}
+
+#mainCarousel .carousel-caption button:hover{
+	background-color: #f27935 !important;
+	color: white;
+	transition: 0.5s;
+}
+
+#mainCarousel .carousel-caption button:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+/* Image Card */
+
+.breadcrumb .active{
+	color: #f27935;
+}
+
+/* Login and Register Forms */
+
+#loginAndRegister input:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+/* Web Shop info section */
+
+#webShopInfoSection i{
+	color: #f27935;
+}
+
+/* Items Section */
+
+#nav-tab .nav-link:hover{
+	border-bottom: 1px solid rgba(242, 121, 53, 1);
+}
+
+#nav-tab .active{
+	border-bottom: 1px solid rgba(242, 121, 53, 1);
+}
+
+#nav-tabContent .card-body p{
+	color: #f27935;
+}
+
+#nav-tabContent .card button:hover{
+	color: #f27935;
+}
+
+/* Image Cards */
+
+#imageCards button{
+	color: #f27935;
+	pointer-events: none;
+}
+
+/* Swiper */
+
+#nav-tabContent .swiper-button-next,
+#nav-tabContent .swiper-button-prev {
+	color: #f27935;
+}
+
+#nav-tabContent .swiper-button-next:hover,
+#nav-tabContent .swiper-button-prev:hover {
+	color: rgb(0, 0, 0, 0.7);
+	transition: 0.5s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f27935 !important;
+}
+
+/* Random items */
+
+.browse-btn{
+	background-color: #f27935;
+}
+
+.browse-btn:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+.browse-btn:hover{
+	background-color: rgba(242, 121, 53, 0.9);
+	transition: 0.5s;
+}
+
+#randomItems .card button:hover{
+	color: #f27935;
+}
+
+#randomItems .card-body p{
+	color: #f27935;
+}
+
+/* My Cart Items */
+
+#myCart .input-group button{
+	background-color: #f27935;
+}
+
+#myCart .input-group button:hover{
+	background-color: rgba(242, 121, 53, 0.9);
+	transition: 0.5s;
+}
+
+#myCart .input-group button:focus,
+#myCart .input-group input:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+#myCart .product-info span{
+	color: #f27935;
+}
+
+#myCart .product-info button:hover i{
+	color: #f27935 !important;
+	transition: 0.5s;
+}
+
+#myCart .warning{
+	color: #f27935;
+}
+
+#myCart .total-heading{
+	color: #f27935;
+}
+
+#myCart .total button{
+	background-color: #f27935;
+}
+
+#myCart .total button:focus{
+	box-shadow: 0px 0px 0px 3px rgba(242, 121, 53, 0.3);
+	border: 1px solid rgba(242, 121, 53, 0.3);
+}
+
+#myCart .accordion button:focus{
+	box-shadow: none;
+	border: none;
+}
