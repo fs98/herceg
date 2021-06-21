@@ -1,0 +1,96 @@
+body {
+	font-family: Montserrat;
+	margins: 0px;
+}
+
+hr {
+	height: 0.5px !important;
+	border: none;
+}
+
+input::placeholder{
+	font-size: 13px;
+}
+
+#topHeader img{
+	height: 12px;
+}
+
+/* Carousel */
+
+#mainCarousel .carousel-inner h1{
+	background-color: rgba(255, 255, 255, 0.5);
+	color: rgba(0, 0, 0, 0.7);
+}
+
+#mainCarousel .carousel-inner h5{
+	background-color: white;
+}
+
+/* Carousel Caption Animation */
+
+.animated-caption{
+	position: relative; 
+	animation: caption 2s; 
+	animation-timing-function: ease;
+}
+
+@keyframes caption {
+  from {top: -200px;}
+  to {top: 0px;}
+}
+
+/* Image Card */
+
+#imageCard .card-img-overlay{
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: white;
+ }
+
+/*#imageCards .card-img-overlay{
+	background-color: rgba(0,0,0,0.3);
+}*/
+
+#imageCards img:hover{
+	transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transition-duration: 0.7s;
+}
+
+ /* Items Section */
+
+#nav-tab .nav-link{
+	border: transparent;
+}
+
+/* Footer */
+
+footer a:hover{
+	color: whitesmoke !important;
+	transition: 0.5s;
+}
+
+/* Item Card */
+
+.card i{
+	pointer-events: none !important;
+}
+
+.animated-card-buttons{
+	display: none;
+}
+
+/* My Cart Items */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+margin: 0;
+}

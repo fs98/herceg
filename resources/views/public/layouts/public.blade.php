@@ -11,12 +11,16 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="{{ asset('js/algolia.js') }}"></script> 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/algolia.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/emerald-theme.css') }}">
@@ -54,10 +58,6 @@
               <!-- Right side -->
     
               <div class="d-flex">
-                <a href="#" class="text-dark text-decoration-none ml-2 p-2 border-right">
-                  <i class="far fa-heart text-theme-color"></i>
-                  Favoriti
-                </a>
                 <a href="#" class="text-dark text-decoration-none p-2 d-none d-sm-none d-md-none d-lg-block d-xl-block border-right">
                   <i class="fas fa-shopping-basket text-theme-color"></i>
                   Moja košarica
@@ -90,7 +90,9 @@
             <div class="col-lg-5 d-flex align-items-center justify-content-between align-self-end">
               <div class="align-self-end d-flex">
                 <div id="logoIcon">
+                <a href="{{ Route('public.index') }}">
                 <img src="{{ asset('images/logo/logo-herceg.png') }}" alt="navbar-brand-logo" width="130">
+                </a>
                 </div>
                 <div class="ml-2 d-none d-xl-block" id="logo">
                   <h3 class="mb-0">OP<span class="colored-text">Herceg</span></h3>
@@ -100,7 +102,7 @@
               <div class="align-self-end d-flex d-lg-none shopping-cart">
                 <a class="text-center text-decoration-none" href="">
                   <i class="fa fa-shopping-basket fa-lg"></i>
-                  <div class="text-center text-uppercase text-dark"><span class="fw-500">Shopping Cart</span></div>
+                  <div class="text-center text-uppercase text-dark"><span class="fw-500">Moja košarica</span></div>
                 </a>
               </div>
             </div>				
@@ -108,20 +110,22 @@
             <!-- Search -->
     
             <div class="col-lg-5 p-3 p-sm-3 p-md-3 p-lg-0 align-self-end" id="search">
-              <div class="input-group mb-0">
-                <input type="text" class="form-control rounded-0" placeholder="{{ __("Pretražite ovdje npr. 'krema'") }}" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                  <button class="input-group-text rounded-0 h-100 btn" id="basic-addon2"><i class="fas fa-search px-1 text-light"></i></button>
+              <form class="" id="aa-input-container" action="{{ Route('public.search') }}" method="GET">
+                <div class="input-group mb-0">
+                  <input type="search" id="aa-search-input" class="form-control rounded-0" placeholder="{{ __("Pretražite ovdje npr. 'krema'") }}" aria-describedby="basic-addon2" name="search" required>
+                  <div class="input-group-append">
+                    <button type="submit" class="input-group-text rounded-0 h-100 btn" id="basic-addon2"><i class="fas fa-search px-1 text-light"></i></button>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
-    
+              
             <!-- Shopping Cart [big screen] -->
     
             <div class="col-lg-2 d-none d-lg-flex justify-content-end align-self-end shopping-cart">
               <a class="text-center text-decoration-none" href="">
                 <i class="fa fa-shopping-basket fa-lg"></i>
-                <div class="text-center text-uppercase text-dark"><span class="fw-500">Shopping Cart</span></div>
+                <div class="text-center text-uppercase text-dark"><span class="fw-500">Moja košarica</span></div>
               </a>
             </div>
     
@@ -147,33 +151,22 @@
                 <li class="nav-item pr-xl-2 pr-lg-2 px-md-0 px-sm-0 px-0">
                   <a class="nav-link lead" aria-current="page" href="{{ Route('public.index') }}" id="indexPage">{{ __('Početna') }}</a>
                 </li>
-                <li class="nav-item dropdown px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link dropdown-toggle lead" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ __('Alternativna apoteka') }}
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Sirupi</a></li> 
-                  </ul>
+                <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
+                  <a class="nav-link" href="{{ Route('public.products', ['category_id' => '4'])}}">{{ __('Prehrambeni proizvodi') }}</a>
                 </li>
-                <li class="nav-item dropdown px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link dropdown-toggle lead" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ __('Prehrambeni proizvodi') }}
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item fw-500 py-2" href="#">Džemovi</a></li>   
-                  </ul>
+                <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
+                  <a class="nav-link" href="{{ Route('public.products', ['category_id' => '3'])}}">{{ __('Alternativna apoteka') }}</a>
                 </li> 		        		        
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link lead" href="#">{{ __('Kozmetika') }}</a>
+                  <a class="nav-link" href="{{ Route('public.products', ['category_id' => '2'])}}">{{ __('Kozmetika') }}</a>
                 </li> 
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
                   <a class="nav-link lead" href="{{ Route('public.about') }}">{{ __('O nama') }}</a>
                 </li>
                 <li class="nav-item pl-xl-2 pl-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link lead" href="#">{{ __('Kontakt') }}</a>
+                  <a class="nav-link lead" href="{{ Route('public.contact') }}">{{ __('Kontakt') }}</a>
                 </li>
               </ul>
-            </div>
           </div>
         </nav>
       </section>
@@ -220,37 +213,30 @@
         <footer class="bg-dark text-white">
           <div class="container">
             <div class="row py-5">
-              <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center align-items-md-start">
-                <h4>Main menu</h4>
-                <a href="" class="text-decoration-none text-muted">Home</a>
-                <a href="" class="text-decoration-none text-muted">Our services</a>
-                <a href="" class="text-decoration-none text-muted">Our products</a>
-                <a href="" class="text-decoration-none text-muted">About us</a>
-                <a href="" class="text-decoration-none text-muted">Contact us</a>
+              <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
+                <div id="logoIcon">
+                <a href="{{ Route('public.index') }}">
+                <img src="{{ asset('images/logo/logo-herceg.png') }}" alt="navbar-brand-logo" width="130">
+                </a>
+                </div>
+                <div class="ml-2" id="logo">
+                  <h3 class="mb-0 tight-text">{{ __('OP') }}<span class="colored-text">{{ __('Herceg') }}</span></h3>
+                  <span class="pt-0 text-uppercase text-wide">20 godina tradicije</span>
+                </div>
               </div>
-              <div class="col-12 mt-3 col-md-6 mt-md-0 col-lg-3 d-flex flex-column align-items-center align-items-md-start">
-                <h4>Important Info</h4> 
-                <a href="" class="text-decoration-none text-muted">Delivery</a>
-                <a href="" class="text-decoration-none text-muted">Returns</a>
-                <a href="" class="text-decoration-none text-muted">Services</a>
-                <a href="" class="text-decoration-none text-muted">Discount</a>
-                <a href="" class="text-decoration-none text-muted">Special offer</a>
+              <div class="col-12 mt-3 col-md-6 mt-md-0 col-lg-4 d-flex flex-column align-items-center">
+               <h4>{{ __('Korisni linkovi') }}</h4>
+                <a href="" class="text-decoration-none text-muted">{{ __('Početna') }}</a>
+                <a href="" class="text-decoration-none text-muted">{{ __('Naši proizvodi') }}i</a>
+                <a href="" class="text-decoration-none text-muted">{{ __('O nama') }}</a>
+                <a href="" class="text-decoration-none text-muted">{{ __('Kontaktirajte nas') }}</a>
               </div>
-              <div class="col-12 mt-3 col-md-6 col-lg-3 mt-lg-0 d-flex flex-column align-items-center align-items-md-start">
-                <h4>Useful Links</h4>
-                <a href="" class="text-decoration-none text-muted">Site Map</a>
-                <a href="" class="text-decoration-none text-muted">Search</a>
-                <a href="" class="text-decoration-none text-muted">Advanced Search</a>
-                <a href="" class="text-decoration-none text-muted">Suppliers</a>
-                <a href="" class="text-decoration-none text-muted">FAQ</a>
-              </div>
-              <div class="col-12 mt-3 col-md-6 col-lg-3 mt-lg-0 d-flex flex-column align-items-center align-items-md-start">
-                <h4>Contact Us</h4>
-                <a href="" class="text-decoration-none text-muted">Home</a>
-                <a href="" class="text-decoration-none text-muted">Our services</a>
-                <a href="" class="text-decoration-none text-muted">Our products</a>
-                <a href="" class="text-decoration-none text-muted">About us</a>
-                <a href="" class="text-decoration-none text-muted">Contact us</a>
+              <div class="col-12 mt-3 col-md-6 col-lg-4 mt-lg-0 d-flex flex-column align-items-center">
+                <h4>{{ __('Pravila privatnosti') }}</h4>
+                <a href="" class="text-decoration-none text-muted">{{ __('Faq?') }}</a>
+                <a href="" class="text-decoration-none text-muted">{{ __('Kontakt') }}</a>
+                <a href="" class="text-decoration-none text-muted">O nama</a>
+                <a href="" class="text-decoration-none text-muted">Kontaktirajte nas</a>
               </div>
             </div>
           </div>

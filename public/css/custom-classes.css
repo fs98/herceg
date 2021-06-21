@@ -1,0 +1,33 @@
+/* Font size classes */
+
+.font-size-15 {
+	font-size: 15px;
+}
+
+.font-size-14 {
+	font-size: 14px;
+}
+
+.font-size-13 {
+	font-size: 13px;
+}
+
+.font-size-12 {
+	font-size: 12px;
+}
+
+/* Font weight classes */
+
+.fw-500 {
+	font-weight: 500;
+}
+
+/* Text style classes */
+
+.text-wide {
+	letter-spacing: 1px;
+}
+
+.tight-text {
+	letter-spacing: -1.5px;
+}

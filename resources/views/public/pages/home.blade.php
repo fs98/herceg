@@ -15,7 +15,7 @@
               <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Organska proizvodnja "Herceg"</h1>
               <p class="text-white fw-normal h6 mt-3">"Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne 
                 proizvodnje u Bosni i Hercegovini.</p>
-              <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Proizvodi</button>
+              <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500" onclick="location.href='proizvodi';">Proizvodi</button>
             </div>
           </div>
       </div>
@@ -88,20 +88,14 @@
           <div class="swiper-container items-swiper w-100 h-100" style="position: unset;">
             <div class="swiper-wrapper" id="featuredItems">
 
-              @for ($i = 0; $i < 7; $i++)
+              @foreach ($products as $product)
 
                 <div class="swiper-slide">
                   <div class="h-100">
                     <div class="card text-dark p-0 border-0 rounded-0 h-75" style="max-height: 246px; max-width: 196px">
-                      <img src="https://via.placeholder.com/300x300" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="...">
-                      <div class="card-img-overlay px-0">
-                        @if ($i % 2 == 0)
-                        <span class="p-2 text-light fw-500 bg-danger position-absolute">-30 %</span>
-                        @elseif ($i % 3 == 0) 
-                        <span class="p-2 text-light fw-500 bg-success position-absolute">NOVO</span>
-                        @else 
-                        <span class="p-2 text-light fw-500 bg-primary position-absolute">SNIŽENO</span>
-                        @endif
+                      <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="...">
+                      <div class="card-img-overlay px-0"> 
+                        <span class="p-2 text-light fw-500 bg-primary position-absolute">SNIŽENO</span> 
                         <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
                         <div class="mb-4">
                           <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
@@ -119,14 +113,14 @@
                       </div>
                     </div>
                     <div class="card-body text-center h-25">
-                      <h6 class="card-title fw-normal">Čaj</h6>
-                      <p class="card-text fw-500 text-theme-color">30 KM<del class="text-muted ml-2">10 KM</del>
+                      <h6 class="card-title fw-normal">{{ $product->title }}</h6>
+                      <p class="card-text fw-500 text-theme-color">{{ $product->price }} KM<del class="text-muted ml-2">10 KM</del>
                       </p>
-                    </div>
+                    </div> 
                   </div>
                 </div>
 
-              @endfor
+              @endforeach
 
             </div>
             <!-- Add Arrows -->
@@ -136,7 +130,7 @@
             <div class="swiper-pagination"></div>
       </div>
       <div class="col-12 text-center">
-        <button class="btn browse-btn rounded-0 font-size-13 py-3 text-light">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
+        <button class="btn browse-btn rounded-0 font-size-13 py-3 text-light" onclick="location.href='proizvodi';" >Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
       </div>
     </div> 
   </div> 
@@ -164,10 +158,10 @@
 	<section id="randomItems">
 		<div class="container my-5">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-				@for ($i = 0; $i < 10; $i++)
+				@foreach ($products as $product)
           <div class="col">
             <div class="card text-dark p-0 border-0 rounded-0 h-75">
-              <img src="https://via.placeholder.com/250x300" class="card-img rounded-0 h-100 img-fluid" alt="...">
+              <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid" alt="...">
               <div class="card-img-overlay px-0">
                 <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
                 <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
@@ -183,15 +177,16 @@
               </div>
             </div>
             <div class="card-body text-center h-25">
-              <h6 class="card-title fw-normal">Čaj</h6>
-              <p class="card-text fw-500">35.00 KM<del class="text-muted ml-2">41.00 KM</del></p>
+              <h6 class="card-title fw-normal">{{ $product->title }}</h6>
+              <h6>Na stanju: {{ $product->in_stock == '1' ? "Da" : "Ne" }}</h6>
+              <p class="card-text fw-500">{{ $product->price }} KM<del class="text-muted ml-2"></del></p>
             </div>
           </div>
-        @endfor
+        @endforeach
 			</div>
 			<div class="row mt-4">
 				<div class="col-12 text-center">
-					<button class="btn browse-btn rounded-0 font-size-13 py-3 text-light">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
+					<button class="btn browse-btn rounded-0 font-size-13 py-3 text-light" onclick="location.href='proizvodi';">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
 				</div>
 			</div>
 		</div>
