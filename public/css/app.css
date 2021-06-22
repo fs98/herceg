@@ -10206,6 +10206,7 @@ h3 {
   }
 }
 .fa-rotate-90 {
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   transform: rotate(90deg);
 }

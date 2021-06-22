@@ -2,7 +2,7 @@
 
 
 :root {
-  --theme-color: #3fc380;
+  --theme-color: #39B54A;
   --theme-color-rgb: rgb(63, 195, 128)
 } 
  
@@ -18,11 +18,11 @@
 /* Utility Classes */
 
 .text-theme-color {
-  color: var(--theme-color);
+  color: var(--theme-color) !important;
 }
 
 .bg-theme-color {
-  background-color: var(--theme-color);
+  background-color: var(--theme-color) !important;
 }
 
 .border-2 {

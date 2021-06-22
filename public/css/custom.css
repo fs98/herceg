@@ -41,6 +41,10 @@ font-weight-light {
   font-weight: 200;
 }
 
+.text-red {
+  color: #FF0000 !important;
+}
+
 /* Navbar */
 
 .navbar-nav .nav-item .nav-link {
@@ -161,5 +165,3 @@ margin: 0;
 }
 
 /* Products Swiper */
-
-.swiper-button-next
