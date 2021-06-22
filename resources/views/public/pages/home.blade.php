@@ -84,63 +84,43 @@
   <div class="container position-relative">
     <div class="row">
       <div class="col-12">
-        <nav class="text-uppercaser">
-          <div class="nav justify-content-center" id="nav-tab" role="tablist">
-            <a class="nav-link border-transparent text-decoration-none active text-dark text-wide mx-3" id="popular" data-bs-toggle="tab" data-bs-target="#popularItems" type="button" role="tab" aria-controls="popularItems" aria-selected="true">Popularni</a>
-            <a class="nav-link text-decoration-none text-dark text-wide mx-3" id="featured" data-bs-toggle="tab" data-bs-target="#featuredItems" type="button" role="tab" aria-controls="featuredItems" aria-selected="false">Izdvajamo</a>
-            <a class="nav-link text-dark text-wide mx-3" id="latest" data-bs-toggle="tab" data-bs-target="#latestItems" type="button" role="tab" aria-controls="latestItems" aria-selected="false">Najnoviji</a>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Swiper -->
+          <div class="swiper-container items-swiper w-100 h-100" style="position: unset;">
+            <div class="swiper-wrapper" id="featuredItems">
 
-<section>
-  <div class="container mt-4 mt-md-4 px-0">
-    <div class="tab-content mx-3 mx-sm-0" id="nav-tabContent">
+              @foreach ($products as $product)
 
-      <div class="tab-pane fade show active" id="popularItems" role="tabpanel" aria-labelledby="popular">
-        <div class="row">
-          <div class="col-12">
-            <!-- Swiper -->
-              <div class="swiper-container w-100 h-100" style="margin: 20px 0">
-                <div class="swiper-wrapper">
-
-                  <div class="swiper-slide">
-                    @foreach ($products as $product)
-                    <div class="h-100">
-                      <div class="card text-dark p-0 border-0 rounded-0 h-75">
-                        <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="...">
-                        <div class="card-img-overlay px-0">
-                          <span class="p-2 text-light fw-500 bg-danger position-absolute">TOP</span>
-                          <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
-                          <div class="mb-4">
-                            <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
-                              <i class="fas fa-heart"></i>
-                            </button>
-                            <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Quick view">
-                              <i class="fas fa-search"></i>
-                            </button>
-                          </div>
-                          <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500">
-                            <i class="fas fa-shopping-cart mr-2" >
-                              </i>Add to cart
-                            </button>
-                          </div>
+                <div class="swiper-slide">
+                  <div class="h-100">
+                    <div class="card text-dark p-0 border-0 rounded-0 h-75" style="max-height: 246px; max-width: 196px">
+                      <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="...">
+                      <div class="card-img-overlay px-0"> 
+                        <span class="p-2 text-light fw-500 bg-primary position-absolute">SNIŽENO</span> 
+                        <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
+                        <div class="mb-4">
+                          <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
+                            <i class="fas fa-heart"></i>
+                          </button>
+                          <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Quick view">
+                            <i class="fas fa-search"></i>
+                          </button>
+                        </div>
+                        <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500">
+                          <i class="fas fa-shopping-cart mr-1"></i>
+                          <small>Dodaj u košaricu</small>
+                        </button>
                         </div>
                       </div>
-                      <div class="card-body text-center h-25">
-                        <h6 class="card-title fw-normal">{{ $product->title }}</h6>
-                        <p class="card-text fw-500">{{ $product->price }} KM<del class="text-muted ml-2">10 KM</del>
-                        </p>
-                      </div>
                     </div>
-                    @endforeach
+                    <div class="card-body text-center h-25">
+                      <h6 class="card-title fw-normal">{{ $product->title }}</h6>
+                      <p class="card-text fw-500 text-theme-color">{{ $product->price }} KM<del class="text-muted ml-2">10 KM</del>
+                      </p>
+                    </div> 
                   </div>
                 </div>
 
-              @endfor
+              @endforeach
 
             </div>
             <!-- Add Arrows -->
@@ -148,11 +128,11 @@
             <div class="swiper-button-prev"></div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
-      </div>
+          </div>
+      </div>  
       <div class="col-12 text-center">
-        <button class="btn browse-btn rounded-0 font-size-13 py-3 text-light" onclick="location.href='proizvodi';" >Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
-      </div>
-    </div> 
+          <button class="btn browse-btn rounded-0 font-size-13 py-3 text-light" onclick="location.href='proizvodi';" >Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
+      </div> 
   </div> 
 </section>
 
@@ -182,7 +162,7 @@
 				@foreach ($products as $product)
           <div class="col">
             <div class="card text-dark p-0 border-0 rounded-0 h-75">
-              <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid" alt="...">
+              <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="..." style="max-height: 246px; max-width: 196px">
               <div class="card-img-overlay px-0">
                 <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
                 <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">

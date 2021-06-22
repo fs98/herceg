@@ -164,7 +164,7 @@
                   <a class="nav-link lead" href="{{ Route('public.about') }}">{{ __('O nama') }}</a>
                 </li>
                 <li class="nav-item pl-xl-2 pl-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link" href="{{ Route('public.contact') }}">{{ __('Kontakt') }}</a>
+                  <a class="nav-link lead" href="{{ Route('public.contact') }}">{{ __('Kontakt') }}</a>
                 </li>
               </ul>
           </div>
