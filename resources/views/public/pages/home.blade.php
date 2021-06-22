@@ -219,7 +219,7 @@
 
 <!-- Image Cards Section -->
 
-	<section id="imageCards">
+	<section id="imageCards" class="d-none">
 		<div class="container">
 			<div class="row my-5">
 				<div class="col-12 col-lg-5 d-flex p-0">
