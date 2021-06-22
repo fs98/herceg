@@ -6,10 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-<<<<<<< HEAD
-=======
         "algolia/scout-extended": "^1.18",
->>>>>>> 3f97b1ec099566ae652723f0c77497538f301df4
         "algolia/algoliasearch-client-php": "^2.2",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
