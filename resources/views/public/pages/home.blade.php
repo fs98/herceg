@@ -70,8 +70,9 @@
     <div class="swiper-wrapper" style="height: 500px">
       <div class="swiper-slide h-100 position-relative">
         <img src="{{ asset('images/home/pexels-photo-5231216.jpeg') }}" class="d-block w-100 img-responsive h-100 home-bg-animation" alt="...">
-        <div class="img-overlay">
-          <div>
+          <div class="img-overlay">
+            <div>
+          </div>
         </div>
       </div>
       <div class="swiper-slide bg-black h-100 d-flex flex-column justify-content-center align-items-center px-5 text-center">
@@ -81,7 +82,6 @@
           proizvodnje u Bosni i Hercegovini.</p>
         <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500" onclick="location.href='proizvodi';">Proizvodi</button>
       </div>
-    </div>
   </div>
 </section>
 
