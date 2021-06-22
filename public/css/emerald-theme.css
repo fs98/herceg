@@ -2,7 +2,7 @@
 
 
 :root {
-  --theme-color: #3fc380;
+  --theme-color: #39B54A;
   --theme-color-rgb: rgb(63, 195, 128)
 } 
  
@@ -23,6 +23,10 @@
 
 .bg-theme-color {
   background-color: var(--theme-color);
+}
+
+.border-theme-color {
+  border-color: var(--theme-color);
 }
 
 .border-2 {

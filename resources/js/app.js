@@ -61,6 +61,17 @@ window.onload = function() {
       }, 
     },
   });
+
+  var heroSwiper = new Swiper(".hero-slider", {
+    slidesPerGroup: 1,
+    spaceBetween: 0, 
+    breakpoints: { 
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      }
+    },
+  });
   
   // Aos Init
   AOS.init({

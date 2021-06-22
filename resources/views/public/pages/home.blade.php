@@ -4,7 +4,7 @@
 
 <!-- Carousel --> 
 
-<section id="mainCarousel">
+{{-- <section id="mainCarousel">
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-interval="5000">
@@ -61,6 +61,27 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+  </div>
+</section> --}}
+
+<section id="mainCarousel">
+  <!-- Swiper -->
+  <div class="swiper-container hero-slider">
+    <div class="swiper-wrapper" style="height: 500px">
+      <div class="swiper-slide h-100 position-relative">
+        <img src="{{ asset('images/home/pexels-photo-5231216.jpeg') }}" class="d-block w-100 img-responsive h-100 home-bg-animation" alt="...">
+        <div class="img-overlay">
+          <div>
+        </div>
+      </div>
+      <div class="swiper-slide bg-black h-100 d-flex flex-column justify-content-center align-items-center px-5 text-center">
+        <h5 class="text-uppercase text-light px-4 py-2">Organska proizvodnja</h5>
+        <h1 class="text-uppercase text-orange text-wide display-4 font-weight-bold w-100 mt-3 py-2">20 godina tradicije</h1>
+        <p class="text-white fw-normal h6 mt-3 lead">"Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne 
+          proizvodnje u Bosni i Hercegovini.</p>
+        <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500" onclick="location.href='proizvodi';">Proizvodi</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -198,7 +219,7 @@
 
 <!-- Image Cards Section -->
 
-	<section id="imageCards" class="d-none">
+	<section id="imageCards">
 		<div class="container">
 			<div class="row my-5">
 				<div class="col-12 col-lg-5 d-flex p-0">
