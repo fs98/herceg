@@ -152,13 +152,13 @@
                   <a class="nav-link lead" aria-current="page" href="{{ Route('public.index') }}" id="indexPage">{{ __('Početna') }}</a>
                 </li>
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link" href="{{ Route('public.products', ['category_id' => '4'])}}">{{ __('Prehrambeni proizvodi') }}</a>
+                  <a class="nav-link lead" href="{{ Route('public.products', ['category_id' => '4'])}}">{{ __('Prehrambeni proizvodi') }}</a>
                 </li>
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link" href="{{ Route('public.products', ['category_id' => '3'])}}">{{ __('Alternativna apoteka') }}</a>
+                  <a class="nav-link lead" href="{{ Route('public.products', ['category_id' => '3'])}}">{{ __('Alternativna apoteka') }}</a>
                 </li> 		        		        
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link" href="{{ Route('public.products', ['category_id' => '2'])}}">{{ __('Kozmetika') }}</a>
+                  <a class="nav-link lead" href="{{ Route('public.products', ['category_id' => '2'])}}">{{ __('Kozmetika') }}</a>
                 </li> 
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
                   <a class="nav-link lead" href="{{ Route('public.about') }}">{{ __('O nama') }}</a>

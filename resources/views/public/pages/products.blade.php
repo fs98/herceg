@@ -9,7 +9,7 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
         @foreach($products as $product)
           <div class="col">
-            <div class="card text-dark p-0 border-0 rounded-0 h-75">
+            <div class="card text-dark p-0 border-0 rounded-0 h-75 img-responsive" style="max-height: 246px; max-width: 196px">
               <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="..." style="max-height: 246px; max-width: 196px">
               <div class="card-img-overlay px-0">
                 <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
