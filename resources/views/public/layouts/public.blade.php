@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src="{{ asset('js/algolia.js') }}"></script> 
+    <script src="{{ asset('js/auto-write.js') }}"></script> 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -33,7 +34,7 @@
 
       <!-- Top part of header -->
     
-      <section id="topHeader" class="border-bottom">
+      <section id="topHeader" class="border-bottom py-2">
         <div class="container">
           <div class="row d-flex flex-wrap justify-content-between">
             <div class="col-xl-12 d-flex justify-content-between">
@@ -43,14 +44,14 @@
               <div class="d-flex align-items-center">
                 <div class="py-1 pr-2 mr-2 border-right">
                   <a class="text-dark text-decoration-none">
-                    <i class="fas fa-envelope fa-xs text-theme-color"></i>
-                    <span class="">emina@herceg.ba</span>
+                    <i class="fas fa-envelope fa-lg text-theme-color"></i>
+                    <span class="h5">emina@herceg.ba</span>
                   </a> 
                 </div> 
                 <div class="py-1 pr-2">
                   <a class="text-dark text-decoration-none">
-                    <i class="fas fa-phone fa-xs text-theme-color"></i>
-                    <span class="">00-62-658-658</span>
+                    <i class="fas fa-phone fa-lg text-theme-color"></i>
+                    <span class="h5">00-62-658-658</span>
                   </a>
                 </div>						
               </div>
@@ -58,14 +59,9 @@
               <!-- Right side -->
     
               <div class="d-flex">
-                <a href="#" class="text-dark text-decoration-none p-2 d-none d-sm-none d-md-none d-lg-block d-xl-block border-right">
-                  <i class="fas fa-shopping-basket text-theme-color"></i>
-                  Moja košarica
-                </a>
-                <a href="#" class="text-dark text-decoration-none px-2 py-2 pr-0 d-none d-sm-none d-md-none d-lg-block d-xl-block border-right">
-                  <i class="fas fa-receipt text-theme-color"></i>
-                  Naruči
-                </a> 
+                <marquee behavior="scroll" direction="up" scrollamount="1">
+                    <span class="h5 text-red text-uppercase font-weight-bold">-20% na sve vrste sirupa !!!</span>
+                </marquee>
               </div>	
     
     
@@ -83,21 +79,17 @@
     
       <section id="middleHeader">
         <div class="container">
-          <div class="row align-items-center my-3">
+          <div class="row align-items-center justify-content-center my-3">
     
             <!-- Logo -->
     
-            <div class="col-lg-5 d-flex align-items-center justify-content-between align-self-end">
+            <div class="col-lg-3 d-flex align-items-center justify-content-between align-self-end">
               <div class="align-self-end d-flex">
                 <div id="logoIcon">
                 <a href="{{ Route('public.index') }}">
-                <img src="{{ asset('images/logo/logo-herceg.png') }}" alt="navbar-brand-logo" width="130">
+                <img src="{{ asset('images/logo/logo-herceg.png') }}" alt="navbar-brand-logo" width="200">
                 </a>
-                </div>
-                <div class="ml-2 d-none d-xl-block" id="logo">
-                  <h3 class="mb-0">OP<span class="colored-text">Herceg</span></h3>
-                  <span class="pt-0 text-uppercase text-wide">20 godina tradicije</span>
-                </div>
+                </div> 
               </div>
               <div class="align-self-end d-flex d-lg-none shopping-cart">
                 <a class="text-center text-decoration-none" href="">
@@ -109,12 +101,12 @@
     
             <!-- Search -->
     
-            <div class="col-lg-5 p-3 p-sm-3 p-md-3 p-lg-0 align-self-end" id="search">
+            <div class="col-lg-7 p-3 p-sm-3 p-md-3 p-lg-0 align-self-center" id="search">
               <form class="" id="aa-input-container" action="{{ Route('public.search') }}" method="GET">
                 <div class="input-group mb-0">
-                  <input type="search" id="aa-search-input" class="form-control rounded-0" placeholder="{{ __("Pretražite ovdje npr. 'krema'") }}" aria-describedby="basic-addon2" name="search" required>
+                  <input type="search" id="aa-search-input" class="form-control" aria-describedby="basic-addon2" name="search" required>
                   <div class="input-group-append">
-                    <button type="submit" class="input-group-text rounded-0 h-100 btn" id="basic-addon2"><i class="fas fa-search px-1 text-light"></i></button>
+                    <button type="submit" class="input-group-text h-100 btn" id="basic-addon2"><i class="fas fa-search px-1 text-light"></i></button>
                   </div>
                 </div>
               </form>
@@ -122,10 +114,10 @@
               
             <!-- Shopping Cart [big screen] -->
     
-            <div class="col-lg-2 d-none d-lg-flex justify-content-end align-self-end shopping-cart">
+            <div class="col-lg-2 d-none d-lg-flex justify-content-end align-self-center shopping-cart">
               <a class="text-center text-decoration-none" href="">
-                <i class="fa fa-shopping-basket fa-lg"></i>
-                <div class="text-center text-uppercase text-dark"><span class="fw-500">Moja košarica</span></div>
+                <i class="fa fa-shopping-basket fa-3x"></i>
+                <sup class="bg-danger text-light fw-500 px-2 py-1 rounded-circle ml-n3">2</sup>
               </a>
             </div>
     

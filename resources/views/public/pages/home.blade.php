@@ -8,47 +8,29 @@
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-interval="5000">
-        <img src="https://images.pexels.com/photos/5231216/pexels-photo-5231216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100 img-responsive" alt="...">
+        <img src="http://novum.ba/cimage/webroot/img.php?src=/userfiles/image/VIJESTI2018/Aldijana/20092018/2/DSC_0396.JPG&w=1280&h=800&crop-to-fit" class="d-block w-100 img-responsive" alt="...">
         <div class="d-flex align-items-center animated-caption">
             <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h5 class="text-uppercase px-4 py-2">20 godina tradicije</h5>
-              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Organska proizvodnja "Herceg"</h1>
-              <p class="text-white fw-normal h6 mt-3">"Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne 
-                proizvodnje u Bosni i Hercegovini.</p>
-              <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500" onclick="location.href='proizvodi';">Proizvodi</button>
+              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">20 godina sa vama</h1>
+              <button class="btn rounded bg-white text-uppercase px-3 py-2 my-3 font-weight-bold" onclick="location.href='proizvodi';">Proizvodi</button>
             </div>
           </div>
       </div>
       <div class="carousel-item" data-interval="5000">
-        <img src="https://images.pexels.com/photos/6763421/pexels-photo-6763421.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="d-block w-100 img-responsive" alt="...">
+        <img src="http://www.poduzetna.ba/img/s/750x450//upload/images/Mejra_Halilovic_1.jpg" class="d-block w-100 img-responsive" alt="...">
         <div class="d-flex align-items-center animated-caption">
-          <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-            <h5 class="text-uppercase px-4 py-2">Kozmetika</h5>
-            <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Neven krema - melem</h1>
-            <p class="text-white fw-normal h6 mt-3">Pomaže kod opekotina, posjekotina, ogrebotina, akni, upaljenih i proširenih vena.</p>
-            <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item" data-interval="5000">
-        <img src="https://image.freepik.com/free-photo/still-life-loose-tea_169016-2071.jpg" class="d-block w-100 img-responsive " alt="...">
-          <div class="d-flex align-items-center animated-caption"> 
             <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h5 class="text-uppercase px-4 py-2">Čajevi</h5>
-              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Čaj kadulja</h1>
-              <p class="text-white fw-normal h6 mt-3">Veoma brzo eliminiše bol i svrab, zaustavlja krvarenje, ima protuupalnu i antiseptičko dejstvo...</p>
-              <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
+              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">Nudimo samo najbolje</h1>
+              <button class="btn bg-white text-uppercase px-3 py-2 my-3 font-weight-bold" onclick="location.href='proizvodi';">Proizvodi</button>
             </div>
           </div>
       </div>
       <div class="carousel-item" data-interval="5000">
-        <img src="https://image.freepik.com/free-photo/yellow-flowers-among-other-flowers_1160-706.jpg" class="d-block w-100 img-responsive" alt="...">
+        <img src="https://www.capital.ba/wp-content/uploads/2019/02/organsko-herceg-3.png" class="d-block w-100 img-responsive" alt="...">
         <div class="d-flex align-items-center animated-caption">
             <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h5 class="text-uppercase px-4 py-2">Uštedite do 75%</h5>
-              <h1 class="text-uppercase text-wide display-4 fw-500 w-100 mt-3 py-2">Med od maslačka</h1>
-              <p class="text-white fw-normal h6 mt-3">Veoma brzo eliminiše bol i svrab, zaustavlja krvarenje, ima protuupalno i antiseptičko dejstvo...</p>
-              <button class="btn rounded-0 bg-white text-uppercase px-3 py-2 my-3 fw-500">Kupi sad</button>
+              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">Organska proizvodnja</h1>
+              <button class="btn bg-white text-uppercase px-3 py-2 my-3 font-weight-bold" onclick="location.href='proizvodi';">Proizvodi</button>
             </div>
           </div>
       </div> 
@@ -160,9 +142,15 @@
 		<div class="container my-5">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 				@foreach ($products as $product)
+<<<<<<< HEAD
           <div class="col">
             <div class="card text-dark p-0 border-0 rounded-0 h-75">
               <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-responsive" alt="..." style="max-height: 246px; max-width: 196px">
+=======
+          <div class="col mb-3">
+            <div class="card text-dark p-0 border-0 rounded-0 h-75 img-responsive" style="max-height: 246px; max-width: 196px">
+              <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="..." style="max-height: 246px; max-width: 196px">
+>>>>>>> d9c85adecfa0cd427432a80a83fb0b7af071b03c
               <div class="card-img-overlay px-0">
                 <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
                 <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
