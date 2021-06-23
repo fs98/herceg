@@ -67,40 +67,31 @@
     <div class="row">
       <div class="col-12">
         <!-- Swiper -->
-          <div class="swiper-container items-swiper w-100 h-100" style="position: unset;">
+          <div class="swiper-container bg-transparent items-swiper w-100 h-100" style="position: unset;">
             <div class="swiper-wrapper" id="featuredItems">
 
               @foreach ($products as $product)
 
-                <div class="swiper-slide">
-                  <div class="h-100">
-                    <div class="card text-dark p-0 border-0 rounded-0 h-75 img-responsive" style="max-height: 246px; max-width: 196px">
-                      <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="...">
-                      <div class="card-img-overlay px-0"> 
-                        <span class="p-2 text-light fw-500 bg-primary position-absolute">Sniženo</span> 
-                        <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
-                        <div class="mb-4">
-                          <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
-                            <i class="fas fa-heart"></i>
-                          </button>
-                          <button class="btn btn-light rounded-0 mr-1" data-toggle="tooltip" data-placement="top" title="Quick view">
-                            <i class="fas fa-search"></i>
-                          </button>
-                        </div>
-                        <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500">
-                          <i class="fas fa-shopping-cart mr-1"></i>
-                          <small>Dodaj u košaricu</small>
-                        </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body text-center h-25">
-                      <h6 class="card-title fw-normal">{{ $product->title }}</h6>
-                      <p class="card-text fw-500 text-theme-color">{{ $product->price }} KM<del class="text-muted ml-2">10 KM</del>
-                      </p>
-                    </div> 
-                  </div>
-                </div>
+                <div class="swiper-slide bg-transparent">
+                  <div class="" style="height: 25rem">
+                    <div class="card text-dark p-0 border-0 h-100 bg-light">
+				              <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-50" alt="...">
+				              <div class="card-img-overlay px-0">
+				                <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
+				                <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
+				                  <div class="mb-4">
+				                    <button class="btn btn-light rounded-0 ms-1" onclick="location.href='kontakt';" data-bs-toggle="tooltip" data-bs-placement="top" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></button>
+				                  </div>
+				                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
+				                </div>
+				              </div>
+				              <div class="card-body text-center h-25">
+				                <h6 class="card-title font-weight-bold text-theme-color h4">{{ $product->title }}</h6>
+				                <p class="card-text text-center text-dark h3 font-weight-bold">{{ $product->price }} KM<del class="text-muted ml-2"></del></p>
+				              </div>
+				            </div>
+                	</div>
+              	</div>
 
               @endforeach
 
@@ -112,7 +103,7 @@
             <div class="swiper-pagination"></div>
           </div>
       </div>  
-      <div class="col-12 text-center">
+      <div class="col-12 text-center mt-5">
           <button class="btn browse-btn rounded-0 font-size-13 py-3 text-light" onclick="location.href='proizvodi';" >Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
       </div> 
   </div> 
@@ -142,37 +133,26 @@
 		<div class="container my-5">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 				@foreach ($products as $product)
-<<<<<<< HEAD
-          <div class="col">
-            <div class="card text-dark p-0 border-0 rounded-0 h-75">
-              <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-responsive" alt="..." style="max-height: 246px; max-width: 196px">
-=======
-          <div class="col mb-3">
-            <div class="card text-dark p-0 border-0 rounded-0 h-75 img-responsive" style="max-height: 246px; max-width: 196px">
-              <img src="{{ $product->header_image_url }}" class="card-img rounded-0 h-100 img-fluid img-responsive" alt="..." style="max-height: 246px; max-width: 196px">
->>>>>>> d9c85adecfa0cd427432a80a83fb0b7af071b03c
+  			<div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-5" style="height: 31rem">
+             <div class="card text-dark p-0 border-0 h-100 shadow-lg bg-light">
+              <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-75" alt="...">
               <div class="card-img-overlay px-0">
                 <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
                 <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
                   <div class="mb-4">
-                    <button class="btn btn-light rounded-0 me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><i class="fas fa-heart"></i></button>
-                    <button class="btn btn-light rounded-0 ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Quick view"><i class="fas fa-search"></i></button>
+                    <button class="btn btn-light rounded-0 ms-1" onclick="location.href='kontakt';" data-bs-toggle="tooltip" data-bs-placement="top" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></button>
                   </div>
-                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500">
-                    <i class="fas fa-shopping-cart mr-1"></i>
-                    <small>Dodaj u košaricu</small>
-                  </button>
+                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
                 </div>
               </div>
-            </div>
-            <div class="card-body text-center h-25">
-              <h6 class="card-title fw-normal">{{ $product->title }}</h6>
-              <h6>Na stanju: {{ $product->in_stock == '1' ? "Da" : "Ne" }}</h6>
-              <p class="card-text fw-500">{{ $product->price }} KM<del class="text-muted ml-2"></del></p>
+              <div class="card-body text-center h-25">
+                <h6 class="card-title font-weight-bold text-theme-color h4">{{ $product->title }}</h6>
+                <p class="card-text text-center text-dark h3 font-weight-bold">{{ $product->price }} KM<del class="text-muted ml-2"></del></p>
+              </div>
             </div>
           </div>
         @endforeach
-			</div>
+				</div>
 			<div class="row mt-4">
 				<div class="col-12 text-center">
 					<button class="btn browse-btn rounded-0 font-size-13 py-3 text-light" onclick="location.href='proizvodi';">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>

@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src="{{ asset('js/algolia.js') }}"></script> 
-    <script src="{{ asset('js/auto-write.js') }}"></script> 
+    <script src="{{ asset('js/auto-write.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -115,10 +115,10 @@
             <!-- Shopping Cart [big screen] -->
     
             <div class="col-lg-2 d-none d-lg-flex justify-content-end align-self-center shopping-cart">
-              <a class="text-center text-decoration-none" href="">
+              <button type="button" class="text-center text-decoration-none bg-transparent border-0" href="" data-toggle="modal" data-target="#cart" id="total">
                 <i class="fa fa-shopping-basket fa-3x"></i>
-                <sup class="bg-danger text-light fw-500 px-2 py-1 rounded-circle ml-n3">2</sup>
-              </a>
+                <sup class="bg-danger text-light fw-500 px-2 py-1 rounded-circle ml-n3">{{ $totalItems }}</sup>
+              </button> 
             </div>
     
           </div>
@@ -166,6 +166,49 @@
       <!-- End of bottom part of header -->
     
     </header>
+
+    <!-- Modal -->
+
+      <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Moja košarica</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="show-cart table"> 
+                
+                  @foreach ($cartProducts as $cartProduct)
+                    <tr> 
+                      <td>{{ $cartProduct->name }}</td>
+                      <td>{{ $cartProduct->qty }} kom</td>
+                      <td>{{ $cartProduct->price }}<span> KM</span></td>
+                      <td class="my-0 py-0"> 
+                        <form action="{{ Route('cart.remove', $cartProduct->rowId) }}" method="POST" class="p-0 m-0">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-danger btn-sm rounded-pill my-2">X</button>
+                        </form> 
+                      </td> 
+                    </tr> 
+                  @endforeach  
+              </table>
+              <div class="ml-3">Ukupno: <strong>{{ $totalPrice . ' KM' }}</strong><span class="total-cart"></span></div>
+            </div>
+            <div class="modal-footer">
+              @if ($totalItems > 0)
+                <a href="{{ Route('public.order') }}" class="btn bg-theme-color px-4 py-2 text-white text-uppercase add-to-cart">Uredi ili završi narudžbu</a>
+              @else
+                <a href="{{ Route('public.products') }}" class="btn bg-theme-color px-4 py-2 text-white text-uppercase add-to-cart">Naruči</a>
+              @endif
+              
+            </div>
+          </div> 
+        </div>
+      </div>
 
 
   <!-- Main Content -->
@@ -248,6 +291,7 @@
    <!-- Scripts -->
 
       @yield('scripts')
+
 
 </body>
 </html>
