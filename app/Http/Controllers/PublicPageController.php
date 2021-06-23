@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Categories;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class PublicPageController extends Controller
 {
@@ -18,7 +19,7 @@ class PublicPageController extends Controller
     {   
 
 
-        $products = Product::orderByDesc('updated_at')->limit(10)->get();
+        $products = Product::orderByDesc('updated_at')->limit(8)->get();
         
          return view('public.pages.home', [
           'products' => $products, 
@@ -42,6 +43,10 @@ class PublicPageController extends Controller
      */
     public function products()
     { 
+
+      $cartProducts = Cart::content();
+      $totalItems = Cart::count();
+      $totalPrice = Cart::subtotal();
       $productsAll = Product::orderBy('created_at', 'desc');
       $category_id = request()->input('category_id');
 
@@ -53,6 +58,9 @@ class PublicPageController extends Controller
     
       return view('public.pages.products', [
           'products' => $products, 
+          'cartProducts' => $cartProducts,
+          'totalItems' => $totalItems,
+          'totalPrice' => $totalPrice
       ]);
     }
 
@@ -64,6 +72,14 @@ class PublicPageController extends Controller
      */
     public function contact()
     {
-        return view('public.pages.contact');
+        $cartProducts = Cart::content();
+        $totalItems = Cart::count();
+        $totalPrice = Cart::subtotal();
+        
+        return view('public.pages.contact', [
+            'cartProducts' => $cartProducts,
+            'totalItems' => $totalItems,
+            'totalPrice' => $totalPrice
+        ]);
     }
 }

@@ -18,8 +18,13 @@ Route::get('/', [App\Http\Controllers\PublicPageController::class, 'index'])->na
 Route::get('/o-nama', [App\Http\Controllers\PublicPageController::class, 'about'])->name('public.about');
 Route::get('/proizvodi', [App\Http\Controllers\PublicPageController::class, 'products'])->name('public.products');
 Route::get('/kontakt', [App\Http\Controllers\PublicPageController::class, 'contact'])->name('public.contact');
+Route::get('/narudzba', [App\Http\Controllers\PublicOrderController::class, 'order'])->name('public.order');
 // Route for search
 Route::get('/search', [App\Http\Controllers\SearchproductsController::class, 'search'])->name('public.search');
+
+Route::post('/proizvodi/{id}', [App\Http\Controllers\PublicOrderController::class, 'cartStore'])->name('cart.store');
+Route::delete('/proizvodi/{id}', [App\Http\Controllers\PublicOrderController::class, 'removeFromCart'])->name('cart.remove');
+
 
 Auth::routes([
   'register' => false
