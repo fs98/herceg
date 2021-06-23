@@ -20,9 +20,15 @@ class PublicPageController extends Controller
 
 
         $products = Product::orderByDesc('updated_at')->limit(8)->get();
+        $cartProducts = Cart::content();
+        $totalItems = Cart::count();
+        $totalPrice = Cart::subtotal();
         
          return view('public.pages.home', [
           'products' => $products, 
+          'cartProducts' => $cartProducts,
+          'totalItems' => $totalItems,
+          'totalPrice' => $totalPrice
       ]);
     }
 
@@ -33,7 +39,15 @@ class PublicPageController extends Controller
      */
     public function about()
     {
-        return view('public.pages.about');
+        $cartProducts = Cart::content();
+        $totalItems = Cart::count();
+        $totalPrice = Cart::subtotal();
+
+        return view('public.pages.about', [
+            'cartProducts' => $cartProducts,
+            'totalItems' => $totalItems,
+            'totalPrice' => $totalPrice
+        ]);
     }
 
     /**
