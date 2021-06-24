@@ -143,15 +143,30 @@
                 <li class="nav-item pr-xl-2 pr-lg-2 px-md-0 px-sm-0 px-0">
                   <a class="nav-link lead" aria-current="page" href="{{ Route('public.index') }}" id="indexPage">{{ __('Početna') }}</a>
                 </li>
-                <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link lead" href="{{ Route('public.products', ['category_id' => '4'])}}">{{ __('Prehrambeni proizvodi') }}</a>
-                </li>
-                <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link lead" href="{{ Route('public.products', ['category_id' => '3'])}}">{{ __('Alternativna apoteka') }}</a>
-                </li> 		        		        
-                <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
-                  <a class="nav-link lead" href="{{ Route('public.products', ['category_id' => '2'])}}">{{ __('Kozmetika') }}</a>
-                </li> 
+                @if ($categories->count() <= 4)
+                  
+                  @foreach ($categories as $category)
+                    <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
+                      <a class="nav-link lead" href="{{ Route('public.category.products', $category )}}">{{ $category->title }}</a>
+                    </li> 
+                  @endforeach
+                
+                @else 
+
+                  <li class="nav-item dropdown px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
+                    <a class="nav-link dropdown-toggle lead" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Kategorije
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                      @foreach ($categories as $category)
+                        <a class="dropdown-item" href="{{ Route('public.category.products', $category )}}">{{ $category->title }}</a>
+                      @endforeach
+                      
+                    </div>
+                  </li>
+
+                @endif
                 <li class="nav-item px-xl-2 px-lg-2 px-md-0 px-sm-0 px-0">
                   <a class="nav-link lead" href="{{ Route('public.about') }}">{{ __('O nama') }}</a>
                 </li>

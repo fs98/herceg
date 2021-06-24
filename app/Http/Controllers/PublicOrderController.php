@@ -21,6 +21,8 @@ class PublicOrderController extends Controller
         $products = Cart::content();
         $totalItems = Cart::count();
 
+        // dd($products);
+
         return view('public.pages.order', [
             'products' => $products,
             'totalItems' => $totalItems,
@@ -38,8 +40,10 @@ class PublicOrderController extends Controller
     {
 
         $product = Product::find($id);
-        Cart::add($product->id, $product->title, 1, $product->price)
-          ->associate('App\Models\Product');
+        Cart::add($product->id, $product->title, 1, $product->price, [
+          'image' => $product->header_image_url,
+          'category' => $product->category->title
+          ])->associate('App\Models\Product');
         $swal = new Swal("Gotovo", 200, '', "success", "Gotovo!", "Proizvod dodan u košaricu.");
         return response()->json($swal->get());
     }
