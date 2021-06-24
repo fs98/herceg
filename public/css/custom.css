@@ -165,3 +165,14 @@ margin: 0;
 }
 
 /* Products Swiper */
+
+
+
+
+/* Date labels on order page */
+
+.date-label {
+  position: absolute;
+  top: 90px;
+  z-index: 1000;
+}
