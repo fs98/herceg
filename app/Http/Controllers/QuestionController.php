@@ -45,6 +45,7 @@ class QuestionController extends Controller
         $question->phone = $request->phoneNumber;
         $question->message = $request->question;
         $question->save();
+        
         $swal = new Swal("Success", 200, Route('public.index'), "success", "Gotovo!", "Vaša poruka je poslana. Uskoro ćemo Vas konaktirati, a do tada pogledajte naše proizvode!");
         return response()->json($swal->get());
     }

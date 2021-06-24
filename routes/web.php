@@ -20,12 +20,20 @@ Route::get('/proizvodi', [App\Http\Controllers\PublicPageController::class, 'pro
 Route::get('/proizvodi/{category:slug}', [App\Http\Controllers\PublicPageController::class, 'categoryProducts'])->name('public.category.products');
 Route::get('/kontakt', [App\Http\Controllers\PublicPageController::class, 'contact'])->name('public.contact');
 Route::post('/kontakt', [App\Http\Controllers\QuestionController::class, 'store'])->name('public.contact.store');
-Route::get('/narudzba', [App\Http\Controllers\PublicOrderController::class, 'order'])->name('public.order');
+
+// Order
+Route::get('/narudzba/prvi-korak', [App\Http\Controllers\PublicOrderController::class, 'order'])->name('public.order');
+Route::post('/narudzba/prvi-korak', [App\Http\Controllers\PublicOrderController::class, 'orderDetails'])->name('public.order.details');
+Route::get('/narudzba/drugi-korak', [App\Http\Controllers\PublicOrderController::class, 'orderSecondStep'])->name('public.order.second');
+Route::post('/narudzba/drugi-korak', [App\Http\Controllers\PublicOrderController::class, 'orderFinal'])->name('public.order.final');
+
 // Route for search
 Route::get('/search', [App\Http\Controllers\SearchproductsController::class, 'search'])->name('public.search');
 
 Route::post('/proizvodi/{id}', [App\Http\Controllers\PublicOrderController::class, 'cartStore'])->name('cart.store');
 Route::delete('/proizvodi/{id}', [App\Http\Controllers\PublicOrderController::class, 'removeFromCart'])->name('cart.remove');
+Route::post('/proizvodi/increase/{id}/{quantity}', [App\Http\Controllers\PublicOrderController::class, 'increaseQuantity'])->name('cart.increase');
+Route::post('/proizvodi/decrease/{id}/{quantity}', [App\Http\Controllers\PublicOrderController::class, 'decreaseQuantity'])->name('cart.decrease');
 
 
 Auth::routes([

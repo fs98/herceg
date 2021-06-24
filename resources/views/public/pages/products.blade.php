@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <!-- Single product card section -->
+  <!-- Single product card section -->
  
   <section id="randomItems" class="pt-4 bg-white">
     <div class="container my-4">
