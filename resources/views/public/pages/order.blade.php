@@ -12,19 +12,11 @@
 
         <div class="row m-3 bg-light ">
           <div class="col-3 align-items-baseline p-3">
-<<<<<<< HEAD
             <img src="{{ $product->options->image }}" class="img-fluid rounded">
           </div>
           <div class="col-7 p-3 d-flex flex-column justify-content-between product-info">
               <h5>{{ $product->name }}</h5>
               <span class="fw-500">Kategorija:<span class="text-dark fw-normal ms-2">{{ $product->options->category }}</span></span>
-=======
-            <img src="{{ $product->header_image_url }}" class="img-fluid rounded">
-          </div>
-          <div class="col-7 p-3 d-flex flex-column justify-content-between product-info">
-              <h5>{{ $product->name }}</h5>
-              <span class="fw-500">Kategorija:<span class="text-dark fw-normal ms-2"></span></span>
->>>>>>> 73a7068f898199417c3a9f14861051089dad3a5d
               <div class="d-flex flex-column">
               <span class="fw-500">Akcija:<span class="text-dark fw-normal ms-2">{{ $product->product_tag }}</span></span>
               <span class="fw-500 mt-3">Količina:<span class="text-dark fw-normal ms-2">{{ $product->qty }} kom</span></span>
