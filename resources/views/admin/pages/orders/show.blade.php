@@ -92,7 +92,7 @@
                     
                     <p>Lista prozvoda:</p>
 
-                    <a href="#" class="btn btn-success btn-sm mb-3">
+                    <a href="{{ "/storage/receipts/" . $order->receipt }}" download="" class="btn btn-success btn-sm mb-3">
                       <i class="fas fa-long-arrow-alt-down"></i>
                       Preuzmi račun
                     </a>
