@@ -16,7 +16,7 @@
             <img src="assets/img/sellingItems/652-299s.jpg" class="img-fluid rounded">
           </div>
           <div class="col-7 p-3 d-flex flex-column justify-content-between product-info">
-              <h5>Joggers</h5>
+              <h5>{{ $cartProduct->name }}</h5>
               <span class="fw-500">Category:<span class="text-dark fw-normal ms-2">Sports</span></span>
               <div class="d-flex flex-column">
               <span class="fw-500">Color:<span class="text-dark fw-normal ms-2">Black</span></span>

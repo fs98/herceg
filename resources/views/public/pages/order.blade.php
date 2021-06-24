@@ -12,18 +12,17 @@
 
         <div class="row m-3 bg-light ">
           <div class="col-3 align-items-baseline p-3">
-            <img src="assets/img/sellingItems/652-299s.jpg" class="img-fluid rounded">
+            <img src="{{ $product->header_image_url }}" class="img-fluid rounded">
           </div>
           <div class="col-7 p-3 d-flex flex-column justify-content-between product-info">
-              <h5>Joggers</h5>
-              <span class="fw-500">Category:<span class="text-dark fw-normal ms-2">Sports</span></span>
+              <h5>{{ $product->name }}</h5>
+              <span class="fw-500">Kategorija:<span class="text-dark fw-normal ms-2"></span></span>
               <div class="d-flex flex-column">
-              <span class="fw-500">Color:<span class="text-dark fw-normal ms-2">Black</span></span>
-              <span class="fw-500 mt-3">Size:<span class="text-dark fw-normal ms-2">M</span></span>
+              <span class="fw-500">Akcija:<span class="text-dark fw-normal ms-2">{{ $product->product_tag }}</span></span>
+              <span class="fw-500 mt-3">Količina:<span class="text-dark fw-normal ms-2">{{ $product->qty }} kom</span></span>
               </div>
               <div>
-                <button class="btn p-0 fw-light text-uppercase font-size-14"><i class="far fa-trash-alt me-2 text-muted"></i>remove item</button>
-                <button class="btn p-0 ms-3 fw-light text-uppercase font-size-14"><i class="fas fa-heart me-2 text-muted"></i>move to wishlist</button>
+                <button class="btn p-0 fw-light text-uppercase font-size-14"><i class="far fa-trash-alt me-2 text-muted"></i>Obriši proizvod</button>
               </div>
           </div>
           <div class="col-2 p-3 d-flex flex-column justify-content-between align-items-end">
@@ -37,7 +36,7 @@
               </div>
             </div>
             <div>
-              <span class="h5 fw-500">$45.00</span>
+              <span class="h5 fw-500">{{ $product->price }} KM</span>
             </div>
           </div>
         </div>
@@ -61,23 +60,33 @@
         </div>            
 
       </div>
-      <div class="col-4 mt-3 total">
+      <div class="col-lg-4 col-sm-12 mt-5 total">
+         <div class="form-group d-flex justify-content-center mt-3 mb-5">
+            <select name="shippingType" id="shippingType" class="col-11 border-0 bg-theme-color py-3 text-light" required>
+              <option class="h5" selected disabled>Odaberite način plaćanja</option>
+              <option value="1">U našim prostorijama</option>
+              <option value="2">Brza pošta</option>
+            </select> 
+          </div>
+          <div class="form-group d-flex justify-content-center">
+            <label class="date-label h5">Odaberite datum pošiljke Od-Do</label>
+            <input name="date" type="date" id="shippingType"  value="" class="col-5 border-0 bg-theme-color py-2 text-light mx-3" required>
+            <input name="date" type="date" id="shippingType"  value="" class="col-5 border-0 bg-theme-color py-2 text-light mx-3" required>
+          </div>
         <div class="m-3 mt-0 p-4 bg-light checkout">
-          <h5 class="fw-500 total-heading">Checkout</h5>
-          <h5 class="fw-light d-flex justify-content-between mt-5">Items Price<span>$34.90</span></h5>
-          <h5 class="fw-light d-flex justify-content-between mt-3">Shipping<span>$6.99</span></h5>
+          <h5 class="fw-500 total-heading">Račun</h5>
+          <h5 class="fw-light d-flex justify-content-between mt-5">Ukupno<span>{{ $totalPrice . ' KM' }}</span></h5>
           <hr>
-          <h5 class="fw-bold d-flex justify-content-between mt-3">Total<span>$6.99</span></h5>
-          <button class="btn w-100 mt-2 rounded-0 py-3 text-light">Pay now</button>
+          <button class="btn w-100 mt-2 rounded-0 py-3 text-light">Završi narudžbu</button>
         </div>
         <div class="m-3 p-4">
            <div class="accordion accordion-flush mt-4">
             <h2 class="accordion-header  rounded-0" id="headingTwo">
-              <button class="accordion-button collapsed text-dark bg-transparent border-0 ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <button class="accordion-button collapsed text-dark bg-transparent border-0 ps-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Add a discount code (optional)
               </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
               <div class="accordion-body">
                 <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
               </div>
