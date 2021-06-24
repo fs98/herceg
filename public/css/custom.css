@@ -176,3 +176,10 @@ margin: 0;
   top: 90px;
   z-index: 1000;
 }
+
+
+/* BreadCrumb */
+
+.breadcrumb-dark .breadcrumb-item::before {
+  color: black !important;
+}

@@ -2,42 +2,58 @@
 
 @section('content')
 
-    <!-- Single product card section -->
- 
-  <section id="randomItems" class="pt-4 bg-white">
-    <div class="container my-4">
-      <div class="row">
-        @foreach($products as $product)
-          <div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-5" style="height: 31rem">
-             <div class="card text-dark p-0 border-0 h-100 shadow-lg bg-light">
-              <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-75" alt="...">
-              <div class="card-img-overlay px-0">
-                  @if($product->tags->first())
-                    <span class="badge rounded-0 py-2 px-3 {{ $product->tags->first()->color }}">
-                      <span class="h5">{{ $product->tags->first()->name }}</span>
-                    </span>    
-                  @endif
-                <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
-                <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
-                  <div class="mb-4">
-                    <a class="btn btn-light rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></a>
-                  </div>
-                  <form class="w-100" method="POST" action="{{ Route('cart.store', $product) }}" id="{{ Helper::RouteCrafter('store') . $product->id }}">
-                    @csrf
-                    <button type="button" class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
-                  </form>
-                </div>
-              </div>
-              <div class="card-body text-center h-25">
-                <h6 class="card-title font-weight-bold text-theme-color h4">{{ $product->title }}</h6>
-                <p class="card-text text-center text-dark h3 font-weight-bold">{{ $product->price }} KM<del class="text-muted ml-2"></del></p>
-              </div>
-            </div>
-          </div>
-       @endforeach
+<!-- Single product preview card section -->
+
+<section id="imageCard">
+    <div class="card border-0 text-dark rounded-0">
+      <div class="rounded-0 d-flex flex-column align-items-center justify-content-center mt-5">
+        <h1 class="card-title font-weight-bold text-uppercase">{{ $product->title }}</h5>
+        <nav aria-label="breadcrumb" class="justify-content-center text-dark breadcrumb-dark">
+        <ol class="breadcrumb bg-transparent mb-0">
+
+          <li class="breadcrumb-item"><a href="{{ Route('public.products') }}" class="text-decoration-none text-dark">&#x2190; Svi proizvodi</a></li>
+          <li class="breadcrumb-item active" aria-current="page"> {{ $product->category->title }}</li>
+         
+        </ol>
+      </nav>
       </div>
     </div>
   </section>
+
+<!-- Product preview -->
+
+<section class="bg-white">
+  <div class="container">
+    <div class="row py-5 shadow-lg mb-5">
+      <div class="col-lg-7">
+        <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive" style="height: 31rem">
+      </div>
+      <div class="col-lg-5">
+        <h2 class="mx-5 mt-3 font-weight-bold">{{ $product->price }} KM</h2>
+        <div class="mx-5">
+          @foreach($product->tags as $tag)
+          <span class="badge {{ $tag->color }}">{{ $tag->name }}</span>
+          @endforeach            
+        </div>
+        <div class="mx-5 mt-5">
+          <h6 class="h5">{{ $product->description }}</h6>
+        </div>
+        <div class="mx-5 mt-5">
+          <h5>Sastav:</h5>
+          <h6>{{ $product->ingredients }}</h6>            
+        </div>
+        <div class="mx-5 mt-5">
+          <form class="w-100" method="POST" action="{{ Route('cart.store', $product) }}" id="{{ Helper::RouteCrafter('store') . $product->id }}">
+            @csrf
+            <button type="button" class="btn btn-block bg-theme-color w-100 rounded-0 p-3 text-white text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mx-2 me-2" ></i>Dodaj u košaricu</button>
+          </form>            
+        </div>
+      </div>
+
+  </div>
+  </div>
+</section>
+
 
 @endsection
 
@@ -125,45 +141,6 @@ if($(event.target.form)[0] != undefined) {
 }
 });
 
-// Card animation
-
-$("#nav-tabContent .card, #randomItems .card").hover(function() {
-    $(this).find(".animated-card-buttons").css("display","flex").hide().fadeIn();
-  }, function() {
-    $(this).find(".animated-card-buttons").css("display","none");
-  })
-
-$("#imageCards .card").hover(function() {
-  $(this).find("img").css({
-    'transform' : 'scale(1.2)',
-  '-webkit-transform' : 'scale(1.2)',
-  '-o-transform': 'scale(1.2)',
-  '-moz-transform': 'scale(1.2)',
-  'transition-duration': '0.7s'
-  });
-  $(this).find("h2").css({
-    'color' : '#3fc380',
-    'transition' : '0.5s'
-  });
-  $(this).find(".card-img-overlay").css({
-    'background-color' : 'rgba(255, 255, 255, 0.5)',
-  });
-}, function() {
-  $(this).find("img").css({
-    'transform' : 'scale(1)',
-  '-webkit-transform' : 'scale(1)',
-  '-o-transform': 'scale(1)',
-  '-moz-transform': 'scale(1)',
-  'transition-duration': '0.7s'
-  });
-  $(this).find("h2").css({
-    'color' : 'white'
-  });
-  $(this).find(".card-img-overlay").css({
-    'background-color' : 'transparent',
-  });
-})
-
 </script>
-    
+
 @endsection
