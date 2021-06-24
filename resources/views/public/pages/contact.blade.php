@@ -41,29 +41,36 @@
 				<div class="col-12 mt-3 col-md-6 mt-md-0 order-md-2 order-1">
 					<h5 class="h4 text-center text-md-start">Ispunite formu</h5>
 					<hr class="border-0">
-					 	<form method="post">
+					 	<form method="POST" id="contactForm" action="{{ Route('public.contact.store') }}">
+              @csrf
 		          <div class="mb-4">
 		            <label for="firstName" class="col-form-label font-size-14">Ime: <span class="text-danger">*</span></label>
-		            <input type="text" class="form-control rounded-0" placeholder="Ime" id="firstName" required="">
+		            <input type="text" class="form-control rounded-0" placeholder="Ime" id="firstName" name="firstName">
 		          </div>
 		          <div class="mb-4">
 		            <label for="lastName" class="col-form-label font-size-13">Prezime: <span class="text-danger">*</span></label>
-		            <input type="text" class="form-control rounded-0" id="lastName" placeholder="Prezime" required="">
+		            <input type="text" class="form-control rounded-0" id="lastName" name="lastName" placeholder="Prezime">
 		          </div>
 		          <div class="mb-4">
 		            <label for="phoneNumber" class="col-form-label font-size-13">Broj telefona: <span class="text-danger">*</span></label>
-		            <input type="text" class="form-control rounded-0" id="phoneNumber" placeholder="Broj telefona" required="">
+		            <input type="text" class="form-control rounded-0" id="phoneNumber" name="phoneNumber" placeholder="Broj telefona">
 		          </div>
 		          <div class="mb-4">
-		            <label for="password" class="col-form-label font-size-13">Adresa: <span class="text-danger">*</span></label>
-		            <input type="text" class="form-control rounded-0" id="adress" placeholder="Adresa" required="">
+		            <label for="password" class="col-form-label font-size-13">Email: <span class="text-danger">*</span></label>
+		            <input type="email" class="form-control rounded-0" id="email" name="email" placeholder="Email">
 		          </div>
-		          <div class="mb-4">
-		            <label for="password" class="col-form-label font-size-13">Vaša poruka: <span class="text-danger">*</span></label>
-		            <input type="textarea" class="form-control rounded-0" id="message" placeholder="Vaša poruka" required="">
-		          </div>
+		          <div class="form-group">
+                <label for="question" class="col-form-label">Vaša poruka</label>
+                <textarea id="question" class="form-control textarea-custom @error('question') is-invalid @enderror" placeholder="Vaša poruka" name="question" maxlength="1024"></textarea>
+            
+                @error('question')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
 		          <div class="mb-2 mt-4 d-flex justify-content-center">
-		       		 <button type="submit" class="btn rounded-0 font-size-13 py-2 px-4 text-light" id="loginButton">Pošalji</button>
+		       		 <button type="button" class="btn rounded-0 font-size-13 py-2 px-4 text-light" id="loginButton" form="contactForm">Pošalji</button>
 		          </div>
 		        </form>
 				</div>
@@ -74,6 +81,86 @@
 @endsection
 
 @section('scripts')
+
+
+{{-- Sweetalert --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script>
+  $("#loginButton").on("click", function(event) {
+    if($(event.target.form)[0] != undefined) {
+      var form = $(event.target.form)[0];
+      if (!form.checkValidity()) {
+        var tmpSubmit = document.createElement('button');
+        form.appendChild(tmpSubmit);
+        tmpSubmit.click();
+        form.removeChild(tmpSubmit);
+        return false;
+      }
+      var form_data = new FormData(form);
+      Swal.fire({
+        toast: false,
+        title: 'Procesiranje..',
+        text: 'Molimo sačekajte..',
+        allowEscapeKey : false,
+        allowOutsideClick: false,
+        onOpen: function() {
+          $.ajax({
+            type: $(form).attr('method'),
+            url: $(form).attr('action'),
+            processData: false,
+            contentType: false,
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            data: form_data,
+          }).done(function(data) {
+          }).fail(function(data) {
+          }).always(function(data) {
+            $(form).find(".form-error-box").remove();
+            $(form).find(".invalid-feedback").remove();
+            $(form).find(".is-invalid").removeClass('is-invalid');
+            if(data != undefined) {
+              if(data.responseJSON != undefined && (data.responseJSON.errors != undefined || data.responseJSON.exception != undefined)) {
+                Swal.update({
+                  allowEscapeKey : false,
+                  allowOutsideClick: false,
+                  icon: 'error',
+                  text: 'Došlo je do greške, molimo pokušajte ponovo.',
+                  title: 'Greška!',
+                });
+                Swal.hideLoading();
+                var html_error_segment = '<div class="form-group p-4 form-error-box"><h2 id="errors-title">Folgende Fehler sind aufgetreten:</h2></div>';
+                var error_title_element = $("#errors-top").append(html_error_segment);
+                if(data.responseJSON.errors != undefined) {
+                  for (var key in data.responseJSON.errors) {
+                    error_title_element.find("#errors-title").after("<li>" + data.responseJSON.errors[key] + "</li>");
+                    $("#" + key).addClass('is-invalid');
+                    $("#" + key).after('<span class="invalid-feedback mb-3" role="alert"><strong>' + data.responseJSON.errors[key] + '</strong></span>');
+                  }
+                } else if(data.responseJSON.exception != undefined) {
+                  error_title_element.find("#errors-title").after("<li>" + data.responseJSON.exception + "</li>");
+                }
+                $("#errors-top").show();
+                throw new Error;
+              }
+              Swal.fire({
+                icon: 'success',
+                text: data.swal_message,
+                title: data.swal_title,
+                allowEscapeKey : false,
+                allowOutsideClick: false,
+              }).then(function() {
+                if(data.redirect_url != null && data.redirect_url != '') {
+                  window.location.href = data.redirect_url;
+                }
+              });
+              Swal.hideLoading();
+            }
+          });
+          Swal.showLoading();
+        }
+      });
+    }
+  });
+</script>
 
 <script>
     function initMap() {

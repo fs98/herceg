@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Categories;
+use App\Models\Category;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class PublicPageController extends Controller
@@ -61,14 +61,8 @@ class PublicPageController extends Controller
       $cartProducts = Cart::content();
       $totalItems = Cart::count();
       $totalPrice = Cart::subtotal();
-      $productsAll = Product::orderBy('created_at', 'desc');
-      $category_id = request()->input('category_id');
+      $products = Product::orderBy('created_at', 'desc')->get();
 
-      if (in_array($category_id, ['2', '3,', '4'])) {
-        $productsAll->where('category_id', $category_id);
-      }
-
-      $products = $productsAll->get();
     
       return view('public.pages.products', [
           'products' => $products, 
@@ -76,6 +70,21 @@ class PublicPageController extends Controller
           'totalItems' => $totalItems,
           'totalPrice' => $totalPrice
       ]);
+    }
+
+    public function categoryProducts(Category $category)
+    {
+      $products = $category->products()->orderBy('created_at', 'desc')->get();
+      $cartProducts = Cart::content();
+      $totalItems = Cart::count();
+      $totalPrice = Cart::subtotal();
+
+      return view('public.pages.products', [
+        'products' => $products, 
+        'cartProducts' => $cartProducts,
+        'totalItems' => $totalItems,
+        'totalPrice' => $totalPrice
+    ]);
     }
 
 

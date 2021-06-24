@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\PublicPageController::class, 'index'])->name('public.index');
 Route::get('/o-nama', [App\Http\Controllers\PublicPageController::class, 'about'])->name('public.about');
 Route::get('/proizvodi', [App\Http\Controllers\PublicPageController::class, 'products'])->name('public.products');
+Route::get('/proizvodi/{category:slug}', [App\Http\Controllers\PublicPageController::class, 'categoryProducts'])->name('public.category.products');
 Route::get('/kontakt', [App\Http\Controllers\PublicPageController::class, 'contact'])->name('public.contact');
+Route::post('/kontakt', [App\Http\Controllers\QuestionController::class, 'store'])->name('public.contact.store');
 Route::get('/narudzba', [App\Http\Controllers\PublicOrderController::class, 'order'])->name('public.order');
 // Route for search
 Route::get('/search', [App\Http\Controllers\SearchproductsController::class, 'search'])->name('public.search');
@@ -36,7 +38,9 @@ Auth::routes([
 // Admin Routes
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() { 
   Route::resource('category', App\Http\Controllers\CategoryController::class);
-  Route::resource('question', App\Http\Controllers\QuestionController::class);
+  Route::resource('question', App\Http\Controllers\QuestionController::class)->except([
+    'store'
+  ]);
   Route::resource('product', App\Http\Controllers\ProductController::class);
   Route::resource('order', App\Http\Controllers\OrderController::class);
   Route::resource('order_item', App\Http\Controllers\OrderItemController::class);

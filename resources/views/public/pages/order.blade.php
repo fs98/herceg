@@ -12,11 +12,11 @@
 
         <div class="row m-3 bg-light ">
           <div class="col-3 align-items-baseline p-3">
-            <img src="assets/img/sellingItems/652-299s.jpg" class="img-fluid rounded">
+            <img src="{{ $product->options->image }}" class="img-fluid rounded">
           </div>
           <div class="col-7 p-3 d-flex flex-column justify-content-between product-info">
-              <h5>Joggers</h5>
-              <span class="fw-500">Category:<span class="text-dark fw-normal ms-2">Sports</span></span>
+              <h5>{{ $product->name }}</h5>
+              <span class="fw-500">Kategorija:<span class="text-dark fw-normal ms-2">{{ $product->options->category }}</span></span>
               <div class="d-flex flex-column">
               <span class="fw-500">Color:<span class="text-dark fw-normal ms-2">Black</span></span>
               <span class="fw-500 mt-3">Size:<span class="text-dark fw-normal ms-2">M</span></span>

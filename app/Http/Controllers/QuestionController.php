@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use App\Models\Swal;
+use App\Http\Requests\QuestionRequest;
 
 class QuestionController extends Controller
 {
@@ -35,9 +36,17 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionRequest $request)
     {
-        //
+        $question = new Question;
+        $question->name = $request->firstName;
+        $question->surname = $request->lastName;
+        $question->email = $request->email;
+        $question->phone = $request->phoneNumber;
+        $question->message = $request->question;
+        $question->save();
+        $swal = new Swal("Success", 200, Route('public.index'), "success", "Gotovo!", "Vaša poruka je poslana. Uskoro ćemo Vas konaktirati, a do tada pogledajte naše proizvode!");
+        return response()->json($swal->get());
     }
 
     /**
