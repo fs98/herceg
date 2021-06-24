@@ -140,7 +140,7 @@
                 <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
                 <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
                   <div class="mb-4">
-                    <button class="btn btn-light rounded-0 ms-1" onclick="location.href='kontakt';" data-bs-toggle="tooltip" data-bs-placement="top" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></button>
+                    <a class="btn btn-light rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></a>
                   </div>
                   <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
                 </div>

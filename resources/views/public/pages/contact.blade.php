@@ -9,7 +9,7 @@
 		<div class="card bg-dark border-0 text-white rounded-0">
 		  <img src="{{ asset('images/kontakt/contact.jpg') }}" class="card-img img-responsive" alt="..." height="300">
 		  <div class="card-img-overlay rounded-0 d-flex flex-column align-items-center justify-content-center py-0">
-	    	<h1 class="card-title font-weight-bold text-uppercase">Kontaktirajte nas</h5>
+	    	<h1 class="card-title font-weight-bold text-uppercase">Kontaktirajte nas</h1>
 	    	<nav aria-label="breadcrumb" class="justify-content-center text-white">
 			  <ol class="breadcrumb bg-transparent mb-0">
 			    <li class="breadcrumb-item"><a href="{{ Route('public.index') }}" class="text-decoration-none text-white">Početna</a></li>

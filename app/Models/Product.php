@@ -28,6 +28,15 @@ class Product extends Model
       return asset(config('api.storage_paths_v2.product') . $this->directory_id . '/' . $this->picture_file_name);
     }
 
+    public function getSlugAttribute($value)
+    {
+      if ($value) {
+        return $value;
+      } else {
+        return '/';
+      }
+    }
+
     /**
      * Generating a Mutator
      * Mutators are used for formating data when it is saving to database.

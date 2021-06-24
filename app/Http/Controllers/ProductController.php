@@ -9,6 +9,7 @@ use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductEditRequest;
 use App\Models\Swal;
 use Illuminate\Support\Facades\Storage;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 
 class ProductController extends Controller
@@ -96,9 +97,19 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Category $category, Product $product)
     {
-        //
+
+        $cartProducts = Cart::content();
+        $totalItems = Cart::count();
+        $totalPrice = Cart::subtotal();
+
+        return view('public.pages.product', [
+            'cartProducts' => $cartProducts,
+            'totalItems' => $totalItems,
+            'totalPrice' => $totalPrice,
+            'product' => $product
+        ]);
     }
 
     /**
