@@ -56,4 +56,5 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
   Route::resource('order', App\Http\Controllers\OrderController::class);
   Route::resource('order_item', App\Http\Controllers\OrderItemController::class);
   Route::resource('tag', App\Http\Controllers\TagController::class);
+  Route::resource('user', App\Http\Controllers\UserController::class);
 });
