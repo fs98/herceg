@@ -24,7 +24,7 @@
 
 <section class="bg-white">
   <div class="container">
-    <div class="row py-5 shadow-lg mb-5">
+    <div class="row py-5 shadow-lg mb-5 py-5">
       <div class="col-lg-7">
         <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive" style="height: 31rem">
       </div>

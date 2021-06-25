@@ -80,7 +80,7 @@
 				                <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
 				                <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
 				                  <div class="mb-4">
-				                    <button class="btn btn-light rounded-0 ms-1" onclick="location.href='kontakt';" data-bs-toggle="tooltip" data-bs-placement="top" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></button>
+				                    <a class="btn btn-light rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}"  title="Vidi detaljno"><i class="fas fa-2x fa-search routooltipnded"></i></a>
 				                  </div>
 				                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
 				                </div>
@@ -104,7 +104,7 @@
           </div>
       </div>  
       <div class="col-12 text-center mt-5">
-          <button class="btn browse-btn rounded-0 font-size-13 py-3 text-light" onclick="location.href='proizvodi';" >Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
+          <button class="btn browse-btn rounded-1 font-size-13 py-3 text-light" onclick="location.href='proizvodi';" >Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
       </div> 
   </div> 
 </section>
@@ -113,13 +113,20 @@
 
 <div id="autocomplete"></div>
 
+
 <!-- Image or Add Section -->
 
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-12 mt-5">
-        <img src="{{ asset('images/home/home-main.png') }}" class="img-responsive w-100 mt-5" height="200">
+      <div class="col-12 mt-1">
+        <img src="{{ asset('images/home/home-main.png') }}" class="img-responsive w-100 mt-5" height="200" style="border-radius: 5px;">
+				<p class="h4 text-center bg-white border-1 shadow-lg py-5 ">Firma <b>"Herceg"</b> egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja 	organske poljoprivredne 
+					proizvodnje u Bosni i Hercegovini. Neprestano je uključena u ovaj sistem a jedna je od rijetkih koja je, 
+					zahvaljujući u prvom redu kvaliteti svojih proizvoda, već u samom startu uspjela dobiti međunarodni certifikat.
+					Nadalje, firma ”Herceg” ne samo da je uspjela sačuvati kontinuitet i nivo svoje organske proizvodnje nego je na 
+					dobrom putu da ga u doglednoj budućnosti i značajno unaprijedi. 
+				</p>
       </div>
     </div>
   </div>
@@ -127,35 +134,36 @@
 
 <!-- End of Image or Add Section -->
 
-	<!-- Random Items -->
 
-	<section id="randomItems">
-		<div class="container my-5">
-			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-				@foreach ($products as $product)
-  			<div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-5" style="height: 31rem">
-             <div class="card text-dark p-0 border-0 h-100 shadow-lg bg-light">
-              <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-75" alt="...">
-              <div class="card-img-overlay px-0">
-                <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
-                <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
-                  <div class="mb-4">
-                    <a class="btn btn-light rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></a>
-                  </div>
-                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
+<!-- Random Items -->
+
+<section id="randomItems">
+	<div class="container my-5">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+			@foreach ($products as $product)
+			<div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-5" style="height: 31rem">
+           <div class="card text-dark p-0 border-0 h-100 shadow-lg bg-light">
+            <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-75" alt="...">
+            <div class="card-img-overlay px-0">
+              <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
+              <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
+                <div class="mb-4">
+                  <a class="btn btn-light rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></a>
                 </div>
-              </div>
-              <div class="card-body text-center h-25">
-                <h6 class="card-title font-weight-bold text-theme-color h4">{{ $product->title }}</h6>
-                <p class="card-text text-center text-dark h3 font-weight-bold">{{ $product->price }} KM<del class="text-muted ml-2"></del></p>
+                <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
               </div>
             </div>
-          </div>
-        @endforeach
-				</div>
+            <div class="card-body text-center h-25">
+              <h6 class="card-title font-weight-bold text-theme-color h4">{{ $product->title }}</h6>
+              <p class="card-text text-center text-dark h3 font-weight-bold">{{ $product->price }} KM<del class="text-muted ml-2"></del></p>
+            </div>
+      	</div>
+      </div>
+      @endforeach
+		</div>
 			<div class="row mt-4">
 				<div class="col-12 text-center">
-					<button class="btn browse-btn rounded-0 font-size-13 py-3 text-light" onclick="location.href='proizvodi';">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
+					<button class="btn browse-btn rounded-1 font-size-13 py-3 text-light" onclick="location.href='proizvodi';">Pogledaj sve proizvode<i class="fas fa-long-arrow-alt-right ml-2"></i></button>
 				</div>
 			</div>
 		</div>
@@ -247,6 +255,7 @@
 @endsection
 
 @section('scripts')
+
 
 <script>
 

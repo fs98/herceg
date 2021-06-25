@@ -3,11 +3,11 @@ $(document).ready(function() {
   var sentences = ["Gavez krema - melem...", "Bronho sirup...", "Suhe šljive...", "Sos od paradajza..."];
   var sentIndex = 0;
   var checker = false; 
-    if(document.getElementById("aa-search-input") !== null) {
+    if(document.getElementById("elastic-search") !== null) {
       function nextStep() {
         if(checker) {
           setTimeout(function() {
-            var input = document.getElementById("aa-search-input");
+            var input = document.getElementById("elastic-search");
             var val = input.getAttribute("placeholder") || "";
             val = sentences[sentIndex].substring(0, val.length + dir);
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
             checker = false;
           }, 700);
         } else {
-          var input = document.getElementById("aa-search-input");
+          var input = document.getElementById("elastic-search");
           var val = input.getAttribute("placeholder") || "";
           val = sentences[sentIndex].substring(0, val.length + dir);
 

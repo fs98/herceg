@@ -96,7 +96,7 @@
             @enderror
           </div> 
           <div class="form-group">
-            <button class="btn btn-success rounded-0 py-3 px-4" type="button" id="submit-btn" form="orderSecondStep">Pošalji</button>
+            <button class="btn btn-success rounded-1 py-3 px-5 bg-theme-color" type="button" id="submit-btn" form="orderSecondStep">Pošalji</button>
           </div>
         </form>
       </div>

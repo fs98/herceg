@@ -45,13 +45,13 @@
                 <div class="py-1 pr-2 mr-2 border-right">
                   <a class="text-dark text-decoration-none">
                     <i class="fas fa-envelope fa-lg text-theme-color"></i>
-                    <span class="h5">emina@herceg.ba</span>
+                    <span class="h5 contact-info">emina@herceg.ba</span>
                   </a> 
                 </div> 
                 <div class="py-1 pr-2">
                   <a class="text-dark text-decoration-none">
                     <i class="fas fa-phone fa-lg text-theme-color"></i>
-                    <span class="h5">00-62-658-658</span>
+                    <span class="h5 contact-info">62-658-658</span>
                   </a>
                 </div>						
               </div>
@@ -102,11 +102,11 @@
             <!-- Search -->
     
             <div class="col-lg-7 p-3 p-sm-3 p-md-3 p-lg-0 align-self-center" id="search">
-              <form class="" id="aa-input-container" action="{{ Route('public.search') }}" method="GET">
+              <form class=""action="{{ Route('public.search') }}" method="GET">
                 <div class="input-group mb-0">
-                  <input type="search" id="aa-search-input" class="form-control" aria-describedby="basic-addon2" name="search" required>
+                  <input type="search" id="elastic-search" class="form-control" aria-describedby="basic-addon2" name="search" required>
                   <div class="input-group-append">
-                    <button type="submit" class="input-group-text h-100 btn" id="basic-addon2"><i class="fas fa-search px-1 text-light"></i></button>
+                    <button type="submit" class="input-group-text h-100 btn"><i class="fas fa-search px-1 text-light"></i></button>
                   </div>
                 </div>
               </form>
@@ -239,16 +239,16 @@
 
         <!-- Newsletter Section -->
 
-        <section class="bg-light" id="newsletterSection">
+        <section class="bg-light py-5" id="newsletterSection">
           <div class="container">
-            <div class="row d-flex justify-content-center py-5">
+            <div class="row d-flex justify-content-center">
               <div class="col-auto text-center">
                 <span class="h3 text-uppercase fw-500">Želite li dobijati obavijesti o akcijama?</span>
                 <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
                 <div class="input-group">
-                  <input type="text" class="form-control rounded-0" placeholder="Your email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control rounded-1" placeholder="Your email" aria-label="Recipient's username" aria-describedby="basic-addon2">
                   <div class="input-group-append">
-                    <button class="btn text-light fw-500 text-uppercase rounded-0" type="button">Pretplati se</button>
+                    <button class="btn text-light fw-500 text-uppercase rounded-1" type="button">Pretplati se</button>
                   </div>
                 </div>
               </div>
@@ -306,6 +306,7 @@
    <!-- Scripts -->
 
       @yield('scripts')
+
 
 
 </body>

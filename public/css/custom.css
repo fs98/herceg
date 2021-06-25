@@ -111,6 +111,18 @@ font-weight-light {
 	transition-duration: 0.7s;
 }
 
+/* Navbar contact info */
+
+.contact-info {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 575.98px) {
+  .contact-info {
+    font-size: 12px;
+  }
+}
+
  /* Items Section */
 
 #nav-tab .nav-link{
