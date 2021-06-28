@@ -37,7 +37,7 @@
       <section id="topHeader" class="border-bottom py-2">
         <div class="container">
           <div class="row d-flex flex-wrap justify-content-between">
-            <div class="col-xl-12 d-flex justify-content-between">
+            <div class="col-xl-12 d-flex justify-content-center justify-content-md-end">
     
               <!-- Left side -->
     
@@ -58,11 +58,11 @@
     
               <!-- Right side -->
     
-              <div class="d-flex">
+              <!-- <div class="d-flex d">
                 <marquee behavior="scroll" direction="up" scrollamount="1">
                     <span class="h5 text-red text-uppercase font-weight-bold">-20% na sve vrste sirupa !!!</span>
                 </marquee>
-              </div>	
+              </div>	 -->
     
     
             </div>
@@ -132,7 +132,7 @@
       <!-- Bottom part of header -->
     
       <section id="bottomHeader">
-        <nav class="navbar navbar-expand-lg navbar-dark fw-500 py-2 py-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-dark fw-500 py-2 py-lg-0" style="background-color: #634C25 !important;">
           <div class="container">
             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

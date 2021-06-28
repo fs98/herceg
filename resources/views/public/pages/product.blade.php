@@ -45,7 +45,7 @@
         <div class="mx-5 mt-5">
           <form class="w-100" method="POST" action="{{ Route('cart.store', $product) }}" id="{{ Helper::RouteCrafter('store') . $product->id }}">
             @csrf
-            <button type="button" class="btn btn-block bg-theme-color w-100 rounded-0 p-3 text-white text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mx-2 me-2" ></i>Dodaj u košaricu</button>
+            <button type="button" class="btn btn-block bg-theme-color w-100 rounded-1 p-3 text-white text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mx-2 me-2" ></i>Dodaj u košaricu</button>
           </form>            
         </div>
       </div>

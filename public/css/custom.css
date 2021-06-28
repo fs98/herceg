@@ -58,6 +58,43 @@ font-weight-light {
 }
 
 /*******
+ * Main splah
+ *******/
+
+
+
+#mainSplash::before {
+  background-image: url('../images/home/reljef-bih.png') !important;
+  background-size: cover !important;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  content: '';
+}
+
+#mainSplash {
+  background-color: rgb(57,181,74, 0.9);
+  height: calc(100vh - 200px);
+}
+
+.herceg img {
+  top: -20%; 
+  border: 40px solid #BA8E44;
+}
+
+.tradition-logo {
+  width: 65%;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*******
 * Header
 *******/
 

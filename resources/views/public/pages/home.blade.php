@@ -2,16 +2,32 @@
 
 @section('content')
 
+<!-- Home page splash -->
+
+<section id="mainSplash" class="position-relative">
+	<div class="container-fluid h-100">
+		<div class="row overflow-hidden h-100">
+			<div class="col-lg-7">
+				<img src="{{ asset('images/home/OPG.png') }}" class="tradition-logo img-responsive">
+			</div>
+			<div class="col-lg-5 h-100 herceg d-none d-lg-block">
+				<img src="{{ asset('images/home/herceg-products.jpg') }}" class="rounded-circle position-absolute">
+			</div>
+		</div>
+	</div>
+</section>
+
+
 <!-- Carousel --> 
 
-<section id="mainCarousel">
+<!-- <section id="mainCarousel">
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-interval="5000">
         <img src="http://novum.ba/cimage/webroot/img.php?src=/userfiles/image/VIJESTI2018/Aldijana/20092018/2/DSC_0396.JPG&w=1280&h=800&crop-to-fit" class="d-block w-100 img-responsive" alt="...">
         <div class="d-flex align-items-center animated-caption">
             <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">20 godina sa vama</h1>
+              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">20 godina tradicije</h1>
               <button class="btn rounded bg-white text-uppercase px-3 py-2 my-3 font-weight-bold" onclick="location.href='proizvodi';">Proizvodi</button>
             </div>
           </div>
@@ -20,7 +36,7 @@
         <img src="http://www.poduzetna.ba/img/s/750x450//upload/images/Mejra_Halilovic_1.jpg" class="d-block w-100 img-responsive" alt="...">
         <div class="d-flex align-items-center animated-caption">
             <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">Nudimo samo najbolje</h1>
+              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">20 godina nudimo samo najbolje</h1>
               <button class="btn bg-white text-uppercase px-3 py-2 my-3 font-weight-bold" onclick="location.href='proizvodi';">Proizvodi</button>
             </div>
           </div>
@@ -46,7 +62,7 @@
   </div>
 </section>
 
-<!-- End of Carousel -->
+<!-- End of Carousel --> 
 
 <style>
 
@@ -63,7 +79,7 @@
 <!-- Items Section -->
 
 <section class="mt-5">
-  <div class="container position-relative">
+  <div class="container position-relative>
     <div class="row">
       <div class="col-12">
         <!-- Swiper -->
@@ -80,7 +96,7 @@
 				                <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
 				                <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
 				                  <div class="mb-4">
-				                    <a class="btn btn-light rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}"  title="Vidi detaljno"><i class="fas fa-2x fa-search routooltipnded"></i></a>
+				                    <a class="btn btn-light rounded-0 ms-1 bg-dark" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}"  title="Vidi detaljno"><i class="fas fa-2x fa-search routooltipnded text-theme-color"></i></a>
 				                  </div>
 				                  <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
 				                </div>
@@ -119,9 +135,9 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-12 mt-1">
+      <div class="col-12 mt-1 border-1">
         <img src="{{ asset('images/home/home-main.png') }}" class="img-responsive w-100 mt-5" height="200" style="border-radius: 5px;">
-				<p class="h4 text-center bg-white border-1 shadow-lg py-5 ">Firma <b>"Herceg"</b> egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja 	organske poljoprivredne 
+				<p class="h4 text-center bg-white border-1 shadow-lg py-5 px-3">Firma <b>"Herceg"</b> egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja 	organske poljoprivredne 
 					proizvodnje u Bosni i Hercegovini. Neprestano je uključena u ovaj sistem a jedna je od rijetkih koja je, 
 					zahvaljujući u prvom redu kvaliteti svojih proizvoda, već u samom startu uspjela dobiti međunarodni certifikat.
 					Nadalje, firma ”Herceg” ne samo da je uspjela sačuvati kontinuitet i nivo svoje organske proizvodnje nego je na 
@@ -148,7 +164,7 @@
               <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
               <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
                 <div class="mb-4">
-                  <a class="btn btn-light rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded"></i></a>
+                  <a class="btn btn-dark rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded text-theme-color"></i></a>
                 </div>
                 <button class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15"><i class="fas fa-shopping-cart me-2" ></i>Dodaj u košaricu</button>
               </div>
