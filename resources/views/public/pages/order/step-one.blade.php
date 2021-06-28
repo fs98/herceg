@@ -79,7 +79,7 @@
           @csrf
           <div class="form-group mt-5 mb-4 w-100">
             <label for="fromDate">Način preuzimanja</label>
-            <select name="shippingType" id="shippingType" class="w-100 border-0 bg-theme-color py-2 px-2 text-light" required>
+            <select name="shippingType" id="shippingType" class="w-100 bg-theme-color py-2 px-2 text-light" required>
               <option value="1">U našim prostorijama</option>
               <option value="2">Brza pošta</option>
             </select> 
@@ -101,7 +101,7 @@
             <h5 class="fw-500 total-heading">Račun</h5>
             <h5 class="fw-light d-flex justify-content-between mt-5">Ukupno<span>{{ $totalPrice . ' KM' }}</span></h5>
             <hr>
-            <button class="btn w-100 mt-2 rounded-0 py-3 text-light bg-danger" type="submit" form="orderFirstStep">Sljedeći korak</button>
+            <button class="btn w-100 mt-2 rounded-1 py-3 text-light bg-danger" type="submit" form="orderFirstStep">Sljedeći korak</button>
           </div> 
 
         </form>

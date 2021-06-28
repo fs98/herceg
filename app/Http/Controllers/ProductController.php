@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 
+
 class ProductController extends Controller
 {
     /**

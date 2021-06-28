@@ -24,7 +24,7 @@
 
 <section class="bg-white">
   <div class="container">
-    <div class="row py-5 shadow-lg mb-5">
+    <div class="row py-5 shadow-lg mb-5 py-5">
       <div class="col-lg-7">
         <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive" style="height: 31rem">
       </div>
@@ -45,7 +45,7 @@
         <div class="mx-5 mt-5">
           <form class="w-100" method="POST" action="{{ Route('cart.store', $product) }}" id="{{ Helper::RouteCrafter('store') . $product->id }}">
             @csrf
-            <button type="button" class="btn btn-block bg-theme-color w-100 rounded-0 p-3 text-white text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mx-2 me-2" ></i>Dodaj u košaricu</button>
+            <button type="button" class="btn btn-block bg-theme-color w-100 rounded-1 p-3 text-white text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mx-2 me-2" ></i>Dodaj u košaricu</button>
           </form>            
         </div>
       </div>

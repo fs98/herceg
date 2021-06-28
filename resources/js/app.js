@@ -15,7 +15,12 @@ window.onload = function() {
   // Swiper Init
   var itemsSwiper = new Swiper('.items-swiper', {
     slidesPerView: 1,
+    loop: true,
     spaceBetween: 10,
+    speed: 1000,
+    autoplay: {
+      delay: 2000,
+    },
     // init: false,
     navigation: {
       nextEl: '.swiper-button-next',
