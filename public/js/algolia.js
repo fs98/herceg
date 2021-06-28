@@ -3,7 +3,7 @@
     var index = client.initIndex('products');
     var enterPressed = false;
     //initialize autocomplete on search input (ID selector must match)
-    autocomplete('aa-search-input',
+    autocomplete('#elastic-search',
         { hint: false }, {
             source: autocomplete.sources.hits(index, { hitsPerPage: 10 }),
             //value to be displayed in input control after user's suggestion selection
@@ -12,14 +12,14 @@
             templates: {
                 //'suggestion' templating function used to render a single suggestion
                 suggestion: function (suggestion) {
-                    const route = "/proizvodi/" + suggestion._highlightResult.id.value;
+                    const route = "/proizvodi/" + suggestion._highlightResult.title.value;
 
                     const markup = `
-                        <a class="algolia-result" href="`+ route + `">
+                        <a class="algolia-result" href="`+ route +`">
                             <span>
                                 ${suggestion._highlightResult.title.value}
                             </span>
-                            <span>${(suggestion.price)}</span>
+                            <span>${(suggestion.price)} KM</span>
                         </div>
                         <div class="algolia-details">
                            
@@ -36,7 +36,7 @@
             enterPressed = true;
         }).on('keyup', function(event) {
             if (event.keyCode == 13 && !enterPressed) {
-                //window.location.href = window.location.origin + '/search-algolia?q=' + document.getElementById('aa-search-input').value;
+                
             }
         });
 })();
