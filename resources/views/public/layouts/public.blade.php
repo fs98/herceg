@@ -239,7 +239,7 @@
 
         <!-- Newsletter Section -->
 
-        <section class="bg-light py-5" id="newsletterSection">
+        <section class="bg-light py-5 d-none" id="newsletterSection">
           <div class="container">
             <div class="row d-flex justify-content-center">
               <div class="col-auto text-center">
