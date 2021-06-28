@@ -121,6 +121,18 @@
               @enderror
             </div> 
 
+            <div class="form-group">
+              <legend class="h6">Tags</legend>
+              @foreach ($tags as $tag)
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="tags[]" value="{{ $tag->id }}">
+                  <label class="form-check-label">
+                    <span class="badge {{ $tag->color }}">{{ $tag->name }}</span>
+                  </label>
+                </div>
+              @endforeach
+            </div>
+
             <div class="mt-2 float-right">
               <button type="button" id="submit-button" form="{{ Helper::RouteCrafter('store') }}" class="btn btn-success">Kreiraj</button>
             </div>

@@ -40,4 +40,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Accessors.
+     *
+     * @var array
+     */
+    protected function getCreatedAtAttribute($date) 
+    {
+      return date('d.m.Y.', strtotime($date));
+    } 
+
+
 }

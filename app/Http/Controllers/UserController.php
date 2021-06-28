@@ -82,13 +82,15 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, User $user)
+    public function update(UserEditRequest $request, User $user)
     {   
         $user->name = $request->name;
         $user->email = $request->email;
-        if ($user->password) {
+
+        if (isset($request->password)) {
           $user->password = Hash::make($request->password); 
         }
+        
         $user->update();
 
         $swal = new Swal("Gotovo", 200, Route('admin.user.index'), "success", "Gotovo!", "Podaci o korisniku ažurirani.");
