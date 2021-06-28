@@ -16,6 +16,13 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('title', 128)->nullable();
+            $table->foreignId('category_id')
+                  ->nullable()
+                  ->constrained()
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+            $table->string('slug')->nullable();
+            $table->tinytext('ingredients')->nullable();
             $table->string('picture_file_name', 64)->nullable();
             $table->string('directory_id', 64)->nullable();
             $table->text('description')->nullable();
