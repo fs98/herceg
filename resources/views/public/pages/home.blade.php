@@ -15,54 +15,7 @@
 			</div>
 		</div>
 	</div>
-</section>
-
-
-<!-- Carousel --> 
-
-<!-- <section id="mainCarousel">
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-interval="5000">
-        <img src="http://novum.ba/cimage/webroot/img.php?src=/userfiles/image/VIJESTI2018/Aldijana/20092018/2/DSC_0396.JPG&w=1280&h=800&crop-to-fit" class="d-block w-100 img-responsive" alt="...">
-        <div class="d-flex align-items-center animated-caption">
-            <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">20 godina tradicije</h1>
-              <button class="btn rounded bg-white text-uppercase px-3 py-2 my-3 font-weight-bold" onclick="location.href='proizvodi';">Proizvodi</button>
-            </div>
-          </div>
-      </div>
-      <div class="carousel-item" data-interval="5000">
-        <img src="http://www.poduzetna.ba/img/s/750x450//upload/images/Mejra_Halilovic_1.jpg" class="d-block w-100 img-responsive" alt="...">
-        <div class="d-flex align-items-center animated-caption">
-            <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">20 godina nudimo samo najbolje</h1>
-              <button class="btn bg-white text-uppercase px-3 py-2 my-3 font-weight-bold" onclick="location.href='proizvodi';">Proizvodi</button>
-            </div>
-          </div>
-      </div>
-      <div class="carousel-item" data-interval="5000">
-        <img src="https://www.capital.ba/wp-content/uploads/2019/02/organsko-herceg-3.png" class="d-block w-100 img-responsive" alt="...">
-        <div class="d-flex align-items-center animated-caption">
-            <div class="carousel-caption d-none d-lg-flex flex-md-column align-items-center">
-              <h1 class="text-uppercase text-wide font-weight-bold display-4 w-100 mt-3 py-2 bg-theme-color text-light shadow-lg rounded-pill">Organska proizvodnja</h1>
-              <button class="btn bg-white text-uppercase px-3 py-2 my-3 font-weight-bold" onclick="location.href='proizvodi';">Proizvodi</button>
-            </div>
-          </div>
-      </div> 
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</section>
-
-<!-- End of Carousel --> 
+</section> 
 
 <style>
 
@@ -79,7 +32,7 @@
 <!-- Items Section -->
 
 <section class="mt-5">
-  <div class="container position-relative>
+  <div class="container position-relative">
     <div class="row">
       <div class="col-12">
         <!-- Swiper -->

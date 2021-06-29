@@ -146,7 +146,7 @@ class PublicOrderController extends Controller
 
         $request->session()->flush();
 
-        $receiptName = $order->first_name . '_trgovina_tom_racun_za_narudzbu_' . $order->created_at . '.pdf';
+        $receiptName = preg_replace('/[^A-Za-z0-9\-]/', '', $order->first_name) . "-" . preg_replace('/[^A-Za-z0-9\-]/', '', $order->last_name) . '_herceg_racun_za_narudzbu_' . $order->created_at . '.pdf';
 
         if ($request->filled('email')) {
           Mail::send(new OrderShipped($request->email, $receiptFile, $receiptName));

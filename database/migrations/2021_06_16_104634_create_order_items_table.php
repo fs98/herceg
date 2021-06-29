@@ -20,7 +20,7 @@ class CreateOrderItemsTable extends Migration
                   ->nullable()
                   ->constrained()
                   ->onUpdate('cascade')
-                  ->odDelete('cascade');
+                  ->onDelete('cascade');
             $table->foreignId('product_id')
                   ->unsigned()
                   ->nullable()

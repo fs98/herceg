@@ -32,7 +32,7 @@ class PdfController extends Controller
 
       //Static variables
       $phoneText = "+387 60 000 000";
-      $companyText = "Trgovina Tom";
+      $companyText = "Herceg";
       $addressText = iconv('UTF-8', 'windows-1252', "Bosna i Hercegovina");
       $priceText = "Cijena: " . $formatedPrice;
       $header = array('Naziv', 'Kolicina', 'Cijena', 'Ukupna cijena');
