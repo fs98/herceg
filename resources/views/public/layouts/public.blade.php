@@ -43,15 +43,15 @@
     
               <div class="d-flex align-items-center">
                 <div class="py-1 pr-2 mr-2 border-right">
-                  <a class="text-dark text-decoration-none">
+                  <a href="mailto:emina@herceg.ba" class="text-dark text-decoration-none">
                     <i class="fas fa-envelope fa-lg text-theme-color"></i>
                     <span class="h5 contact-info">emina@herceg.ba</span>
                   </a> 
                 </div> 
                 <div class="py-1 pr-2">
-                  <a class="text-dark text-decoration-none">
+                  <a href="tel:+387-61 758 733" class="text-dark text-decoration-none">
                     <i class="fas fa-phone fa-lg text-theme-color"></i>
-                    <span class="h5 contact-info">62-658-658</span>
+                    <span class="h5 contact-info">061 758 733</span>
                   </a>
                 </div>						
               </div>

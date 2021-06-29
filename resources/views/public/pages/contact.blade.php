@@ -174,9 +174,7 @@
           '<h1 id="firstHeading" class="firstHeading">OP Herceg</h1>'+
           '<div id="bodyContent">'+
           '<p>OP Herceg<br>Novi Travnik bb<br>Bosnia & Herzegovina</p>'+ 
-          '<p><a target="_blank" href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16187.999239423023!2d17.660421416068846!3d44.17284605622512!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475f01aacbc7cf35%3A0xde3b9ee371569d62!2sNovi%20Travnik!5e0!3m2!1sen!2sba!4v1624960195866!5m2!1sen!2sba" '+
-          'Pogledaj na Google Mapi</a>'+
-          '</p>'+
+         
           '<p>"Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne proizvodnje u Bosni i Hercegovini. Neprestano je uključena u ovaj sistem a jedna je od rijetkih koja je, zahvaljujući u prvom redu kvaliteti svojih proizvoda, već u samom startu uspjela dobiti međunarodni certifikat.<br></p>'+
           '<p>Nadalje, firma ”Herceg” ne samo da je uspjela sačuvati kontinuitet i nivo svoje organske proizvodnje nego je na dobrom putu da ga u doglednoj budućnosti i značajno unaprijedi. Imanje Organske Proizvodnje ”Herceg” smješteno je na pitoresknim padinama planina Vranica i Vlašića nedaleko od putnog pravca Novi Travnik - Gornji Vakuf.</p>'+      
           '</div>'+
