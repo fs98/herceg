@@ -57,6 +57,14 @@ font-weight-light {
   transition: 0.5s;
 }
 
+@media screen and (max-width: 997px) {
+  .cart-button {
+    position: relative !important;
+    top: -125px;
+    left: 180px;
+  }
+}
+
 /*******
  * Main splah
  *******/
