@@ -157,7 +157,7 @@
 	<div class="container my-5">
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 			@foreach ($products as $product)
-			<div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-5" style="height: 31rem">
+			<div class=" col-12 col-md-4 col-xl-3 mb-5" style="height: 31rem">
            <div class="card text-dark p-0 border-0 h-100 shadow-lg bg-light">
             <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-75" alt="...">
             <div class="card-img-overlay px-0">

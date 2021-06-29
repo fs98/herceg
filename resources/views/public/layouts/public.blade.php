@@ -91,13 +91,15 @@
                 </a>
                 </div> 
               </div>
-              <div class="align-self-end d-flex d-lg-none shopping-cart">
+            <!--   <div class="col-lg-2 d-flex justify-content-center align-self-center shopping-cart">
                 <a class="text-center text-decoration-none" href="">
                   <i class="fa fa-shopping-basket fa-lg"></i>
                   <div class="text-center text-uppercase text-dark"><span class="fw-500">Moja košarica</span></div>
                 </a>
-              </div>
-            </div>				
+              </div> -->
+             
+            </div>
+
     
             <!-- Search -->
     
@@ -114,8 +116,8 @@
               
             <!-- Shopping Cart [big screen] -->
     
-            <div class="col-lg-2 d-none d-lg-flex justify-content-end align-self-center shopping-cart">
-              <button type="button" class="text-center text-decoration-none bg-transparent border-0" href="" data-toggle="modal" data-target="#cart" id="total">
+            <div class="col-lg-2 d-flex justify-content-center align-self-center shopping-cart">
+              <button type="button" class="cart-button text-center text-decoration-none bg-transparent border-0" href="" data-toggle="modal" data-target="#cart" id="total">
                 <i class="fa fa-shopping-basket fa-3x"></i>
                 <sup class="bg-danger text-light fw-500 px-2 py-1 rounded-circle ml-n3">{{ $totalItems }}</sup>
               </button> 
