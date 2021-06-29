@@ -96,14 +96,14 @@
 	<div class="container my-5">
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 			@foreach ($products as $product)
-			<div class=" col-12 col-md-4 col-xl-3 mb-5" style="height: 31rem">
+			<div class=" col-12 col-md-4 col-xl-3 mb-5" style="height: 22rem">
            <div class="card text-dark p-0 border-0 h-100 shadow-lg bg-light">
-            <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-75" alt="...">
+            <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-50" alt="...">
             <div class="card-img-overlay px-0">
               <!-- <span class="p-2 text-light fw-500 bg-success position-absolute">Sale!</span> -->
-              <div class="flex-column align-items-center position-absolute bottom-0 w-100 animated-card-buttons">
-                <div class="mb-4">
-                  <a class="btn btn-dark rounded-0 ms-1" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded text-theme-color"></i></a>
+              <div class="flex-column align-items-center position-absolute bottom-0 w-100">
+                <div class="mb-4 justify-content-center align-items-center animated-card-buttons">
+                  <a class="btn btn-dark rounded-0 py-2" href="{{ Route('public.products.show', ['category' => $product->category, 'product' => $product->slug]) }}" title="Vidi detaljno"><i class="fas fa-2x fa-search rounded text-theme-color"></i></a>
                 </div>
                 <form class="w-100" method="POST" action="{{ Route('cart.store', $product) }}" id="{{ Helper::RouteCrafter('store') . $product->id }}">
                   @csrf
