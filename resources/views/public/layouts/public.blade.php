@@ -83,27 +83,20 @@
     
             <!-- Logo -->
     
-            <div class="col-lg-3 d-flex align-items-center justify-content-between align-self-end">
-              <div class="align-self-end d-flex">
+            <div class="col-6 col-lg-3 d-flex"> 
+              <div class="">
                 <div id="logoIcon">
-                <a href="{{ Route('public.index') }}">
-                <img src="{{ asset('images/logo/logo-herceg.png') }}" alt="navbar-brand-logo" width="200">
-                </a>
+                  <a href="{{ Route('public.index') }}">
+                  <img src="{{ asset('images/logo/logo-herceg.png') }}" alt="navbar-brand-logo" width="200">
+                  </a>
                 </div> 
-              </div>
-            <!--   <div class="col-lg-2 d-flex justify-content-center align-self-center shopping-cart">
-                <a class="text-center text-decoration-none" href="">
-                  <i class="fa fa-shopping-basket fa-lg"></i>
-                  <div class="text-center text-uppercase text-dark"><span class="fw-500">Moja košarica</span></div>
-                </a>
-              </div> -->
-             
+              </div> 
             </div>
 
     
             <!-- Search -->
     
-            <div class="col-lg-7 p-3 p-sm-3 p-md-3 p-lg-0 align-self-center" id="search">
+            <div class="col-12 col-lg-7 p-3 p-sm-3 p-md-3 p-lg-0 order-2 order-lg-1" id="search">
               <form class=""action="{{ Route('public.search') }}" method="GET">
                 <div class="input-group mb-0">
                   <input type="search" id="elastic-search" class="form-control" aria-describedby="basic-addon2" name="search" required>
@@ -116,7 +109,7 @@
               
             <!-- Shopping Cart [big screen] -->
     
-            <div class="col-lg-2 d-flex justify-content-center align-self-center shopping-cart">
+            <div class="col-lg-2 col-6 order-1 order-lg-2 shopping-cart d-flex justify-content-end">
               <button type="button" class="cart-button text-center text-decoration-none bg-transparent border-0" href="" data-toggle="modal" data-target="#cart" id="total">
                 <i class="fa fa-shopping-basket fa-3x"></i>
                 <sup class="bg-danger text-light fw-500 px-2 py-1 rounded-circle ml-n3">{{ $totalItems }}</sup>
