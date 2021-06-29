@@ -28,7 +28,7 @@
 
 				<!-- Login -->
 
-				<div class="col-12 col-md-6 order-md-1 order-2">
+				<div class="col-12 col-md-6 order-md-1 order-2 mt-5 mt-lg-0">
 					<h5 class="h4 text-center text-md-start">Gdje se nalazimo</h5>
 					<hr class="border-0">
 					 <div id="map" style="height:530px;"></div>
@@ -68,7 +68,7 @@
                 @enderror
               </div>
 		          <div class="mb-2 mt-4 d-flex justify-content-center">
-		       		 <button type="button" class="btn rounded-0 font-size-13 py-2 px-4 text-light" id="loginButton" form="contactForm">Pošalji</button>
+		       		 <button type="button" class="btn rounded-1 font-size-13 py-2 px-4 text-light" id="loginButton" form="contactForm">Pošalji</button>
 		          </div>
 		        </form>
 				</div>
@@ -162,8 +162,8 @@
 
 <script>
     function initMap() {
-      var centrala = {lat: 44.174620, lng: 17.759190};
-      var centerPoint = {lat: 44.172584, lng: 17.757464};
+      var centrala = {lat: 44.17918, lng: 17.66874};
+      var centerPoint = {lat: 44.17918, lng: 17.66874};
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: centerPoint
@@ -171,15 +171,14 @@
       var contentString1 = '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">Trgovina Tom</h1>'+
+          '<h1 id="firstHeading" class="firstHeading">OP Herceg</h1>'+
           '<div id="bodyContent">'+
-          '<p>Trgovina Tom<br>Bila bb<br>Bosnia & Herzegovina</p>'+ 
-          '<p><a target="_blank" href="https://www.google.com/maps/place/Bo%C5%A1njak+Commerce+Centrala/@44.1745967,17.7569901,17z/data=!3m1!4b1!4m5!3m4!1s0x475f03d5be8a0f27:0x15f0038c44b12e53!8m2!3d44.1745967!4d17.7591788">'+
+          '<p>OP Herceg<br>Novi Travnik bb<br>Bosnia & Herzegovina</p>'+ 
+          '<p><a target="_blank" href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16187.999239423023!2d17.660421416068846!3d44.17284605622512!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475f01aacbc7cf35%3A0xde3b9ee371569d62!2sNovi%20Travnik!5e0!3m2!1sen!2sba!4v1624960195866!5m2!1sen!2sba" '+
           'Pogledaj na Google Mapi</a>'+
           '</p>'+
-          '<p>Tom Trgovina se bavi prodajom domaćih proizvoda<br>'+
-          'Značajan dio proizvoda izvozi se u zemlje Europske unije.<br></p>'+
-          '<p></p>'+      
+          '<p>"Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne proizvodnje u Bosni i Hercegovini. Neprestano je uključena u ovaj sistem a jedna je od rijetkih koja je, zahvaljujući u prvom redu kvaliteti svojih proizvoda, već u samom startu uspjela dobiti međunarodni certifikat.<br></p>'+
+          '<p>Nadalje, firma ”Herceg” ne samo da je uspjela sačuvati kontinuitet i nivo svoje organske proizvodnje nego je na dobrom putu da ga u doglednoj budućnosti i značajno unaprijedi. Imanje Organske Proizvodnje ”Herceg” smješteno je na pitoresknim padinama planina Vranica i Vlašića nedaleko od putnog pravca Novi Travnik - Gornji Vakuf.</p>'+      
           '</div>'+
           '</div>';
       var contentString2 = '<div id="content">'+
@@ -191,6 +190,9 @@
           '<p><a target="_blank" href="https://www.google.com/maps/place/Bo%C5%A1njak+Commerce+Proizvodnja/@44.153877,17.7637829,17z/data=!3m1!4b1!4m5!3m4!1s0x475f033ea8329947:0x2c88448afdd1f928!8m2!3d44.153877!4d17.7659716">'+
           'Pogledaj na Google Mapi</a> '+
           '</p>'+
+          '<p>Kompanija Bošnjak Commerce proizvodi fasadne mrežice, PVC kutne i okapne lajsne, PVC tiple.<br>' +
+          'Također nudimo i prodaju proizvoda kao što je kompletan građevinski materijal, sve za izgradnju od temelja do krova, alata i materijala potrebnih za građu.</p>'+
+          '<p>Fasadni program Bošnjak Commerce nositelj je EOTA certifikata kojim se Bošnjak Commerce i službeno pridružio eliti europskih proizvođača fasadnog programa.</p>'+
           '</div>'+
           '</div>';
       var infowindow1 = new google.maps.InfoWindow({
@@ -202,14 +204,17 @@
   var marker1 = new google.maps.Marker({
     position: centrala,
     map: map,
-    icon: "http://localhost:3000/front/images/tom-location.svg",
-    title: 'Trgovina Tom'
+    icon: "http://herceg.cf/images/kontakt/herceg-location.png",
+    title: 'OP Herceg'
   });
+ 
   marker1.addListener('click', function() {
     infowindow1.open(map, marker1);
   });
+
 }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDobyETeoVl2PU3AZ_2pjucSrfSQHOWwfQ&callback=initMap"></script>
+
 
 @endsection
