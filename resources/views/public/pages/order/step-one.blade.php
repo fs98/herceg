@@ -3,14 +3,14 @@
 @section('content')
 
 <section id="myCart" class="bg-white">
-  <div class="container py-4 px-0">
-    <div class="row">
+  <div class="container py-4">
+    <div class="row m-3">
       <div class="col-12 col-xl-8">
-      <h4 class="mx-3 mt-4 fw-500">Moja košarica <span class="">({{ $totalItems }} proizvoda)</span></h4>
+        <h4 class="mt-4 fw-500">Moja košarica <span class="">({{ $totalItems }} proizvoda)</span></h4>
 
         @foreach ($products as $product)
 
-        <div class="row m-3 bg-light ">
+        <div class="row bg-light ">
           <div class="col-3 align-items-baseline p-3">
             <img src="{{ $product->options->image }}" class="img-fluid rounded">
           </div>
@@ -58,11 +58,13 @@
 
             
 
-        <div class="row m-3 p-3 warning bg-light">
-          <span class="h6 fw-light mb-0">
-            <i class="fas fa-exclamation-circle fa-lg"></i>
-            Nemojte odgađati kupovinu, jer dodavanje proizvoda u košaricu ne znači i njihovo rezervisanje.
-          </span>
+        <div class="row">
+          <div class="col-12 p-3 warning bg-light">
+            <span class="h6 fw-light mb-0">
+              <i class="fas fa-exclamation-circle fa-lg"></i>
+              Nemojte odgađati kupovinu, jer dodavanje proizvoda u košaricu ne znači i njihovo rezervisanje.
+            </span>
+          </div>
         </div>
 
         {{-- <div class="row m-3">
@@ -73,13 +75,13 @@
         </div>             --}}
 
       </div>
-      <div class="col-lg-4 col-sm-12 mt-3 total">
+      <div class="col-xl-4 col-12 total">
 
-        <form action="{{ Route('public.order.details') }}" method="POST" id="orderFirstStep">
+        <form action="{{ Route('public.order.details') }}" method="POST" id="orderFirstStep" class="">
           @csrf
-          <div class="form-group mt-5 mb-4 w-100">
+          <div class="form-group mt-5 mb-4">
             <label for="fromDate">Način preuzimanja</label>
-            <select name="shippingType" id="shippingType" class="w-100 bg-theme-color py-2 px-2 text-light" required>
+            <select name="shippingType" id="shippingType" class="w-100 bg-theme-color py-2 text-light" required>
               <option value="1">U našim prostorijama</option>
               <option value="2">Brza pošta</option>
             </select> 
@@ -106,32 +108,6 @@
 
         </form>
 
-        {{-- <div class="mb-3 mt-3">
-          <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header bg-theme-color" id="headingOne">
-                <h2 class="mb-0">
-                  <button class="btn btn-link bg-transparent btn-block text-white text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Dodaj kupon kod (opcionalno) 
-                  </button>
-                </h2>
-              </div>
-          
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="coupon">Kupon</label>
-                      <input type="text" class="form-control" id="coupon" name="coupon" aria-describedby="couponHelp">
-                      <small id="couponHelp" class="form-text text-muted">Kupon kod će biti uračunat u konačnu cijenu.</small>
-                    </div> 
-                    <button type="submit" class="btn border-0">Potvrdi</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> --}}
 
       </div>
     </div>

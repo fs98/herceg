@@ -3,7 +3,7 @@
 @section('content')
 
 <section id="myCart" class="bg-white">
-  <div class="container py-4 px-0">
+  <div class="container py-4">
     <div class="row">
       <div class="col-12">
         <form class="contact-form contact-form-main mt-5" id="orderSecondStep" method="POST" action="{{ Route('public.order.final') }}">
