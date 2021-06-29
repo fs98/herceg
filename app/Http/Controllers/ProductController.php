@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Tag;
 use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductEditRequest;
 use App\Models\Swal;
@@ -22,7 +23,7 @@ class ProductController extends Controller
      */
     public function index()
     { 
-        $products = Product::orderBy('created_at', 'desc')->paginate(10);
+        $products = Product::orderBy('created_at', 'desc')->paginate(12);
 
         return view('admin.pages.products.index', [
           'products' => $products
@@ -38,9 +39,11 @@ class ProductController extends Controller
     {
         $product = new Product;
         $categories = Category::select('id','title')->get();
+        $tags = Tag::get();
         return view('admin.pages.products.create', [
             'product' => $product,
-            'categories' => $categories
+            'categories' => $categories,
+            'tags' => $tags
         ]);
     }
 
@@ -84,6 +87,7 @@ class ProductController extends Controller
 
         try {
           $product->save();
+          $product->tags()->sync($request->tags);
         } catch (Exception $e) {
           //throw $th;
         }
@@ -122,9 +126,11 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::select('id','title')->get();
+        $tags = Tag::get();
         return view('admin.pages.products.edit', [
           'product' => $product,
-          'categories' => $categories
+          'categories' => $categories,
+          'tags' => $tags
         ]);
     
       }
@@ -168,6 +174,7 @@ class ProductController extends Controller
 
         try {
           $product->update();
+          $product->tags()->sync($request->tags);
         } catch (Exception $e) {
           //throw $th;
         }

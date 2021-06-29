@@ -241,7 +241,7 @@
 
         <!-- Newsletter Section -->
 
-        <section class="bg-light py-5" id="newsletterSection">
+        <section class="bg-light py-5 d-none" id="newsletterSection">
           <div class="container">
             <div class="row d-flex justify-content-center">
               <div class="col-auto text-center">
@@ -285,7 +285,7 @@
               </div>
               <div class="col-12 mt-3 col-md-6 col-lg-4 mt-lg-0 d-flex flex-column align-items-center">
                 <h4>{{ __('Pravila privatnosti') }}</h4>
-                <a href="" class="text-decoration-none text-muted">{{ __('Faq?') }}</a>
+                <a href="" class="text-decoration-none text-muted">{{ __('FAQ') }}</a>
                 <a href="" class="text-decoration-none text-muted">{{ __('Kontakt') }}</a>
                 <a href="" class="text-decoration-none text-muted">O nama</a>
                 <a href="" class="text-decoration-none text-muted">Kontaktirajte nas</a>

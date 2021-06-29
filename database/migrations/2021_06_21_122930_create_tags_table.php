@@ -16,6 +16,7 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
             $table->string('name', 16)->unique();
+            $table->string('color', 16)->nullable();
             $table->timestamps();
         });
 
@@ -26,13 +27,13 @@ class CreateTagsTable extends Migration
                 ->nullable()
                 ->constrained()
                 ->onUpdate('cascade')
-                ->odDelete('cascade');
+                ->onDelete('cascade');
           $table->foreignId('tag_id')
                 ->unsigned()
                 ->nullable()
                 ->constrained()
                 ->onUpdate('cascade')
-                ->odDelete('cascade');      
+                ->onDelete('cascade');      
           $table->timestamps();
       });
     }

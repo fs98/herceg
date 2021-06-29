@@ -28,7 +28,7 @@
 
             @forelse ($products as $product)
 
-              <div class="col-12 col-md-3 col-lg-2">
+              <div class="col-12 col-md-3 col-lg-2 mb-3">
                 <div class="card" style="height: 22rem">
                   <img class="card-img-top" style="height: 60%; object-fit: cover" src="{{ $product->header_image_url }}" alt="Card image cap">
                   <div class="card-body bg-light text-center d-flex flex-column justify-content-center">
@@ -59,8 +59,10 @@
 
             @endforelse
         </div>
-        <div class="row">
-            {{ $products->links() }}
+        <div class="row mt-3">
+            <div class="col-12">
+              {{ $products->links() }}
+            </div>
         </div>
     </div> 
   </div>  
