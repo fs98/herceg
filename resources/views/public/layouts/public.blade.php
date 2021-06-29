@@ -260,7 +260,7 @@
             <div class="row py-5">
               <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
                 <div id="logoIcon">
-                <a href="{{ Route('public.index') }}">
+                <a href=" {{ Route('public.index')}}">
                 <img src="{{ asset('images/logo/logo-herceg.png') }}" alt="navbar-brand-logo" width="130">
                 </a>
                 </div>
@@ -271,17 +271,16 @@
               </div>
               <div class="col-12 mt-3 col-md-6 mt-md-0 col-lg-4 d-flex flex-column align-items-center">
                <h4>{{ __('Korisni linkovi') }}</h4>
-                <a href="" class="text-decoration-none text-muted">{{ __('Početna') }}</a>
-                <a href="" class="text-decoration-none text-muted">{{ __('Naši proizvodi') }}i</a>
-                <a href="" class="text-decoration-none text-muted">{{ __('O nama') }}</a>
-                <a href="" class="text-decoration-none text-muted">{{ __('Kontaktirajte nas') }}</a>
+                <a href="{{ Route('public.index')}}" class="text-decoration-none text-muted">{{ __('Početna') }}</a>
+                <a href="{{ Route('public.products')}}" class="text-decoration-none text-muted">{{ __('Naši proizvodi') }}i</a>
+                <a href="{{ Route('public.about')}}" class="text-decoration-none text-muted">{{ __('O nama') }}</a>
+                <a href="{{ Route('public.contact')}}" class="text-decoration-none text-muted">{{ __('Kontaktirajte nas') }}</a>
               </div>
               <div class="col-12 mt-3 col-md-6 col-lg-4 mt-lg-0 d-flex flex-column align-items-center">
-                <h4>{{ __('Pravila privatnosti') }}</h4>
-                <a href="" class="text-decoration-none text-muted">{{ __('FAQ') }}</a>
-                <a href="" class="text-decoration-none text-muted">{{ __('Kontakt') }}</a>
-                <a href="" class="text-decoration-none text-muted">O nama</a>
-                <a href="" class="text-decoration-none text-muted">Kontaktirajte nas</a>
+                <h4>{{ __('Kategorije') }}</h4>
+                @foreach ($categories as $category)
+                      <a class="text-decoration-none text-muted" href="{{ Route('public.category.products', $category )}}">{{ $category->title }}</a>
+                  @endforeach
               </div>
             </div>
           </div>

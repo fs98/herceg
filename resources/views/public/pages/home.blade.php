@@ -41,7 +41,7 @@
 				                  </div>
 				                  <form class="w-100" method="POST" action="{{ Route('cart.store', $product) }}" id="{{ Helper::RouteCrafter('store') . $product->id }}">
                             @csrf
-                            <button type="button" class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mr-2" ></i>Dodaj u košaricu</button>
+                            <button type="button" class="btn btn-block btn-dark w-100 rounded-lg p-3 text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mr-2" ></i>Dodaj u košaricu</button>
                           </form>
 				                </div>
 				              </div>
@@ -107,7 +107,7 @@
                 </div>
                 <form class="w-100" method="POST" action="{{ Route('cart.store', $product) }}" id="{{ Helper::RouteCrafter('store') . $product->id }}">
                   @csrf
-                  <button type="button" class="btn btn-block btn-dark w-100 rounded-0 p-3 text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mr-2" ></i>Dodaj u košaricu</button>
+                  <button type="button" class="btn btn-block btn-dark w-100 rounded-lg p-3 text-uppercase fw-500 font-size-15 submit-btn" form="{{ Helper::RouteCrafter('store')  . $product->id }}"><i class="fas fa-shopping-cart mr-2" ></i>Dodaj u košaricu</button>
                 </form>
               </div>
             </div>
