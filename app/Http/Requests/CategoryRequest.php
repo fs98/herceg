@@ -37,8 +37,8 @@ class CategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'category_title.required' => 'Morate unijeti naziv kategorije',
-            'selected_image.required' => 'Kategorija mora imati sliku',
+            'category_title.required' => 'Morate unijeti naziv kategorije.',
+            'selected_image.required' => 'Kategorija mora imati sliku.',
             'selected_image.image' => 'Molimo izaberite sliku!',
             'selected_image.mimes' => 'Izabrana slika mora biti u jednom od sljedećih formata: jpeg, jpg, png.',
             'selected_image.max' => 'Maksimalna dozvoljena veličina slike je 16MB.'

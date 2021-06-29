@@ -45,6 +45,12 @@ window.onload = function() {
       },
     },
   });
+  $('.items-swiper').on('mouseenter', function(){
+    itemsSwiper.autoplay.stop();
+  })
+  $('.items-swiper').on('mouseleave', function(){
+    itemsSwiper.autoplay.start();
+  })
 
   var shopsSwiper = new Swiper(".shops-swiper", {
     effect: "coverflow", 

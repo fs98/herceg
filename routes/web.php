@@ -74,4 +74,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
   Route::resource('user', App\Http\Controllers\UserController::class)->except([
     'show'
   ]);
+  Route::resource('shop', App\Http\Controllers\ShopController::class)->except([
+    'show'
+  ]);
 });

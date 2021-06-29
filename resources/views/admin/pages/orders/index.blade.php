@@ -67,6 +67,11 @@
           @endif
 
         </div>
+        <div class="row">
+          <div class="col-12 mt-4">
+            {{ $orders->links() }}
+          </div>
+        </div>
     </div> 
   </div>  
 
