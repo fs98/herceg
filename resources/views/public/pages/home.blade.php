@@ -17,18 +17,6 @@
 	</div>
 </section> 
 
-<style>
-
-.items-swiper .swiper-button-next {
-  right: -30px;
-}
-
-.items-swiper .swiper-button-prev {
-  left: -30px;
-}
-
-</style>
-
 <!-- Items Section -->
 
 <section class="mt-5">
@@ -67,12 +55,7 @@
 
               @endforeach
 
-            </div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
+            </div>  
           </div>
       </div>  
       <div class="col-12 text-center mt-5">
