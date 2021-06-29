@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Shop;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class PublicPageController extends Controller
@@ -42,11 +43,13 @@ class PublicPageController extends Controller
         $cartProducts = Cart::content();
         $totalItems = Cart::count();
         $totalPrice = Cart::subtotal();
+        $shops = Shop::select(['location', 'directory_id', 'picture_file_name' ])->get();
 
         return view('public.pages.about', [
             'cartProducts' => $cartProducts,
             'totalItems' => $totalItems,
-            'totalPrice' => $totalPrice
+            'totalPrice' => $totalPrice,
+            'shops' => $shops
         ]);
     }
 

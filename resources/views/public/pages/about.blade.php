@@ -63,23 +63,23 @@
       </div>
     </div>  
     <div class="row">
-      <div class="col-6 col-xl-3 pb-5 text-center">
-        <img src="https://via.placeholder.com/300x300" alt="tim" height="200" class="img-responsive rounded-circle border-2">
+      <div class="col-12 col-sm-6 col-xl-3 pb-5 text-center">
+        <img src="https://m.novi.ba/storage/2017/07/28/thumbs/597b1293-758c-4a8d-907a-5cdc0a0a0a67-sejad-690x480.jpg" alt="tim" height="200" width="200" class="img-responsive rounded-circle border-2">
         <h5 class="mt-3">Sejad Herceg</h5>
         <h6 class="text-theme-color text-uppercase">Osnivač</h6>
       </div>
-      <div class="col-6 col-xl-3 pb-5 text-center">
-        <img src="https://via.placeholder.com/300x300" alt="tim" height="200" class="img-responsive rounded-circle border-2">
+      <div class="col-12 col-sm-6 col-xl-3 pb-5 text-center">
+        <img src="https://images.pexels.com/photos/6272310/pexels-photo-6272310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tim" height="200" width="200" class="img-responsive rounded-circle border-2">
         <h5 class="mt-3">Anisa Herceg</h5>
         <h6 class="text-theme-color text-uppercase">Proizvodnja</h6>
       </div>
-      <div class="col-6 col-xl-3 pb-5 text-center">
-        <img src="https://via.placeholder.com/300x300" alt="tim" height="200" class="img-responsive rounded-circle border-2">
+      <div class="col-12 col-sm-6 col-xl-3 pb-5 text-center">
+        <img src="https://images.pexels.com/photos/7125485/pexels-photo-7125485.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="tim" height="200" width="200" class="img-responsive rounded-circle border-2">
         <h5 class="mt-3">Osman Herceg</h5>
         <h6 class="text-theme-color text-uppercase">Menadžment</h6>
       </div>
-      <div class="col-6 col-xl-3 pb-5 text-center">
-        <img src="https://via.placeholder.com/300x300" alt="tim" height="200" class="img-responsive rounded-circle border-2
+      <div class="col-12 col-sm-6 col-xl-3 pb-5 text-center">
+        <img src="https://images.pexels.com/photos/4503732/pexels-photo-4503732.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="tim" height="200" width="200" class="img-responsive rounded-circle border-2
         ">
         <h5 class="mt-3">Emina Herceg</h5>
         <h6 class="text-theme-color text-uppercase">Sales repesentative</h6>
@@ -100,18 +100,12 @@
         <!-- Swiper -->
         <div class="swiper-container w-100 shops-swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="{{ asset('images/about/poslovnicentar.jpg') }}" height="350" class="img-responsive">
-              <h4 class="mt-3">Poslovni centar 96, FIS Vitez</h4>
-            </div>
-            <div class="swiper-slide">
-              <img src="{{ asset('images/about/novigradsarajevo.jpg') }}" height="350" class="img-responsive">
-              <h4 class="mt-3">Kurta Schorka 7, Novi Grad Sarajevo</h4>
-            </div>
-            <div class="swiper-slide">
-              <img src="https://via.placeholder.com/750x400" height="350" class="img-responsive">
-              <h4 class="mt-3">Fake Street 6, Imaginary City</h4>
-            </div> 
+            @foreach ($shops as $shop)
+              <div class="swiper-slide">
+                <img src="{{ $shop->header_image_url }}" height="350" class="img-responsive">
+                <h4 class="mt-3">{{ $shop->location }}</h4>
+              </div>
+            @endforeach 
           </div>
         </div>
       </div>

@@ -134,6 +134,24 @@
             </div>
           </li>
 
+          <!-- Nav Item - Content Collapse Menu -->
+          <li class="nav-item {{ Route::currentRouteNamed('admin.shop.*') ? "active" : "" }}">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseShops" aria-expanded="true"
+                aria-controls="collapseShops">
+                <i class="fas fa-fw fa-quote-left"></i>
+                <span>{{ __('Prodavnice')}}</span>
+            </a>
+            <div id="collapseShops" class="collapse {{ Route::currentRouteNamed('admin.shop.*') ? "show" : "" }}" aria-labelledby="headingPages"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">{{ __('Prodavnice:') }}</h6>
+                    <a class="collapse-item {{ Route::currentRouteNamed('admin.shop.index') ? "active" : "" }}" href="{{ Route('admin.shop.index') }}">{{ __('Prodavnice') }}</a>
+                    <a class="collapse-item {{ Route::currentRouteNamed('admin.shop.create') ? "active" : "" }}" href="{{ Route('admin.shop.create') }}">{{ __('Nova prodavnica') }}</a>
+                </div>
+            </div>
+          </li>
+
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
 
@@ -160,7 +178,7 @@
                   </button>
 
                   <!-- Topbar Search -->
-                  <form
+                  {{-- <form
                       class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                       <div class="input-group">
                           <input type="text" class="form-control bg-light border-0 small" placeholder="{{ __('Search...') }}"
@@ -171,7 +189,7 @@
                               </button>
                           </div>
                       </div>
-                  </form>
+                  </form> --}}
 
                   <!-- Topbar Navbar -->
                   <ul class="navbar-nav ml-auto">
@@ -181,7 +199,7 @@
                       </a>
                   </li>
 
-                      <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                      {{-- <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                       <li class="nav-item dropdown no-arrow d-sm-none">
                           <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -203,7 +221,7 @@
                                   </div>
                               </form>
                           </div>
-                      </li>
+                      </li> --}}
 
                       <div class="topbar-divider d-none d-sm-block"></div>
 

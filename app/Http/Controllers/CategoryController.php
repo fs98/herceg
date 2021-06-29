@@ -56,7 +56,7 @@ class CategoryController extends Controller
         if(!isset($user->id) || $user->id === NULL || $user->id === '') abort(404);
 
         $category = new Category;
-        $category->title = $request->category_title;
+        $category->location = $request->category_title;
         
         $category->directory_id = NULL; 
 

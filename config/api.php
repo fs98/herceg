@@ -35,6 +35,7 @@ return [
         'teams' => 'public/teams/',
         'category' => 'public/category/',
         'product' => 'public/product/',
+        'shops' => 'public/shops/',
     ],
      'storage_paths_v2' => [
         'users' => 'storage/users/',
@@ -42,6 +43,7 @@ return [
         'teams' => 'storage/teams/',
         'category' => 'storage/category/',
         'product' => 'storage/product/',
+        'shops' => 'storage/shops/',
     ],
     'route-paths' => [
         'store' => 'store',
