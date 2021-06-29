@@ -304,4 +304,21 @@
 
 
 </body>
+
+<!-- BotMan -->
+
+    <script>
+      var botmanWidget = {
+          aboutText: 'herceg',
+          introMessage: "✋ Zdravo! Kako Vam možemo pomoći?",
+          title: "Herceg",
+          placeholderText: "Vaša poruka...",
+          mainColor: "#39B54A",
+          bubbleBackground: "#39B54A" 
+      };
+    </script>
+  
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+
+
 </html>

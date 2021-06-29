@@ -6,8 +6,9 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "algolia/algoliasearch-client-php": "^2.2",
         "algolia/scout-extended": "^1.18",
+        "botman/botman": "^2.6",
+        "botman/driver-web": "^1.5",
         "codedge/laravel-fpdf": "^1.7",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",

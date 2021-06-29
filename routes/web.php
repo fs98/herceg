@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\PublicOrderController;
 use App\Http\Controllers\SearchproductsController;
+use App\Http\Controllers\BotManController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,8 @@ Route::delete('/proizvodi/{id}', [PublicOrderController::class, 'removeFromCart'
 Route::post('/proizvodi/increase/{id}/{quantity}', [PublicOrderController::class, 'increaseQuantity'])->name('cart.increase');
 Route::post('/proizvodi/decrease/{id}/{quantity}', [PublicOrderController::class, 'decreaseQuantity'])->name('cart.decrease');
 
+// Botman
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 
 Auth::routes([
   'register' => false
