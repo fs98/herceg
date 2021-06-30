@@ -15,7 +15,7 @@ class BotManController extends Controller
     {
         $botman = app('botman');
   
-        $botman->hears('{message}', function($botman, $message) {
+        $botman->hears('(.+)', function($botman, $message) {
   
             if ($message == 'Zdravo' || $message == 'zdravo') {
                 $this->askName($botman);

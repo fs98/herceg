@@ -8,7 +8,7 @@
 	<div class="container-fluid h-100">
 		<div class="row overflow-hidden h-100">
 			<div class="col-lg-7">
-				<img src="{{ asset('images/home/OPG.png') }}" class="tradition-logo img-responsive">
+				<img src="{{ asset('images/home/opg.png') }}" class="tradition-logo img-responsive">
 			</div>
 			<div class="col-lg-5 h-100 herceg d-none d-lg-block">
 				<img src="{{ asset('images/home/herceg-products.jpg') }}" class="rounded-circle position-absolute">
@@ -71,18 +71,13 @@
 
 <!-- Image or Add Section -->
 
-<section>
-  <div class="container">
+<section id="nevenSplash" class="mt-5">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-12 mt-1 border-1">
-        <img src="{{ asset('images/home/home-main.png') }}" class="img-responsive w-100 mt-5" height="200" style="border-radius: 5px;">
-				<p class="h4 text-center bg-white border-1 shadow-lg py-5 px-3">Firma <b>"Herceg"</b> egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja 	organske poljoprivredne 
-					proizvodnje u Bosni i Hercegovini. Neprestano je uključena u ovaj sistem a jedna je od rijetkih koja je, 
-					zahvaljujući u prvom redu kvaliteti svojih proizvoda, već u samom startu uspjela dobiti međunarodni certifikat.
-					Nadalje, firma ”Herceg” ne samo da je uspjela sačuvati kontinuitet i nivo svoje organske proizvodnje nego je na 
-					dobrom putu da ga u doglednoj budućnosti i značajno unaprijedi. 
-				</p>
-      </div>
+		    <div class="col-lg-8 offset-lg-2 col-12 text-dark d-flex align-items-center border-1" style="background-color:rgb(255,255,255,0.8);">
+		      <p class="h3 text-center py-3">Firma "Herceg” egzistira na području općine Novi Travnik i svojevrsni je pionir uvođenja organske poljoprivredne proizvodnje u Bosni i Hercegovini. Neprestano je uključena u ovaj sistem a jedna je od rijetkih koja je, zahvaljujući u prvom redu kvaliteti svojih proizvoda, već u samom startu uspjela dobiti međunarodni certifikat.
+Nadalje, firma ”Herceg” ne samo da je uspjela sačuvati kontinuitet i nivo svoje organske proizvodnje nego je na dobrom putu da ga u doglednoj budućnosti i značajno unaprijedi</p>
+		    </div>
     </div>
   </div>
 </section>
