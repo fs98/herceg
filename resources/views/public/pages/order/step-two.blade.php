@@ -2,107 +2,107 @@
 
 @section('content')
 
-<section id="myCart" class="bg-white">
-  <div class="container py-4 px-0">
-    <div class="row">
-      <div class="col-12">
-        <form class="contact-form contact-form-main mt-5" id="orderSecondStep" method="POST" action="{{ Route('public.order.final') }}">
-          @csrf
-          <div class="form-row">
-            <div class="form-group col-12 col-md-3">
-              <label for="first_name">Ime</label>
-              <input id="first_name" type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror" value="{{ old('first_name') }}" placeholder="Ime">
-               @error('first_name')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
-             
+  <section id="myCart" class="bg-white">
+    <div class="container py-4 px-0">
+      <div class="row">
+        <div class="col-12">
+          <form class="contact-form contact-form-main mt-5" id="orderSecondStep" method="POST" action="{{ Route('public.order.final') }}">
+            @csrf
+            <div class="form-row">
+              <div class="form-group col-12 col-md-3">
+                <label for="first_name">Ime</label>
+                <input id="first_name" type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror" value="{{ old('first_name') }}" placeholder="Ime">
+                 @error('first_name')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+               
+              </div>
+              <div class="form-group col-12 col-md-3">
+                <label for="last_name">Prezime</label>
+                <input id="last_name" type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror" value="{{ old('last_name') }}" placeholder="Prezime">
+                 @error('last_name')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+               
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label for="form_email">Email</label>
+                <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="JohnDoe@***.com *">
+                <small>Ako želite da Vam dostavimo račun putem interneta, morate upisati email adresu.</small>
+                @error('email')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+    
+              </div>
             </div>
-            <div class="form-group col-12 col-md-3">
-              <label for="last_name">Prezime</label>
-              <input id="last_name" type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror" value="{{ old('last_name') }}" placeholder="Prezime">
-               @error('last_name')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
-             
+            <div class="form-row">
+              <div class="form-group col-12 col-md-6">
+                <label for="form_address">Adresa *</label>
+                <input id="address" type="text" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}" placeholder="">
+                
+                @error('address')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label for="form_phone">Broj telefona *</label>
+                <input id="phone" type="tel" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="">
+                
+                @error('phone')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
             </div>
-            <div class="form-group col-12 col-md-6">
-              <label for="form_email">Email</label>
-              <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="JohnDoe@***.com *">
-              <small>Ako želite da Vam dostavimo račun putem interneta, morate upisati email adresu.</small>
-              @error('email')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
-  
+            <div class="form-row">
+              <div class="form-group col-12 col-md-6">
+                <label for="form_city">Grad *</label>
+                <input id="city" type="text" name="city" class="form-control @error('city') is-invalid @enderror" value="{{ old('city') }}" placeholder="eg. Sarajevo">
+                
+                @error('city')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label for="form_zip">Poštanski broj</label>
+                <input id="zip" type="num" name="zip" class="form-control @error('zip') is-invalid @enderror" value="{{ old('zip') }}" >
+                
+                @error('zip')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-12 col-md-6">
-              <label for="form_address">Adresa *</label>
-              <input id="address" type="text" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}" placeholder="">
+            <div class="form-group">
+              <label for="form_message">Posebne želje *</label>
+              <textarea id="message" name="message" class="form-control @error('message') is-invalid @enderror" value="{{ old('message') }}" placeholder="Unesi poruku *" rows="4"></textarea>
               
-              @error('address')
+              @error('message')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
                 </span>
               @enderror
+            </div> 
+            <div class="form-group">
+              <button class="btn btn-success rounded-1 py-3 px-5 bg-theme-color" type="button" id="submit-btn" form="orderSecondStep">Pošalji</button>
             </div>
-            <div class="form-group col-12 col-md-6">
-              <label for="form_phone">Broj telefona *</label>
-              <input id="phone" type="tel" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="">
-              
-              @error('phone')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-12 col-md-6">
-              <label for="form_city">Grad *</label>
-              <input id="city" type="text" name="city" class="form-control @error('city') is-invalid @enderror" value="{{ old('city') }}" placeholder="eg. Sarajevo">
-              
-              @error('city')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
-            </div>
-            <div class="form-group col-12 col-md-6">
-              <label for="form_zip">Poštanski broj</label>
-              <input id="zip" type="num" name="zip" class="form-control @error('zip') is-invalid @enderror" value="{{ old('zip') }}" >
-              
-              @error('zip')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="form_message">Posebne želje *</label>
-            <textarea id="message" name="message" class="form-control @error('message') is-invalid @enderror" value="{{ old('message') }}" placeholder="Unesi poruku *" rows="4"></textarea>
-            
-            @error('message')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror
-          </div> 
-          <div class="form-group">
-            <button class="btn btn-success rounded-1 py-3 px-5 bg-theme-color" type="button" id="submit-btn" form="orderSecondStep">Pošalji</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 @endsection

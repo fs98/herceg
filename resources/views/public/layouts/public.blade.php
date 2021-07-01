@@ -40,7 +40,7 @@
     
             <!-- Logo -->
     
-            <div class="col-6 col-xl-2 d-flex order-0 order-xl-0"> 
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 d-flex order-0 order-md-0 order-xl-0"> 
               <div class="">
                 <div id="logoIcon">
                   <a href="{{ Route('public.index') }}">
@@ -50,27 +50,27 @@
               </div> 
             </div>
 
-          <!-- Contact -->
+            <!-- Contact -->
 
-            <div class="d-none d-md-block col-xl-3 col-12 order-2 order-xl-1 justify-content-end justify-content-lg-start">
-                <div class="py-1 pr-2 mr-2">
-                  <a href="mailto:emina@herceg.ba" class="text-dark text-decoration-none">
-                    <i class="fas fa-envelope fa-lg text-theme-color"></i>
-                    <span class="h5 contact-info">emina@herceg.ba</span>
-                  </a> 
-                </div> 
-                <div class="py-1 pr-2">
-                  <a href="tel:+387-61 758 733" class="text-dark text-decoration-none">
-                    <i class="fas fa-phone fa-lg text-theme-color"></i>
-                    <span class="h5 contact-info">061 758 733</span>
-                  </a>
-                </div>            
-              </div>
+            <div class="d-none d-md-block col-xl-2 col-12 col-md-4 col-lg-3 order-2 order-xl-1 order-lg-1 justify-content-end justify-content-lg-start">
+              <div class="py-1 pr-2 mr-2">
+                <a href="mailto:emina@herceg.ba" class="text-dark text-decoration-none">
+                  <i class="fas fa-envelope fa-lg text-theme-color"></i>
+                  <span class="h5 contact-info">emina@herceg.ba</span>
+                </a> 
+              </div> 
+              <div class="py-1 pr-2">
+                <a href="tel:+387-61 758 733" class="text-dark text-decoration-none">
+                  <i class="fas fa-phone fa-lg text-theme-color"></i>
+                  <span class="h5 contact-info">061 758 733</span>
+                </a>
+              </div>            
+            </div>
 
     
             <!-- Search -->
     
-            <div class="col-12 col-xl-4 p-3 p-sm-3 p-md-3 p-lg-0 order-2 order-xl-1 justify-content-end" id="search">
+            <div class="col-12 col-md-8 col-lg-4 col-xl-5 p-3 p-sm-3 p-md-3 p-lg-0 order-2 order-md-1 order-xl-1 justify-content-end" id="search">
               <form class=""action="{{ Route('public.search') }}" method="GET">
                 <div class="input-group mb-0">
                   <input type="search" id="elastic-search-two" class="form-control" aria-describedby="basic-addon2" name="search" required>
@@ -83,13 +83,25 @@
               
             <!-- Shopping Cart [big screen] -->
     
-            <div class="col-lg-1 col-6 order-1 order-xl-2 shopping-cart d-flex justify-content-end">
+            <div class="col-lg-2 col-md-4 col-4 order-1 order-xl-2 order-lg-3 order-md-3 shopping-cart d-flex justify-content-end">
               <button type="button" class="cart-button text-center text-decoration-none bg-transparent border-0" href="" data-toggle="modal" data-target="#cart" id="total">
                 <i class="fa fa-shopping-basket fa-3x"></i>
                 <sup class="bg-danger text-light fw-500 px-2 py-1 rounded-circle ml-n3">{{ $totalItems }}</sup>
               </button> 
             </div>
-    
+
+            <!-- Button for toggle menu on mobile version -->
+
+            <div class="col-lg-1 col-md-4 col-2 order-1 order-md-4 d-lg-none">
+              <button class="menu navbar-toggler order-1 justify-content-center ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))">
+                <svg width="60" height="45" viewBox="0 0 100 100">
+                  <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                  <path class="line line2" d="M 20,50 H 80" />
+                  <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                </svg>
+              </button>
+            </div>
+
           </div>
           <!-- /.row -->
         </div>
@@ -104,21 +116,6 @@
         <nav class="navbar navbar-expand-lg navbar-dark d-flex fw-500 py-2 py-lg-0" style="background-color: #634C25 ;">
           <div class="container">
             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-
-            
-
-            
-
-            <button class="menu navbar-toggler order-1 justify-content-center ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))">
-              <svg width="50" height="35" viewBox="0 0 100 100">
-                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                <path class="line line2" d="M 20,50 H 80" />
-                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-              </svg>
-            </button>
-           
-
-
             <div class="collapse navbar-collapse justify-content-center justify-content-lg-end" id="navbarNavDropdown">
               <ul class="navbar-nav align-items-lg-end align-items-center">
                 <li class="nav-item pr-xl-2 pr-lg-2 px-md-0 px-sm-0 px-0">
@@ -179,7 +176,7 @@
     
     </header>
 
-    <!-- Modal -->
+      <!-- Modal -->
 
       <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
