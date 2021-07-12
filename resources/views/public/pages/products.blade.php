@@ -8,7 +8,7 @@
     <div class="container my-4">
       <div class="row">
         @foreach($products as $product)
-          <div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-5" style="height: 35rem">
+          <div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-5" style="height: 37rem">
              <div class="card text-dark p-0 border-0 h-100 shadow-lg bg-light">
               <img src="{{ $product->header_image_url }}" class="card-img rounded img-responsive h-75" alt="...">
               <div class="card-img-overlay px-0">
