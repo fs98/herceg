@@ -113,7 +113,7 @@
               <input type="radio" name="product_in_stock" {{ $product->in_stock == true ? 'checked' : '' }} value="1" class="custom-control-input @error('product_in_stock') is-invalid @enderror"><span class="custom-control-label">Da</span>
               </label>
               <label class="custom-control custom-radio custom-control-inline">
-              <input type="radio" name="product_in_stock" {{ $product->ing_stock == false ? 'checked' : '' }} value="0" class="custom-control-input @error('selected_image') is-invalid @enderror"><span class="custom-control-label">Ne</span>
+              <input type="radio" name="product_in_stock" {{ $product->in_stock == false ? 'checked' : '' }} value="0" class="custom-control-input @error('selected_image') is-invalid @enderror"><span class="custom-control-label">Ne</span>
               </label>
 
               @error('product_in_stock')
