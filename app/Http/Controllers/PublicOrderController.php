@@ -13,6 +13,7 @@ use App\Http\Requests\SecondStepRequest;
 use Codedge\Fpdf\Fpdf\Fpdf;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderShipped;
+use App\Mail\OrderShippedAdmin;
 use DateTime;
 
 
@@ -151,6 +152,8 @@ class PublicOrderController extends Controller
         if ($request->filled('email')) {
           Mail::send(new OrderShipped($request->email, $receiptFile, $receiptName));
         }
+
+        Mail::send(new OrderShippedAdmin($order->first_name, $order->last_name, $order->id, $receiptFile, $receiptName));
 
         $swal = new Swal("Gotovo", 200, Route('public.index'), "success", "Gotovo!", "Narudžba poslana!");
         return response()->json($swal->get()); 

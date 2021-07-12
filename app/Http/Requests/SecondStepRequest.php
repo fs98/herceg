@@ -30,7 +30,7 @@ class SecondStepRequest extends FormRequest
           'address' => 'required',
           'phone' => 'required',
           'city' => 'required',
-          'zip' => 'required',
+          'zip' => 'required|max:8',
           'message' => 'nullable|max:300'
         ];
     }
@@ -45,6 +45,7 @@ class SecondStepRequest extends FormRequest
             'phone.required' => 'Morate unijeti broj telefona na koji Vas možemo kontaktirati.',
             'city.required' => 'Morate unijeti grad.',
             'zip.required' => 'Morate unijeti poštanski broj.',
+            'zip.max' => 'Pošanski broj ne može biti duži od 8 znakova.',
             'message.max' => 'Poruka ne smije biti duža od 300 slovnih mjesta.'
         ];
     }

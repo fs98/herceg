@@ -34,7 +34,7 @@ class OrderShipped extends Mailable
     {
         return $this->markdown('emails.order.shipped')
         ->to($this->email)
-        ->from('trtom@gmail.com', 'Trgovina Tom')
+        ->from('organskaproizvodnjaherceg@gmail.com', 'OP Herceg')
         ->subject('Hvala na narudžbi')
         ->attach($this->receiptFile, [
           'as' => $this->receiptName,

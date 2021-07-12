@@ -77,6 +77,8 @@ class CartController extends Controller
       Mail::send(new OrderShipped($request->email, $receiptFile, $receiptName));
     }
 
+    Mail::send(new OrderShippedAdmin($order->name, $order->id, $receiptFile, $receiptName));
+
     $swal = new Swal("Gotovo", 200, Route('hvalaFrontRender'), "success", "Gotovo!", "Narudžba poslana!");
     return response()->json($swal->get()); 
 
